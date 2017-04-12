@@ -1,0 +1,11 @@
+extends module/form-portfolio
+block page-config
+    -portfolio_data = []
+    -for (var i = 0; i<12 ; i++)
+        -portfolio_data[i] = {}
+        -portfolio_data[i].img = 'assets/images/portfolio-600-' + (i + 1) + '.jpg'
+        -portfolio_data[i].filter = portfolio_filter_array[(i+1)%5] + ' ' + portfolio_filter_array[(i+3)%5]
+    -portfolio_option.page_title = 'PORTFOLIO';
+    -portfolio_option.type = 'icon-item';
+    -portfolio_option.container_class = 'container-fluid';
+    -portfolio_option.item_class = 'col-lg-3 col-md-4 col-sm-6 col-xs-12 dark-overlay';

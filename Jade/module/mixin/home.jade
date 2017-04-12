@@ -1,0 +1,512 @@
+//- Boxed Slider
+//- ============================
+
+//- Style 1 
+
+-var data_homeBoxedSlider_1 = []
+
+-data_homeBoxedSlider_1[0]= {}
+-data_homeBoxedSlider_1[0].imgUrl= "assets/images/home-box-1.jpg"
+-data_homeBoxedSlider_1[0].logo= "assets/images/logo-1-white.svg"
+-data_homeBoxedSlider_1[0].text= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam."
+
+-data_homeBoxedSlider_1[1]= {}
+-data_homeBoxedSlider_1[1].imgUrl= "assets/images/home-box-2.jpg"
+-data_homeBoxedSlider_1[1].logo= "assets/images/logo-1-white.svg"
+-data_homeBoxedSlider_1[1].text= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam."
+
+-data_homeBoxedSlider_1[2]= {}
+-data_homeBoxedSlider_1[2].imgUrl= "assets/images/home-box-3.jpg"
+-data_homeBoxedSlider_1[2].logo= "assets/images/logo-1-white.svg"
+-data_homeBoxedSlider_1[2].text= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam."
+
+-data_homeBoxedSlider_1[3]= {}
+-data_homeBoxedSlider_1[3].imgUrl= "assets/images/home-box-4.jpg"
+-data_homeBoxedSlider_1[3].logo= "assets/images/logo-1-white.svg"
+-data_homeBoxedSlider_1[3].text= "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam."
+
+mixin block-home-boxed-slider-1(item)
+    .home-slider-item
+        .item-image
+            img.img-responsive(src=item.imgUrl alt="Home slider image")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .caption-wrapper.text-center
+                            img.caption(src=item.logo alt="Home logo image" data-caption-animation="fadeIn")
+                            p.caption.hidden-xs(data-caption-animation="fadeIn")= item.text
+
+mixin home-boxed-slider-1(Class,ID)
+    .container
+        .home-boxed-slider.style-1.caption-slider.control-nav(class=Class,id=ID)
+            each item in data_homeBoxedSlider_1
+                +block-home-boxed-slider-1(item)
+//- style 2
+
+-var data_homeBoxedSlider_2 = []
+
+-data_homeBoxedSlider_2[0]= {}
+-data_homeBoxedSlider_2[0].imgUrl= "assets/images/home-box-1b.jpg"
+-data_homeBoxedSlider_2[0].text= "WELCOME TO WOLVERINE THEME"
+
+-data_homeBoxedSlider_2[1]= {}
+-data_homeBoxedSlider_2[1].imgUrl= "assets/images/home-box-2b.jpg"
+-data_homeBoxedSlider_2[1].text= "WELCOME TO WOLVERINE THEME"
+
+-data_homeBoxedSlider_2[2]= {}
+-data_homeBoxedSlider_2[2].imgUrl= "assets/images/home-box-3b.jpg"
+-data_homeBoxedSlider_2[2].text= "WELCOME TO WOLVERINE THEME"
+
+-data_homeBoxedSlider_2[3]= {}
+-data_homeBoxedSlider_2[3].imgUrl= "assets/images/home-box-4b.jpg"
+-data_homeBoxedSlider_2[3].text= "WELCOME TO WOLVERINE THEME"
+
+mixin block-home-boxed-slider-2(item)
+    .home-slider-item
+        .item-image
+            img.img-responsive(src=item.imgUrl alt="Home slider image")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .caption-wrapper.caption.text-center(data-caption-animation="fadeIn")
+                            p.heading-icon-1.caption
+                            h4.caption= item.text
+
+mixin home-boxed-slider-2(Class,ID)
+    .container
+        .home-boxed-slider.style-2.caption-slider.dir-nav(class=Class,id=ID)
+            each item in data_homeBoxedSlider_2
+                +block-home-boxed-slider-2(item)
+//- Style 3
+
+-var data_homeBoxedSlider_3 = []
+
+-data_homeBoxedSlider_3[0]= {}
+-data_homeBoxedSlider_3[0].imgUrl= "assets/images/home-box-1c.jpg"
+-data_homeBoxedSlider_3[0].text1= "WELCOME TO"
+-data_homeBoxedSlider_3[0].text2= "WOLVERINE THEME"
+
+-data_homeBoxedSlider_3[1]= {}
+-data_homeBoxedSlider_3[1].imgUrl= "assets/images/home-box-2c.jpg"
+-data_homeBoxedSlider_3[1].text1= "WELCOME TO"
+-data_homeBoxedSlider_3[1].text2= "WOLVERINE THEME"
+
+-data_homeBoxedSlider_3[2]= {}
+-data_homeBoxedSlider_3[2].imgUrl= "assets/images/home-box-3c.jpg"
+-data_homeBoxedSlider_3[2].text1= "WELCOME TO"
+-data_homeBoxedSlider_3[2].text2= "WOLVERINE THEME"
+
+-data_homeBoxedSlider_3[3]= {}
+-data_homeBoxedSlider_3[3].imgUrl= "assets/images/home-box-4c.jpg"
+-data_homeBoxedSlider_3[3].text1= "WELCOME TO"
+-data_homeBoxedSlider_3[3].text2= "WOLVERINE THEME"
+
+mixin block-home-boxed-slider-3(item)
+    .home-slider-item
+        .item-image
+            img.img-responsive(src=item.imgUrl alt="Home slider image")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .caption-wrapper.caption.text-center(data-caption-animation="fadeIn")
+                            p.caption= item.text1
+                            .heading-icon-1.caption
+                            p.caption= item.text2
+
+mixin home-boxed-slider-3(Class,ID)
+    .container
+        .home-boxed-slider.style-3.caption-slider.dir-nav(class=Class,id=ID)
+            each item in data_homeBoxedSlider_3
+                +block-home-boxed-slider-3(item)
+
+
+//- Style 4
+-var data_homeBoxedSlider_4 = []
+
+-data_homeBoxedSlider_4[0]= {}
+-data_homeBoxedSlider_4[0].imgUrl= "assets/images/home-box-2c.jpg"
+-data_homeBoxedSlider_4[0].logo= "assets/images/logo-7-white.svg"
+-data_homeBoxedSlider_4[0].text= "WELCOME TO WOLVERINE <br> FUNITURE"
+
+-data_homeBoxedSlider_4[1]= {}
+-data_homeBoxedSlider_4[1].imgUrl= "assets/images/home-box-1c.jpg"
+-data_homeBoxedSlider_4[1].logo= "assets/images/logo-7-white.svg"
+-data_homeBoxedSlider_4[1].text= "WELCOME TO WOLVERINE <br> FUNITURE"
+
+-data_homeBoxedSlider_4[2]= {}
+-data_homeBoxedSlider_4[2].imgUrl= "assets/images/home-box-3c.jpg"
+-data_homeBoxedSlider_4[2].logo= "assets/images/logo-7-white.svg"
+-data_homeBoxedSlider_4[2].text= "WELCOME TO WOLVERINE <br> FUNITURE"
+
+-data_homeBoxedSlider_4[3]= {}
+-data_homeBoxedSlider_4[3].imgUrl= "assets/images/home-box-4c.jpg"
+-data_homeBoxedSlider_4[3].logo= "assets/images/logo-7-white.svg"
+-data_homeBoxedSlider_4[3].text= "WELCOME TO WOLVERINE <br> FUNITURE"
+
+mixin block-home-boxed-slider-4(item)
+    .home-slider-item
+        .item-image
+            img.img-responsive(src=item.imgUrl alt="Home slider image")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .caption-wrapper.text-center
+                            img.caption(src=item.logo alt="Home logo image" data-caption-animation="fadeIn")
+                            h4.caption.hidden-xs(data-caption-animation="fadeIn")!= item.text
+
+mixin home-boxed-slider-4(Class,ID)
+    .container
+        .home-boxed-slider.style-4.caption-slider.dir-nav(class=Class,id=ID)
+            each item in data_homeBoxedSlider_4
+                +block-home-boxed-slider-4(item)
+
+//- Style 5
+
+-var data_homeBoxedSlider_5 = []
+
+-data_homeBoxedSlider_5[0]= {}
+-data_homeBoxedSlider_5[0].imgUrl= "assets/images/home-box-1d.jpg"
+-data_homeBoxedSlider_5[0].text= "LEATHER CASES BY SC"
+
+-data_homeBoxedSlider_5[1]= {}
+-data_homeBoxedSlider_5[1].imgUrl= "assets/images/home-box-2d.jpg"
+-data_homeBoxedSlider_5[1].text= "LEATHER CASES BY SC"
+
+-data_homeBoxedSlider_5[2]= {}
+-data_homeBoxedSlider_5[2].imgUrl= "assets/images/home-box-3d.jpg"
+-data_homeBoxedSlider_5[2].text= "LEATHER CASES BY SC"
+
+-data_homeBoxedSlider_5[3]= {}
+-data_homeBoxedSlider_5[3].imgUrl= "assets/images/home-box-4d.jpg"
+-data_homeBoxedSlider_5[3].text= "LEATHER CASES BY SC"
+
+mixin block-home-boxed-slider-5(item)
+    .home-slider-item
+        .item-image
+            img.img-responsive(src=item.imgUrl alt="Home slider image")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .caption-wrapper.text-center
+                            .heading-icon-1.caption(data-caption-animation="fadeIn")
+                            p.caption(data-caption-animation="fadeIn")= item.text
+
+mixin home-boxed-slider-5(Class,ID)
+    .home-boxed-slider.style-5.caption-slider.dir-nav.control-nav(class=Class,id=ID)
+        each item in data_homeBoxedSlider_5
+            +block-home-boxed-slider-5(item)
+
+//- Full Width Slider
+//- ============================
+
+//- Style 1
+
+-var data_homeFullWidthSlider_1 = []
+
+-data_homeFullWidthSlider_1[0]= {}
+-data_homeFullWidthSlider_1[0].bgImg= "assets/images/home-fw-1.jpg"
+-data_homeFullWidthSlider_1[0].text= "Design is our art and our passion. Our goal is to create the best <br> products with a pixel-perfect eye for detail and a high standard for aesthetic excellence."
+
+-data_homeFullWidthSlider_1[1]= {}
+-data_homeFullWidthSlider_1[1].bgImg= "assets/images/home-fw-2.jpg"
+-data_homeFullWidthSlider_1[1].text= "Create any imaginable design or layout with all the options. <br> Ready to buy Wolverine? We can assure you that you won't regret it"
+
+-data_homeFullWidthSlider_1[2]= {}
+-data_homeFullWidthSlider_1[2].bgImg= "assets/images/home-fw-3.jpg"
+-data_homeFullWidthSlider_1[2].text= "Wolverine comes with a lot of features, we have so many of them <br> it would take you too much time to read about our features!"
+
+mixin block-home-fw-slider-1(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                img.caption(src="assets/images/logo-1-white.svg" alt="Home logo image" data-caption-animation="fadeIn")
+                                p.caption(data-caption-animation="fadeIn")!= item.text
+
+mixin home-fw-slider-1(Class,ID)
+    .home-fw-slider.style-1.caption-slider.control-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_1
+            +block-home-fw-slider-1(item)
+    .home-get-start(style="background-image: url('assets/images/home-get-start.png')")
+        a(href="#").icon-down-open-mini
+
+//- Style 2
+
+-var data_homeFullWidthSlider_2 = []
+
+-data_homeFullWidthSlider_2[0]= {}
+-data_homeFullWidthSlider_2[0].bgImg= "assets/images/home-fw-1a.jpg"
+
+-data_homeFullWidthSlider_2[1]= {}
+-data_homeFullWidthSlider_2[1].bgImg= "assets/images/home-fw-2a.jpg"
+
+-data_homeFullWidthSlider_2[2]= {}
+-data_homeFullWidthSlider_2[2].bgImg= "assets/images/home-fw-3a.jpg"
+
+mixin block-home-fw-slider-2(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                img.caption(src="assets/images/logo-7.svg" alt="Home logo image" data-caption-animation="fadeIn")
+                                p.caption(data-caption-animation="fadeIn")
+                                    |WELCOME TO WOLVERINE 
+                                    br
+                                    |CREATIVE
+
+mixin home-fw-slider-2(Class,ID)
+    .home-fw-slider.style-2.caption-slider.control-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_2
+            +block-home-fw-slider-2(item)
+
+//- Style 3
+
+-var data_homeFullWidthSlider_3 = []
+
+-data_homeFullWidthSlider_3[0]= {}
+-data_homeFullWidthSlider_3[0].bgImg= "assets/images/home-fw-1c.jpg"
+-data_homeFullWidthSlider_3[0].text= "(Create any imaginable design or layout with all the options. Made with love by OSThemes)"
+
+-data_homeFullWidthSlider_3[1]= {}
+-data_homeFullWidthSlider_3[1].bgImg= "assets/images/home-fw-2c.jpg"
+-data_homeFullWidthSlider_3[1].text= "(Awesome features, stunning shortcodes & much more)"
+
+mixin block-home-fw-slider-3(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                .heading-icon-1.caption
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CREATIVE
+                                p.caption= item.text
+
+mixin home-fw-slider-3(Class,ID)
+    .home-fw-slider.style-3.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_3
+            +block-home-fw-slider-3(item)
+
+//- Style 4
+
+-var data_homeFullWidthSlider_4 = []
+
+-data_homeFullWidthSlider_4[0]= {}
+-data_homeFullWidthSlider_4[0].bgImg= "assets/images/home-fw-1b.jpg"
+-data_homeFullWidthSlider_4[0].text= "Create any imaginable design or layout with all the options. Made with love by OSThemes"
+
+-data_homeFullWidthSlider_4[1]= {}
+-data_homeFullWidthSlider_4[1].bgImg= "assets/images/home-fw-2b.jpg"
+-data_homeFullWidthSlider_4[1].text= "Awesome features, stunning shortcodes & much more"
+
+mixin block-home-fw-slider-4(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CORPORATION
+                                p.caption= item.text
+                                a.caption.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE NOW
+
+mixin home-fw-slider-4(Class,ID)
+    .home-fw-slider.style-4.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_4
+            +block-home-fw-slider-4(item)
+
+//- Style 5
+
+-var data_homeFullWidthSlider_5 = []
+
+-data_homeFullWidthSlider_5[0]= {}
+-data_homeFullWidthSlider_5[0].bgImg= "assets/images/home-fw-1d.jpg"
+
+-data_homeFullWidthSlider_5[1]= {}
+-data_homeFullWidthSlider_5[1].bgImg= "assets/images/home-fw-2d.jpg"
+
+mixin block-home-fw-slider-5(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .row
+                                .col-lg-7.col-lg-offset-5
+                                    .caption-wrapper
+                                        p.caption Hello! We are
+                                        h1.caption WOLVERINE
+
+mixin home-fw-slider-5(Class,ID)
+    .home-fw-slider.style-5.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_5
+            +block-home-fw-slider-5(item)
+
+//- Style 5 - 2
+
+mixin block-home-fw-slider-5-2(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .row
+                                .col-lg-7
+                                    .caption-wrapper
+                                        p.caption Hello! We are
+                                        h1.caption WOLVERINE
+
+mixin home-fw-slider-5-2(Class,ID)
+    .home-fw-slider.style-5.style-inverse.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_5
+            +block-home-fw-slider-5-2(item)
+//- Style 6
+-var data_homeFullWidthSlider_6 = []
+-data_homeFullWidthSlider_6[0]= {}
+-data_homeFullWidthSlider_6[0].bgImg= "assets/images/homepage6-fw-01.jpg"
+-data_homeFullWidthSlider_6[0].text= "(Create any imaginable design or layout with all the options. Made with love by OSThemes)"
+-data_homeFullWidthSlider_6[1]= {}
+-data_homeFullWidthSlider_6[1].bgImg= "assets/images/homepage6-fw-02.jpg"
+-data_homeFullWidthSlider_6[1].text= "(Awesome features, stunning shortcodes & much more)"
+-data_homeFullWidthSlider_6[2]= {}
+-data_homeFullWidthSlider_6[2].bgImg= "assets/images/homepage6-fw-03.jpg"
+-data_homeFullWidthSlider_6[2].text= "(You can easy to use as a starting point for your website.)"
+mixin block-home-fw-slider-6(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                .heading-icon-1.caption
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CREATIVE
+                                p.caption= item.text
+                                a.caption.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE NOW
+mixin home-fw-slider-6(Class,ID)
+    .home-fw-slider.style-6.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_6
+            +block-home-fw-slider-6(item)
+
+//- Style 7
+-var data_homeFullWidthSlider_7 = []
+-data_homeFullWidthSlider_7[0]= {}
+-data_homeFullWidthSlider_7[0].bgImg= "assets/images/homepage7-fw-01.jpg"
+-data_homeFullWidthSlider_7[0].text= "(Create any imaginable design or layout with all the options. Made with love by OSThemes)"
+-data_homeFullWidthSlider_7[1]= {}
+-data_homeFullWidthSlider_7[1].bgImg= "assets/images/homepage7-fw-02.jpg"
+-data_homeFullWidthSlider_7[1].text= "(Awesome features, stunning shortcodes & much more)"
+-data_homeFullWidthSlider_7[2]= {}
+-data_homeFullWidthSlider_7[2].bgImg= "assets/images/homepage7-fw-03.jpg"
+-data_homeFullWidthSlider_7[2].text= "(You can easy to use as a starting point for your website.)"
+mixin block-home-fw-slider-7(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                .heading-icon-1.caption
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CREATIVE
+                                p.caption= item.text
+                                a.caption.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE NOW
+mixin home-fw-slider-7(Class,ID)
+    .home-fw-slider.style-7.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_7
+            +block-home-fw-slider-7(item)
+
+//- Style 8
+-var data_homeFullWidthSlider_8 = []
+-data_homeFullWidthSlider_8[0]= {}
+-data_homeFullWidthSlider_8[0].bgImg= "assets/images/home8-fw-01.jpg"
+-data_homeFullWidthSlider_8[0].text= "(Create any imaginable design or layout with all the options. Made with love by OSThemes)"
+-data_homeFullWidthSlider_8[1]= {}
+-data_homeFullWidthSlider_8[1].bgImg= "assets/images/home8-fw-02.jpg"
+-data_homeFullWidthSlider_8[1].text= "(Awesome features, stunning shortcodes & much more)"
+-data_homeFullWidthSlider_8[2]= {}
+-data_homeFullWidthSlider_8[2].bgImg= "assets/images/home8-fw-03.jpg"
+-data_homeFullWidthSlider_8[2].text= "(You can easy to use as a starting point for your website.)"
+mixin block-home-fw-slider-8(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                .heading-icon-1.caption
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CREATIVE
+                                p.caption= item.text
+                                a.caption.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE NOW
+mixin home-fw-slider-8(Class,ID)
+    .home-fw-slider.style-8.caption-slider.dir-nav(class=Class, id=ID)
+        each item in data_homeFullWidthSlider_8
+            +block-home-fw-slider-8(item)
+
+//- Style 9
+-var data_homeFullWidthSlider_9 = []
+-data_homeFullWidthSlider_9[0]= {}
+-data_homeFullWidthSlider_9[0].bgImg= "assets/images/home-fw-business2-1.jpg"
+-data_homeFullWidthSlider_9[0].text= "Create any imaginable design or layout with all the options. Made with love by OSThemes"
+-data_homeFullWidthSlider_9[1]= {}
+-data_homeFullWidthSlider_9[1].bgImg= "assets/images/home-fw-business2-2.jpg"
+-data_homeFullWidthSlider_9[1].text= "Awesome features, stunning shortcodes & much more"
+mixin block-home-fw-slider-9(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                .heading-icon-1.caption
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CORPORATION
+                                p.caption= item.text
+                                a.caption.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE NOW
+mixin home-fw-slider-9(Class,ID)
+    .home-fw-slider.style-9.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_9
+            +block-home-fw-slider-9(item)
+
+//- Style 10
+-var data_homeFullWidthSlider_10 = []
+-data_homeFullWidthSlider_10[0]= {}
+-data_homeFullWidthSlider_10[0].bgImg= "assets/images/home-fw-business2-2.jpg"
+-data_homeFullWidthSlider_10[0].text= "Create any imaginable design or layout with all the options. Made with love by OSThemes"
+-data_homeFullWidthSlider_10[1]= {}
+-data_homeFullWidthSlider_10[1].bgImg= "assets/images/home-fw-business2-1.jpg"
+-data_homeFullWidthSlider_10[1].text= "Awesome features, stunning shortcodes & much more"
+mixin block-home-fw-slider-10(item)
+    .home-slider-item
+        .item-image(style="background-image: url(#{item.bgImg});")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .container
+                            .caption-wrapper.text-center
+                                .heading-icon-1.caption
+                                h1.caption WELCOME TO
+                                h1.caption WOLVERINE CORPORATION
+                                p.caption= item.text
+                                a.caption.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE NOW
+mixin home-fw-slider-10(Class,ID)
+    .home-fw-slider.style-10.caption-slider.dir-nav(class=Class,id=ID)
+        each item in data_homeFullWidthSlider_10
+            +block-home-fw-slider-10(item)

@@ -1,0 +1,26 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('CALL TO ACTION')
+block main
+    section.one-child
+        +call-to-action("section-block","normal-btn normal-btn-main btn-size-5")
+        +call-to-action("style-2 section-block", "normal-btn normal-btn-main btn-size-5")
+        +call-to-action("style-3 section-block", "border-btn border-btn-light  btn-size-5")
+        +call-to-action("style-4", "border-btn border-btn-light btn-size-5")
+block footer
+    +footer-preset-02
+block after-main

@@ -1,0 +1,42 @@
+extends module/form
+
+block page-config
+    -page_option.body_class = 'ex-layout';
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_portfolio_header = { title: "WORK WITH LOVE AND NEVER STOP" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+    - var data_team_header = { title: "WHAT MAKES US SUCCESSFUL" , caption:"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    - var data_pricing_table_header = { title: "CHECK OUR PRICES" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+    +main-nav-creative
+//- body>main>
+block header
+    header.site-header
+        +home-fw-slider-2
+//- body>main>
+block main
+    section.bgc-gray
+        +service-section-03
+    section.no-padding
+        +portfolio-home-creative(data_portfolio_header)
+    section
+        +section-header-2-1(data_team_header)
+        +team-section-01
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img2.jpg');")
+        +testimonial-01()
+    section.one-child
+        +brand-carousel-1
+//- body>main>
+block footer
+    +footer-preset-04
+//- body>
+block after-main

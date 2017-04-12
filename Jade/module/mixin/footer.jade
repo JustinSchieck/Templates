@@ -1,0 +1,131 @@
+//- *********** Footer Preset 01 ************** -//
+//- Section
+mixin footer-preset-01
+    footer
+        .container
+            |Copyright &copy; 2015 by OSThemes
+
+//- *********** Footer Preset 02 ************** -//
+//- Block -//
+mixin footer-quote-01
+    .footer-quote-01
+        .footer-quote
+            a(href="index.html")
+                img(src="assets/images/footer-001.png" alt="wolverine")
+            .content
+                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br><br>standard dummy text ever since. Lorem  Ipsum has been the industry’s standard dummy text ever since. 
+                a(href="#") READ MORE
+            .icon
+                p Follow Us:
+                +social-02("icon-facebook", "icon-lastfm", "icon-dribbble", "icon-twitter", "icon-tumblr", "icon-gplus")
+
+//- Section
+mixin footer-preset-02
+    footer.footer-preset-02
+        .container
+            .footer-preset-wrapper
+                .row
+                    .col-md-4.col-sm-6.col-xs-12
+                        +footer-quote-01
+                    .col-md-4.col-sm-6.col-xs-12
+                        h5 INSTAGRAM FOLLOW
+                        +instagram
+                    .col-md-offset-0.col-md-4.col-sm-8.col-sm-offset-2.col-xs-12
+                        h5 QUICK CONTACT US
+                        +widget-contact-us
+            +footer-foot
+
+//- *********** Footer Preset 03 ************** -//
+//- Block -//
+mixin footer-quote-02
+    .footer-quote-02
+        .footer-quote
+            a(href="index.html")
+                img(src="assets/images/footer-002.png" alt="wolverine")
+            .content
+                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br><br>standard dummy text ever since. Lorem  Ipsum has been the industry’s standard dummy text ever since. 
+                a(href="#") 15.k followers 
+                a(href="#") Posted by Keisha Crush
+            .icon
+                p Follow Us:
+                +social-02("icon-facebook", "icon-lastfm", "icon-dribbble", "icon-twitter", "icon-tumblr", "icon-gplus")
+
+//- Section -//
+mixin footer-preset-03
+    footer.footer-preset-03
+        .container
+            .footer-preset-wrapper
+                .row
+                    .col-lg-5.col-md-4.col-sm-6.col-xs-12
+                        +footer-quote-02
+                    .col-lg-4.col-md-4.col-sm-6.col-xs-12
+                        h5 FEATURE BLOGS
+                        +blog-related()
+                    .col-md-offset-0.col-lg-3.col-md-4.col-sm-offset-3.col-sm-6.col-xs-12
+                        h5 INSTAGRAM FOLLOW
+                        +instagram()
+            +footer-foot
+//- *********** Footer Preset 04 ************** -//
+mixin footer-preset-04
+    footer.footer-preset-04
+        h1
+            a(href="index.html") WOLVERINE
+        +social-04
+        p © 2015 All Rights Reserved OSThemes
+        p Contact Envato Support
+
+//- *********** Footer Preset 05 ************** -//
+mixin footer-preset-05
+    footer.footer-preset-05.bgc-light
+        .container
+            .footer-preset-wrapper
+                .row
+                    .col-md-4.col-sm-6.col-xs-12
+                        +footer-quote-01
+                    .col-md-4.col-sm-6.col-xs-12
+                        h5 INSTAGRAM FOLLOW
+                        +instagram
+                    .col-md-offset-0.col-md-4.col-sm-8.col-sm-offset-2.col-xs-12
+                        h5 QUICK CONTACT US
+                        +widget-contact-us
+            +footer-foot
+
+//- *********** Footer Preset 06 ************** -//
+//- Block -//
+mixin footer-quote-03
+    .footer-quote-03
+        .footer-quote
+            a(href="index.html")
+                img(src="assets/images/footer-001.png" alt="wolverine")
+            .content
+                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.<br><br>standard dummy text ever since. Lorem  Ipsum has been the industry’s standard dummy text ever since. 
+                a(href="#") 15.k followers 
+                a(href="#") Posted by Keisha Crush
+            .icon
+                p Follow Us:
+                +social-02("icon-facebook", "icon-lastfm", "icon-dribbble", "icon-twitter", "icon-tumblr", "icon-gplus")
+
+//- Section -//
+mixin footer-preset-06
+    footer.footer-preset-06
+        .container
+            .footer-preset-wrapper
+                .row
+                    .col-md-5.col-sm-6.col-xs-12
+                        +footer-quote-03
+                    .col-md-4.col-sm-6.col-xs-12
+                        h5 FEATURE BLOGS
+                        +blog-related()
+                    .col-md-offset-0.col-md-3.col-sm-6.col-sm-offset-3.col-xs-12
+                        h5 INSTAGRAM FOLLOW
+                        +instagram()
+            +footer-foot
+
+//- *********** Footer Foot ************** -//
+mixin footer-foot
+    .footer-foot.text-center
+        p © 2015 WOLVERINE TEMPLATE. DESIGNED BY OSTHEMES
+
+mixin footer-foot-border
+    .footer-foot-border.text-center
+        p © 2015 WOLVERINE TEMPLATE. DESIGNED BY OSTHEMES

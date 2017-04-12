@@ -1,0 +1,49 @@
+extends module/form
+block page-config
+    -page_option.body_class = "corporate-page";
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_team_header = { title: "MEET OUR TEAM" , caption:"Wolverine Creative are an independent , one-stop creative specialist  with the experience & the know how to come up with great business solutions and make them happen"}
+    - var data_service_header = { title: "OUR SERVICES" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+    - var data_portfolio_header = { title: "OUR PORTFOLIO" , caption:"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    - var data_blog_header = { title: "FROM OUR BLOG" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+    +main-nav-1("home-sticky-nav")
+//- body>main>
+block header
+    header.site-header.home-sticky-nav-trigger
+        +home-fw-slider-3("parents-height")
+//- body>main>
+block main
+    section.large-space.border-bottom
+        +section-header-2-2(data_service_header)
+        +service-section-02
+    section.bgc-light
+        +service-section-03
+    section.large-space
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/quote-bg.jpg');")
+        +quote-slider-02('color-light')
+    section.large-space.no-padding-bottom
+        +section-header-2-2(data_portfolio_header)
+        +portfolio-home-corporate
+    section.large-space
+        +section-header-2-2(data_team_header)
+        +team-section-01
+    section.large-space.bgc-gray.one-child
+        +brand-carousel-1
+    section.large-space.no-padding-bottom
+        +section-header-2-2(data_blog_header)
+        +blog-index-corporate
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main

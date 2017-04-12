@@ -1,0 +1,31 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    -var data_leader_header ={title : "MANAGEMENT TEAM" , caption :"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    -var data_team_header ={title : "OTHER MEMBERS" , caption :"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('MEET OUR TEAM')
+block main
+    section
+        +section-header-1-2(data_leader_header)
+        +team-section-02
+    section.bgc-gray
+        +section-header-2-1(data_team_header)
+        +team-section-04
+    section
+        +counto-section
+block footer
+    +footer-preset-03
+block after-main

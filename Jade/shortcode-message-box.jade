@@ -1,0 +1,46 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    +common-static-header('MESSAGE BOX')
+block main
+    section
+        .container
+            .row
+                .col-sm-6.col-xs-12
+                    +notice-message
+                    div(style="margin-bottom: 30px")
+                    +error-message
+                    div(style="margin-bottom: 30px")
+                    +warning-message
+                    div(style="margin-bottom: 30px")
+                .col-sm-6.col-xs-12
+                    +success-message
+                    div(style="margin-bottom: 30px")
+                    +info-message
+                    div(style="margin-bottom: 30px")
+                    +notice-message
+                    div(style="margin-bottom: 30px")
+                .col-xs-12
+                    +error-messagefull
+                    .section-block
+                    +warning-messagefull
+                    .section-block
+                    +success-messagefull
+                    .section-block
+                    +info-messagefull
+                    .section-block
+block footer
+    +footer-preset-02
+block after-main

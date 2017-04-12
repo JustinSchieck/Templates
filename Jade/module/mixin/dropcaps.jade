@@ -1,0 +1,28 @@
+-var data_dropcaps = []
+- data_dropcaps[0] = {text:" <span class='first-letter'> D </span> Lorem ipsum dolor sit amet,consectetur a adipisielit, sed do eiusmod tempor on incididunt ut et dolore magna zaras aliqua. Ut enim ad minim veniam, quis no at with strud exercitation ullamco laboris nisi dolorem ipsum quia dolor sit dicta.Ut enim ad minim veniam, quis no at with strud exercitation ullamco laboris nisi dolorem ipsum quia dolor sit dicta."}
+- data_dropcaps[1] = {text:" <span class='first-letter'> L </span> Lorem ipsum dolor sit amet,consectetur a adipisielit, sed do eiusmod tempor on incididunt ut et dolore magna zaras aliqua. Ut enim ad minim veniam, quis no at with strud exercitation ullamco laboris nisi dolorem ipsum quia dolor sit dicta.Ut enim ad minim veniam, quis no at with strud exercitation ullamco laboris nisi dolorem ipsum quia dolor sit dicta."}
+- data_dropcaps[2] = {text:" <span class='first-letter'> O </span> Lorem ipsum dolor sit amet,consectetur a adipisielit, sed do eiusmod tempor on incididunt ut et dolore magna zaras aliqua. Ut enim ad minim veniam, quis no at with strud exercitation ullamco laboris nisi dolorem ipsum quia dolor sit dicta.Ut enim ad minim veniam, quis no at with strud exercitation ullamco laboris nisi dolorem ipsum quia dolor sit dicta."}
+
+mixin dropcap-1(dropcaps, Class)
+    p.dropcap-1(class=Class)!= dropcaps.text
+mixin dropcap-2(dropcaps, Class)
+    p.dropcap-2(class=Class)!= dropcaps.text
+mixin dropcap-3(dropcaps, Class)
+    p.dropcap-3(class=Class)!= dropcaps.text
+
+mixin section-dropcaps
+    .container
+        .row
+            .col-md-4.col-sm-6.col-xs-12
+                +dropcap-1(data_dropcaps[0], "style-1")
+                +dropcap-1(data_dropcaps[0], "style-2")
+                +dropcap-1(data_dropcaps[0], "style-3")
+
+            .col-md-4.col-sm-6.col-xs-12
+                +dropcap-2(data_dropcaps[1], "style-1")
+                +dropcap-2(data_dropcaps[1], "style-2")
+                +dropcap-2(data_dropcaps[1], "style-3")
+            .col-md-4.col-xs-12
+                +dropcap-3(data_dropcaps[2], "style-1")
+                +dropcap-3(data_dropcaps[2], "style-2")
+                +dropcap-3(data_dropcaps[2], "style-3")

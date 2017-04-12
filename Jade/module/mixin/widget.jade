@@ -1,0 +1,198 @@
+//-************ Author ****************-//
+mixin widget-author-style-1
+    .widget.author-style-1
+        h5 AUTHOR OF THE BLOG
+        .author-item
+            img(src="assets/images/widget-01.jpg" alt="author")
+            +social-01("icon-twitter","icon-facebook","icon-gplus","icon-lastfm")
+
+mixin widget-author-style-2
+    .widget.author-style-2
+        h5 AUTHOR OF THE BLOG
+        .author-item
+            img(src="assets/images/widget-01.jpg" alt="author")
+            +social-01("icon-twitter","icon-facebook","icon-gplus","icon-lastfm")
+
+//-************ Blog Categories ********************-//
+mixin widget-blog-categories
+    .widget.widget-blog-categories
+        h5 BLOG POST CATEGORIES
+        ul.blog-categories
+            li
+                a(href="#") DESTINATION
+            li
+                a(href="#") FOOD
+            li
+                a(href="#") LANDSCAPE
+            li
+                a(href="#") NATURE
+            li
+                a(href="#") TRAVEL
+            li
+                a(href="#") PHOTOGRAPHY
+
+
+//-****************** Related *****************-//
+//- Data
+-var data_related = [0]
+- data_related[0] = {image: 'assets/images/related01.jpg',href :"blog-post-detail.html", title: 'HOW TO IMPROVE AND REFINE', date: 'JULY 9, 2014'}
+- data_related[1] = {image: 'assets/images/related02.jpg',href :"blog-post-detail.html", title: 'HOW TO IMPROVE AND REFINE', date: 'JULY 9, 2014'}
+- data_related[2] = {image: 'assets/images/related03.jpg',href :"blog-post-detail.html", title: 'HOW TO IMPROVE AND REFINE', date: 'JULY 9, 2014'}
+
+//- Block
+mixin blog-related-item(data)
+    .blog-related-item
+        .image: a(href=data.href)
+            img(src=data.image alt="image")
+        .content
+            p: a(href=data.href)= data.title
+            span=data.date
+
+//- Section
+mixin blog-related(Class)
+    .blog-related(class=Class)
+        each related in data_related
+            +blog-related-item(related)
+
+mixin widget-blog-related
+    .widget.blog-related
+        h5 TOP RELATED POST
+        each related in data_related
+            +blog-related-item(related)
+
+//-******************* Shop Categories ********************-//
+//- Block
+mixin block-shop-categories
+    .block-shop-categories
+        ul
+            li
+                a(href="#") CHAIR
+            li
+                a(href="#") TABLE
+            li
+                a(href="#") CABINETS
+            li
+                a(href="#") DECORATIVE ITEMS
+            li
+                a(href="#") BED
+            li
+                a(href="#") SOFA
+
+//- Section
+mixin widget-shop-categories
+    .widget-shop-categories
+        ul#accordion
+            li.panel
+                a(data-toggle="collapse" data-parent="#accordion" href="#collapse1"): h5 INTERIORS
+                #collapse1.collapse.in
+                    +block-shop-categories
+            li.panel
+                a(data-toggle="collapse" data-parent="#accordion" href="#collapse2"): h5 FASHIONS
+                #collapse2.collapse
+                    +block-shop-categories
+            li.panel
+                a(data-toggle="collapse" data-parent="#accordion" href="#collapse3"): h5 CREATIVES
+                #collapse3.collapse
+                    +block-shop-categories
+
+//- Search -//
+mixin widget-search
+    .widget.widget-search
+        h5 SEARCH
+        form.search-box
+            input(type="search")#search
+            button(type="submit"): i.icon-search
+
+//-******************* Instagram *******************-//
+//- Data
+- var data_instagram = []
+- data_instagram[0]  = {image:'assets/images/instagram-01.jpg', href: "#"}
+- data_instagram[1]  = {image:'assets/images/instagram-02.jpg', href: "#"}
+- data_instagram[2]  = {image:'assets/images/instagram-03.jpg', href: "#"}
+- data_instagram[3]  = {image:'assets/images/instagram-04.jpg', href: "#"}
+- data_instagram[4]  = {image:'assets/images/instagram-05.jpg', href: "#"}
+- data_instagram[5]  = {image:'assets/images/instagram-06.jpg', href: "#"}
+- data_instagram[6]  = {image:'assets/images/instagram-07.jpg', href: "#"}
+- data_instagram[7]  = {image:'assets/images/instagram-08.jpg', href: "#"}
+- data_instagram[8]  = {image:'assets/images/instagram-09.jpg', href: "#"}
+
+//- Block
+mixin instagram-item(instagram)
+    .instagram-item: a(href=instagram.href)
+        img.img-responsive(src=instagram.image alt="instagram-image")
+//- Section
+mixin instagram
+    .widget.instagram
+        .instagram-wrapper
+            each instagram in data_instagram
+                +instagram-item(instagram)
+mixin widget-instagram
+    .widget.instagram
+        h5 INSTAGRAM PHOTOS
+        .instagram-wrapper
+            each instagram in data_instagram
+                +instagram-item(instagram)
+
+//-******************** CategoryProduct ********************-//
+mixin widget-category-product
+    .widget.category-product
+        ul
+            li: h6: a(href="#") STREET STYLE   (12)
+            li: h6: a(href="#") INTERIOR   (15)
+            li: h6: a(href="#") ART   (11)
+            li: h6: a(href="#") LOCAL   (16)
+            li: h6: a(href="#") PHOTOGRAPHY   (12)
+            li: h6: a(href="#") BEAUTY   (2)
+            li: h6: a(href="#") FASHIONS   (22)
+
+//-********************* Recently Viewed *******************-//
+//- Data
+- var data_recently_viewed = []
+- data_recently_viewed[0]  = {image:'assets/images/shop-gallery6.jpg', href: "#", content:'Magne Hinge Glasses', price:'$200'}
+- data_recently_viewed[1]  = {image:'assets/images/shop-gallery2.jpg', href: "#", content:'Maiaimi Mini Lather Bag', price:'$200'}
+- data_recently_viewed[2]  = {image:'assets/images/shop-gallery4.jpg', href: "#", content:'Maiaimi Mini Lather Bag', price:'$200'}
+
+//- Block
+mixin recently-viewed-item(data)
+    .shop-recently-viewed-item.clearfix
+        a(href=data.href)
+            .image
+                img(src=data.image alt="recently view")
+        .price
+            p: a(href=data.href)=data.content
+            span=data.price
+
+//- Section
+mixin widget-recently-viewed
+    .shop-recently-viewed
+        h5 RECENTLY VIEWED
+        each data in data_recently_viewed
+            +recently-viewed-item(data)
+
+//-***************** Filter Price *******************-//
+mixin widget-filter-by-price
+    .price-filter
+        h5 FILTER BY PRICE
+        .price-slider-range
+        .price-filter-detail
+            .button
+                a(href="").normal-btn.normal-btn-main.btn-size-5 FILTER
+            .price
+                p Price :&nbsp;
+                    span.from
+                    span.hyphen &nbsp;-&nbsp;
+                    span.to
+//-****************** Contact Us *********************-//
+mixin widget-contact-us(Class, button_text)
+    .widget.contact-us(class=Class)
+        form#contact_form()
+            input.name(type="text" name="name" placeholder="Name" required )
+            input.email(type="email" name="email" placeholder="Email" required )
+            textarea.msg(name="message" placeholder="Message" required )
+            button.normal-btn.normal-btn-main.btn-size-5(type="submit")= button_text ? button_text : "SUBMIT"
+
+//-****************** Contact Us *********************-//
+mixin widget-banner
+    .widget.widget-banner
+        h5 BANNER
+        a(href="#"): img.img-responsive(src="http://placehold.it/370x250" alt="banner")

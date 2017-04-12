@@ -1,0 +1,43 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_service_header = { subtitle: "CREATIVITY & DARINGS" , title: "CHECK OUT OUR SERVICES" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('ICON LISTS')
+block main
+    section
+        +section-header-1-2(data_service_header)
+        +service-section-01
+block footer
+    +footer-preset-02
+block after-main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

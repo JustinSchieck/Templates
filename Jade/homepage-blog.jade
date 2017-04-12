@@ -1,0 +1,41 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_about_header = { subtitle: "WHAT WE DO" , title: "A STORY ABOUT US" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+    +main-nav-2-b1
+//- body>main>
+block header
+    header.site-header.homepage-blog-header
+        +home-boxed-slider-1
+//- body>main>
+block main
+    section.no-padding-bottom
+        +section-header-1-1(data_about_header)
+        .container
+            .row
+                aside.col-md-4.hidden-sm.hidden-xs
+                    +widget-author-style-1
+                    +widget-blog-categories
+                    +widget-blog-related
+                    +widget-instagram
+                    +widget-banner
+                    +widget-search
+                .col-md-8.col-xs-12
+                    +group-post-index-style-1
+                    +pagination
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main

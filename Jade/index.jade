@@ -1,0 +1,164 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = true;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = true;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = true;
+    -page_option.magnific_popup = true;
+block page-data
+    -var data_index_item = []
+    -var count = -1
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-alternative.png'
+    -data_index_item[count].title = 'HOMEPAGE ALTERNATIVE'
+    -data_index_item[count].href = 'homepage-alternative.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-alternative-2.png'
+    -data_index_item[count].title = 'HOMEPAGE ALTERNATIVE 02'
+    -data_index_item[count].href = 'homepage-alternative-2.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-corporate-2.png'
+    -data_index_item[count].title = 'HOMEPAGE CORPORATE 02'
+    -data_index_item[count].href = 'homepage-corporate-2.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-shop1.jpg'
+    -data_index_item[count].title = 'HOMEPAGE SHOP 01'
+    -data_index_item[count].href = 'homepage-shop-1.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-shop2.png'
+    -data_index_item[count].title = 'HOMEPAGE SHOP 02'
+    -data_index_item[count].href = 'homepage-shop-2.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-shop3.png'
+    -data_index_item[count].title = 'HOMEPAGE SHOP 03'
+    -data_index_item[count].href = 'homepage-shop-3.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-shop2.png'
+    -data_index_item[count].title = 'HOMEPAGE SHOP 02 CARO'
+    -data_index_item[count].href = 'homepage-shop-2-caro.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-shop3.png'
+    -data_index_item[count].title = 'HOMEPAGE SHOP 03 CARO'
+    -data_index_item[count].href = 'homepage-shop-3-caro.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-business-2.jpg'
+    -data_index_item[count].title = 'HOMEPAGE BUSINESS 2'
+    -data_index_item[count].href = 'homepage-business-2.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-creative-2.jpg'
+    -data_index_item[count].title = 'HOMEPAGE CREATIVE 2'
+    -data_index_item[count].href = 'homepage-creative-2.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-default.jpg'
+    -data_index_item[count].title = 'HOMEPAGE DEFAULT'
+    -data_index_item[count].href = 'homepage-default.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-corporate.jpg'
+    -data_index_item[count].title = 'HOMEPAGE CORPORATE'
+    -data_index_item[count].href = 'homepage-corporate.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-onepage.jpg'
+    -data_index_item[count].title = 'HOMEPAGE ONEPAGE'
+    -data_index_item[count].href = 'homepage-onepage.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-creative.jpg'
+    -data_index_item[count].title = 'HOMEPAGE CREATIVE'
+    -data_index_item[count].href = 'homepage-creative.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-portfolio-2.jpg'
+    -data_index_item[count].title = 'HOMEPAGE PORTFOLIO'
+    -data_index_item[count].href = 'homepage-portfolio.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-agency.jpg'
+    -data_index_item[count].title = 'HOMEPAGE AGENCY'
+    -data_index_item[count].href = 'homepage-agency.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-leftmenu.jpg'
+    -data_index_item[count].title = 'HOMEPAGE LEFTMENU'
+    -data_index_item[count].href = 'homepage-leftmenu.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-menubottom.jpg'
+    -data_index_item[count].title = 'HOMEPAGE MENU BOTTOM'
+    -data_index_item[count].href = 'homepage-menubottom.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-blog.jpg'
+    -data_index_item[count].title = 'HOMEPAGE BLOG'
+    -data_index_item[count].href = 'homepage-blog.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-blog-masonry.jpg'
+    -data_index_item[count].title = 'HOMEPAGE BLOG MASONRY'
+    -data_index_item[count].href = 'homepage-blog-masonry.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-slip-screen.jpg'
+    -data_index_item[count].title = 'HOMEPAGE SLIP SCREEN'
+    -data_index_item[count].href = 'homepage-slip-screen.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-classic.jpg'
+    -data_index_item[count].title = 'HOMEPAGE CLASSIC'
+    -data_index_item[count].href = 'homepage-classic.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-classic-2.jpg'
+    -data_index_item[count].title = 'HOMEPAGE CLASSIC 2'
+    -data_index_item[count].href = 'homepage-classic-2.html'
+    -data_index_item[++count] = {}
+    -data_index_item[count].img = 'assets/images/demo-home-business.jpg'
+    -data_index_item[count].title = 'HOMEPAGE BUSINESS'
+    -data_index_item[count].href = 'homepage-business.html'
+
+    mixin index-demo-item(data,index)
+        .index-demo-item.section-block-p
+            img.img-responsive(src="assets/images/bg-view-demo.jpg" alt="header")
+            .image-frame
+                img.img-responsive(src= data.img alt=data.title)
+                .overlay
+                    .cell-vertical-wrapper
+                        .cell-middle
+                            a.border-btn.border-btn-light.btn-size-5(href=data.href target="_blank") VIEW DEMO
+            h5 #{index + 1}. #{data.title}
+    //mixin index-comming-soon-item()
+        .index-demo-item
+            img.img-responsive(src="assets/images/bg-view-demo.jpg" alt="header")
+            .image-frame
+                img.img-responsive(src="assets/images/home-commingsoon-2.jpg" alt="comming soon")
+            h5 COMMING SOON
+block before-main
+    +main-nav-landing-page
+block header
+    header.index-header
+        +page-common-parallax('assets/images/bg-slider-landingpage.jpg')
+        .cell-vertical-wrapper
+            .cell-middle
+                .container
+                    h2 WELCOME TO
+                    h1 WOLVERINE MULTIPURPOSE
+                    p.font-serif.fz-common-2 Create any imaginable design or layout with all the options. Made with love by OSThemes
+                    .icon.icon-indians-icons-05
+block main
+    section.bgc-gray
+        header.section-header
+                .container
+                    .row
+                        .col-lg-10.col-lg-offset-1.col-md-12.text-center
+                            h2.smb CHOOSE YOUR FAVOURITE HOMEPAGE BELOW
+                            p.fz-common-3.font-serif With one purchase of Wolverine you receive +100 HTML files. You can easy to use as a starting point for your website.
+            .container-fluid
+                each data,index in data_index_item
+                    .col-lg-3.col-md-4.col-sm-6.col-xs-12
+                        +index-demo-item(data,index)
+                //.col-lg-3.col-md-4.col-sm-6.col-xs-12
+                    +index-comming-soon-item
+                //.col-lg-3.col-md-4.col-sm-6.col-xs-12
+                    +index-comming-soon-item
+
+block footer
+    footer.index-footer
+        +page-common-parallax(('assets/images/bg-callaction-1.jpg'))
+        .container.footer-content
+            h1 AWESOME FEATURES, STUNNING SHORTCODES & MORE
+            p.font-serif.fz-common-2 Ready to buy Wolverine? We can assure you that you won't regret it
+            a.border-btn.border-btn-light.btn-size-5(href="http://goo.gl/oLvVJV") PURCHASE
+        +footer-foot

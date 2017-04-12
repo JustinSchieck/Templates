@@ -1,0 +1,34 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    +common-static-header('PARALLAX')
+block main
+    section.no-padding
+        .parallax-bg.background-default(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/shortcode-parallax-1.jpg');")
+        .shortcode-parallax-1.text-center
+            .container
+                .content
+                    img(src="assets/images/logo-1-white.svg" alt="logo image")
+                    p "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam <br> nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. euismod tincidunt"
+    section.no-padding
+        .parallax-bg.background-default(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/shortcode-parallax-2.jpg');")
+        .shortcode-parallax-2.text-center
+            .container
+                .content
+                    p.heading-icon-2.color-light " Lorem ipsum dolor sit amet, Lorem ipsum dolor sit. Nam sed ligula odio. Sed id metus felis. Ut pretium nisl non justo condimentum id tincidunt nunc faucibus. Ut neque eros, pulvinar eu blandit quis."
+
+block footer
+    +footer-preset-02
+block after-main

@@ -1,0 +1,34 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+    -page_option.progressbar = true;
+block page-data
+    -var bluete = function(){
+    -    i = 'hello';
+    -    return i;
+    -}
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('PIECHART')
+block main
+    section
+        +group-piechart(null , 'center-color-main')
+    section.bgc-gray
+        +group-piechart(null , 'trail-light')
+    section
+        +group-piechart('icon')
+    section.bgc-gray
+        +group-piechart('icon', 'stroke-dark trail-light')
+block footer
+    +footer-preset-03
+block after-main

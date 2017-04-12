@@ -1,0 +1,26 @@
+//- Data -//
+- var Data_pricetable = []
+- Data_pricetable[0] = {class:"", title: "STARTER", user:"<span>5</span> Users", project:"<span>10</span> Projects", space:"<span>10GB</span> Around of space", email:"<span>5</span> Email accounts", price:"$19"}
+- Data_pricetable[1] = {class:"", title: "BASIC", user:"<span>5</span> Users", project:"<span>10</span> Projects", space:"<span>10GB</span> Around of space", email:"<span>5</span> Email accounts", price:"$29"}
+- Data_pricetable[2] = {class:"default" ,title: "PROFESSIONAL", user:"<span>5</span> Users", project:"<span>10</span> Projects", space:"<span>10GB</span> Around of space", email:"<span>5</span> Email accounts", price:"$39"}
+- Data_pricetable[3] = {class:"", title: "ULTIMATE", user:"<span>5</span> Users", project:"<span>10</span> Projects", space:"<span>10GB</span> Around of space", email:"<span>5</span> Email accounts", price:"$49"}
+
+//- Block -//
+mixin price-table-item(pricetable)
+    .price-table-content(class=pricetable.class)
+        h5=pricetable.title
+        h5!=pricetable.user
+        h5!=pricetable.project
+        h5!=pricetable.space
+        h5!=pricetable.email
+        h1=pricetable.price
+        a(href="http://goo.gl/oLvVJV").normal-btn.normal-btn-main.btn-size-5 PURCHASE
+
+//- Section -//
+mixin section-price-table
+    .price-table
+        .container.remove-col-padding
+            .row
+                each pricetable in Data_pricetable
+                    .col-md-3.col-sm-6.col-xs-11
+                        +price-table-item(pricetable)

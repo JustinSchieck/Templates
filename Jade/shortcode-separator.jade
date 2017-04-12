@@ -1,0 +1,37 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    +common-static-header('SEPARATOR')
+block main
+    mixin separator
+        -for(var i=6; i>=1; i--)
+            div.section-block(class= "separator-" + i)
+
+    section.no-padding-bottom
+        .container
+            .row
+                .col-sm-6.col-xs-12
+                    +separator
+                .col-sm-6.col-xs-12
+                    +separator
+    section.no-padding-bottom
+        .container
+            .row
+                +separator
+    section.one-child
+        +separator
+block footer
+    +footer-preset-03
+block after-main

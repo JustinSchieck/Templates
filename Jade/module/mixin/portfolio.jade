@@ -1,0 +1,292 @@
+//- ========================== Block Portfolio ===============================
+
+//- Portfolio simple , cannot filter data{img,title}
+mixin portfolio-simple(data)
+    a(href="#").portfolio-item.portfolio-simple
+        img(src=data.img alt=data.title)
+        .overlay
+            .cell-vertical-wrapper
+                .cell-middle.overlay-content.text-center
+                    h5.heading-icon-1= data.title
+
+//- Portfolio blog, data{img,icon,title,date}
+mixin portfolio-blog(data)
+    a(href="#").portfolio-item.portfolio-blog
+        img(src=data.img alt=data.title)
+        .overlay
+            .cell-vertical-wrapper
+                .cell-middle.overlay-content.text-center
+                    i(class=data.icon)
+                    h4= data.title
+                    .font-serif.date= data.date
+
+//- Portfolio item 1 , data{img, title, caption}
+mixin portfolio-item-1(data)
+    .portfolio-item.portfolio-item-1
+        img(src=data.img alt=data.title)
+        .overlay
+            .cell-vertical-wrapper
+                .cell-middle.overlay-content.text-center
+                    h5.heading-icon-1= data.title
+                    .font-serif.caption= data.caption
+
+//- Portfolio item 2 , data{img, title, caption}
+mixin portfolio-item-2(data)
+    .portfolio-item.portfolio-item-2
+        img(src=data.img alt=data.title)
+        .overlay
+            .cell-vertical-wrapper
+                .cell-middle.overlay-content.text-center
+                    h5.heading-icon-1= data.title
+                    .font-serif.caption= data.caption
+                    .group-link
+                        a(href="portfolio-single-small-slide.html").icon-link
+                        a.zoom-link(href=data.img).icon-outline-vector-icons-pack-67
+
+//- Portfolio item 3 , data{img, title, caption}
+mixin portfolio-item-3(data)
+    .portfolio-item.portfolio-item-3
+        img(src=data.img alt=data.title)
+        .overlay
+            .cell-vertical-wrapper
+                .cell-middle.overlay-content
+                    h5.heading-icon-1= data.title
+                    .caption= data.caption
+                    .group-link
+                        a(href="portfolio-single-small-slide.html").icon-link
+                        a.zoom-link(href=data.img).icon-outline-vector-icons-pack-67
+
+//- Portfolio item icon item , data{img}
+mixin portfolio-icon-item(data)
+    .portfolio-item.portfolio-icon-item
+        img(src=data.img alt='portfolio')
+        .overlay.dark-overlay
+            .cell-vertical-wrapper
+                .cell-middle.overlay-content.text-center
+                    .group-function
+                        a.zoom-link(href=data.img).icon-outline-vector-icons-pack-94
+                        a(href="portfolio-single-small-slide.html").icon-outline-vector-icons-pack-135
+
+//- Portfolio footer-title ,data{img, title, subtitle}
+mixin portfolio-footer-title(data)
+    .portfolio-item.portfolio-footer-title
+        a.zoom-link.img-wrapper(href=data.img): img(src=data.img alt=data.title)
+        footer.text-center
+            h5: a(href="portfolio-single-small-slide.html")= data.title
+            .subtitle.font-serif.color-main= data.subtitle
+
+
+//- Portfolio text ,data{img, title, caption}
+mixin portfolio-text(data)
+    a(href="#").portfolio-item.portfolio-text
+        img(src=data.img alt='portfolio')
+        .overlay.dark-overlay
+            .cell-vertical-wrapper
+                .cell-bottom
+                    .overlay-content
+                        h5.color-main= data.title
+                        p= data.caption
+
+//- Portfolio more
+mixin portfolio-more
+    a(href="#").portfolio-more.text-center.fixed-ratio-1-1.bgc-gray
+        .fixed-ratio-content
+            h5 MORE ITEMS
+            i.icon-outline-vector-icons-pack-149.fz-common-1
+
+//- =================================================================================
+
+//- ========================== Portfolio Filter Group ===============================
+
+-var data_portfolio_filter_array_default = [];
+-data_portfolio_filter_array_default[0] = {filter:'.art' , title:'Art'}
+-data_portfolio_filter_array_default[1] = {filter:'.business' , title:'Business'}
+-data_portfolio_filter_array_default[2] = {filter:'.fashion' , title:'Fashion'}
+-data_portfolio_filter_array_default[3] = {filter:'.photography' , title:'Photography'}
+-data_portfolio_filter_array_default[4] = {filter:'.interior' , title:'Interior'}
+
+mixin portfolio-filter-group(Filter_array , ID)
+    - Filter_array = Filter_array ? Filter_array : data_portfolio_filter_array_default
+    .portfolio-filter-group(id=ID)
+        a.iso-button.is-checked(href="#" data-filter="*") All
+        each data in Filter_array
+            a.iso-button(href="#" data-filter=data.filter)= data.title
+
+//- ====================================================================================
+
+//- =========================== Portfolio Group Generator ==============================
+//- DEMO
+    -var data_portfolio_array = []
+    -var data_filter_array = ['art', 'business' , 'interior' , 'photography' , 'fashion']
+    -for( var i=0 ; i<11; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-600-'+ ((i+15)%29 + 1) + '.jpg'
+        -data_portfolio_array[i].title = 'LOVE MY LIFE'
+        -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit'
+        -data_portfolio_array[i].filter = data_filter_array[i%5] + " " + data_filter_array[(i+3)%5]
+    +portfolio-group-generator('item-2', data_portfolio_array , 'container-fluid remove-col-padding' , 'col-lg-2 col-md-3 col-sm-4 col-xs-6' , true , false)
+
+//- portfolio group generator
+mixin portfolio-group-generator(type, data_array , container_class , item_class , more_item , filter , external_filter)
+    -page_option.magnific_popup = true
+    .isotope-container(data-filter-nav=external_filter)
+        if(filter)
+            .container
+                +portfolio-filter-group
+        .portfolio-group(class=container_class)
+            .row.iso-grid
+                case type
+                    when 'simple'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-simple(data)
+                    when 'blog'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-blog(data)
+                    when 'item-1'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-item-1(data)
+                    when 'item-2'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-item-2(data)
+                    when 'item-3'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-item-3(data)
+                    when 'icon-item'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-icon-item(data)
+                    when 'footer-title'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-footer-title(data)
+                    when 'text'
+                        each data in data_array
+                            .grid-item.portfolio-column(class=item_class + (data.filter ? ' '+data.filter: ''))
+                                +portfolio-text(data)
+                if (more_item)
+                    .grid-item.portfolio-column(class=item_class)
+                        +portfolio-more
+
+//- ====================================================================================
+
+//- ================================== Portfolio Index =================================
+
+mixin portfolio-about
+    -var data_portfolio_array = []
+    -for( var i=0 ; i<3; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio0'+ (i + 1) + '.jpg'
+        -data_portfolio_array[i].title = 'CHECK OUT OUR FEATURES'
+    .container.section-block-p
+        .section-block.col-md-4.col-sm-6
+            +portfolio-simple(data_portfolio_array[0])
+        .section-block.col-md-4.col-sm-6
+            +portfolio-simple(data_portfolio_array[1])
+        .section-block.col-md-4.col-sm-6.col-md-offset-0.col-sm-offset-3
+            +portfolio-simple(data_portfolio_array[2])
+
+mixin portfolio-home-creative(data)
+    -var data_portfolio_array = []
+    -for( var i=0 ; i<5; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-600-'+ ((i+5)%29 + 1) + '.jpg'
+        -data_portfolio_array[i].title = 'LOVE MY LIFE'
+        -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit'
+    .container-fluid.remove-col-padding.portfolio-index-1
+        .row
+            .col-lg-6
+                .header-wrapper
+                    +section-header-2-1(data)
+            each portfolio in data_portfolio_array
+                .col-lg-3.col-md-4.col-sm-6.col-xs-12
+                    +portfolio-item-2(portfolio)
+            .col-lg-3.col-md-4.col-sm-6.col-xs-12
+                +portfolio-more
+
+mixin portfolio-home-corporate
+    -var data_portfolio_array = []
+    -for( var i=0 ; i<11; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-600-'+ ((i+15)%29 + 1) + '.jpg'
+        -data_portfolio_array[i].title = 'LOVE MY LIFE'
+        -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit'
+    +portfolio-group-generator('item-2', data_portfolio_array , 'container-fluid remove-col-padding' , 'col-lg-2 col-md-3 col-sm-4 col-xs-6' , true , false)
+
+//- ======================================================================================
+
+//- ================================ Portfolio special index =============================
+
+//- Portfolio special onepage
+mixin portfolio-special-index-onepage
+    -var data_portfolio_array = []
+    -for(var i = 0; i<9; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-special-' + (i+1) + '.jpg'
+        -data_portfolio_array[i].title = 'LOVE IS POWER'
+        -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, diamese  nonummy nibh euismod tincidunt  ut laoreet dolore...'
+    .portfolio-special-index-onepage.section-block-p.section-block
+        .container.isotope-container
+            .row.iso-grid
+                .col-md-6.col-sm-8.col-xs-12.grid-item
+                    +portfolio-item-3(data_portfolio_array[0])
+                - for(var i=1; i<7; i++)
+                    .col-md-3.col-sm-4.col-xs-12.col-xs-6.grid-item
+                        +portfolio-simple(data_portfolio_array[i])
+                .col-md-6.col-sm-8.col-xs-12.grid-item
+                    +portfolio-item-1(data_portfolio_array[7])
+
+//- Portfolio special homepage-portfolio
+mixin portfolio-special-index-homepage-portfolio-filter
+    .container.homepage-portfolio-external-filter
+        .label.pull-left.hidden-sm.hidden-xs Filter portfolio:
+        +portfolio-filter-group( false,'portfolio-external-filter')
+        .go-to-home.pull-right.hidden-sm.hidden-xs
+            a(href="index.html")
+                |Back to home
+                i.icon-right-open
+mixin portfolio-special-index-homepage-portfolio
+    -var data_portfolio_array = []
+    -var data_filter_array = ['art', 'business' , 'interior' , 'photography' , 'fashion']
+    -for( var i=0 ; i<9; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-special-2-'+ (i+1) + '.jpg'
+        -data_portfolio_array[i].title = 'Creatively Designed'
+        -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, diamese  nonummy nibh euismod tincidunt  ut laoreet dolore...'
+        -data_portfolio_array[i].filter = data_filter_array[i%5] + " " + data_filter_array[(i+3)%5]
+    -data_portfolio_array[1].caption = 'Lorem ipsum dolor sit ametse'
+    -data_portfolio_array[7].caption = 'Lorem ipsum dolor sit ametse'
+    -data_portfolio_array[8].caption = 'Lorem ipsum dolor sit ametse'
+
+    .homepage-portfolio-special-group.section-block-p
+        +portfolio-group-generator('text', data_portfolio_array , 'container' , 'col-lg-4 col-md-4 col-sm-6 col-xs-12' , false , false ,'#portfolio-external-filter')
+
+//- homepage-blog-masonry-portfolio-header
+mixin homepage-blog-masonry-portfolio-header
+    -var data_portfolio_array = []
+    -for( var i=0 ; i<3; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-header-'+ (i+1) + '.jpg'
+        -data_portfolio_array[i].icon = 'icon-indians-icons-09'
+        -data_portfolio_array[i].title = 'I LOVE MY LIFE VERY MUCH'
+        -data_portfolio_array[i].date = 'May 25th, 2015'
+
+    .homepage-blog-masonry-portfolio-header.section-block-p
+        +portfolio-group-generator('blog', data_portfolio_array , 'container-fluid remove-col-padding' , 'col-sm-4 .col-xs-12 dark-overlay' , false , false , false)
+
+//- homepage-classic_porfolio
+mixin homepage-classic_porfolio
+    -var data_portfolio_array = []
+    -for( var i=0 ; i<12; i++)
+        -data_portfolio_array[i] = {}
+        -data_portfolio_array[i].img = 'assets/images/portfolio-special-3-'+ (i+1) + '.jpg'
+        -data_portfolio_array[i].title = 'SUPER RESPONSIVE'
+
+    .homepage-classic-portfolio.section-block-p
+        +portfolio-group-generator('simple', data_portfolio_array , 'container' , 'col-lg-3 col-md-4 col-xs-6 dark-overlay' , false , false , false)
+
+//- ====================================================================================

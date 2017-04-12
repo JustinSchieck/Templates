@@ -1,0 +1,221 @@
+//- ************** Page Contact ************** -//
+mixin page-contact
+    .container
+        .row
+            .page-contact
+                .col-md-5.section-block
+                    h5 HI! WE ARE SUPPORT
+                    h3 SEND EMAIL FOR US
+                    +widget-contact-us
+                .col-md-7.section-block
+                    iframe.map-iframe( src="https://www.google.com/maps/embed/v1/place?q=SiliconValley,+California,+UnitedStates&key=AIzaSyAN0om9mFmy1QN6Wf54tXAowK4eT0ZUPrU")
+                    +social-03(data_social[0])
+
+//- ************** Page About ************** -//
+//- Data-//
+- var page_about_header = {subtitle: "HELLO! WE ARE" , title:"WOLVERINE CREATIVE"}
+- var data_page_about = []
+- data_page_about[0]  = {title:"OUR FAVORITE INSPIRATIONAL", content:"Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.", author:"- STEVE JOBS -"}
+- data_page_about[1]  = {title:"ABOUT US", content:"Wolverine Creative is an award winning digital media, web design and PR agency. In 2012, Wolverine Creative was recognized as one of the top 3 Advertising Agencies in Wisconsin by readers of Corporate Report Wisconsin. The company recently received two gold Hermes Awards for design and five Alchemy Awards from the Public Relations Society of America, more than any other agency in Madison, Wisconsin.<br/><br/> Wolverine Creative was also a 2006 Wisconsin Better Business Bureau Business Ethics Torch award finalist and has been recognized twice by Madison Magazine as one of the best places to work in Dane County."}
+
+//- Block -//
+mixin page-about-item(page_about)
+    .page-about-item
+        h4=page_about.title
+        p!=page_about.content
+        h5=page_about.author
+
+//- Section -//
+mixin page-about
+    .page-about-header
+        .container.text-center
+            h5.color-gray= page_about_header.subtitle
+            h2= page_about_header.title
+    .page-about
+        .container
+            .row
+                .col-md-4.col-sm-5.col-xs-12.quote
+                    +page-about-item(data_page_about[0])
+                .col-md-8.col-sm-7.col-xs-12.pragraph
+                    +page-about-item(data_page_about[1])
+//- Section No Header -//
+mixin page-about-no-header
+    .page-about
+        .container
+            .row
+                .col-md-4.col-sm-5.col-xs-12.quote
+                    +page-about-item(data_page_about[0])
+                .col-md-8.col-sm-7.col-xs-12.pragraph
+                    +page-about-item(data_page_about[1])
+
+//- ************** Page Services ************** -//
+mixin page-services(Class)
+    .page-services(class= Class)
+        .container
+            .row
+                .col-md-6
+                    .content.section-block
+                        h4.heading-hr-1 WHO ARE OUR CLIENTS?
+                        p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                        a.normal-btn.normal-btn-main.btn-size-5(href="page-contact.html") CONTACT US
+                .col-md-6
+                    .logo
+                        ul
+                            li: a(href="#"): img(src="assets/images/brand-logo-1.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-2.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-3.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-4.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-5.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-6.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-3.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-1.png" alt="brand")
+                            li: a(href="#"): img(src="assets/images/brand-logo-2.png" alt="brand")
+
+//- ************** Page 404Page ************** -//
+mixin page-error
+    .page-error.text-center
+        .container
+            h1 SO SORRY!
+            h4 The document you are looking for may have been removed or re-named. Please contact the web site owner <br> for further assistance.
+            +back-to-home
+
+//- ************** Page 403Page ************** -//
+mixin page-access-denied
+    .page-error.text-center
+        .container
+            h1 403 - ACCESS DENIED
+            p A web server may return a 403 Forbidden HTTP status code in response to a request from a client for a web page or resource to indicate that the server can be reached and understood the request, but refuses to take any further action. Status code 403 responses are the result of the web server being configured to deny access, for some reason, to the requested resource by the client.
+            +back-to-home
+
+//- ************** Page 500Page ************** -//
+mixin page-server-error
+    .page-error.text-center
+        .container
+            h1 500 - SERVER ERROR
+            p The server encountered an error or a misconfiguration and was unable to complete your request. Please contact the server administrator, admin@wolverine.com and inform them of the time the error occured, and anything that you might have done that may have caused the error. <br/> More information about this error may be available in the server error log. Thanks for your understanding!
+            +back-to-home
+
+//- ************** Page Under Construction ************** -//
+mixin page-under-construction
+    .page-under-construction
+        .container-fluid
+            .row
+                .page-under
+                    .col-lg-7.col-md-7.col-sm-12
+                        .image
+                            img(src="assets/images/under-construction-1.png" alt="image")
+                    .col-lg-5.col-md-5.col-sm-12
+                        .content
+                            h4 Hi! Im Wolverine Theme
+                            h1 We are currently working on something awesome. Stay tuned!
+                            form
+                                input(type="email" placeholder="Email Address")
+                                a(href="#").normal-btn.normal-btn-main.btn-size-5 SUBCRIBLE
+                            +social-default-01
+//- ************** Page Login ************** -//
+mixin page-login(Class,ID)
+    .page-login-wrapper
+        .page-login(class=Class id=ID)
+            form
+                h3 WELCOME BACK!
+                p Login to your account below
+                .infor
+                    span.icon
+                        i.icon-user
+                    input(type="email" placeholder="Email Address")
+                .infor
+                    span.icon
+                        i.icon-key
+                    input(type="password" placeholder="PassWord")
+                .remember
+                    label.checkbox
+                        input(type="checkbox")
+                        span
+                    p Remember me
+                .button
+                    a(href="#").normal-btn.normal-btn-main.btn-size-5 LOGIN
+                .button
+                    a(href="#").border-btn.border-btn-lightgray.btn-size-5 SIGN UP
+                a.forgotpass(href="#") Forgotten password?
+            +back-to-home
+
+//- ************** Page Regsiter ************** -//
+mixin regsiter(Class,ID)
+    .page-rigsiter-wrapper
+        .page-rigsiter(class=Class id=ID)
+            form
+                h3  REGSITER NOW!
+                .name
+                    p NAME
+                    input(type="text" name="first_name" placeholder="First")
+                    input(type="text" name="last_name" placeholder="Last")
+                p ENTER YOUR EMAIL ADDRESS:
+                input(type="email" placeholder="Address your email.")
+                p CREATE YOUR USERNAME:
+                input(type="text" name="username")
+                p CREATE YOUR PASSWORD:
+                input(type="password" name="password")
+                p CONFIRM YOUR PASSWORD:
+                input(type="password" name="confirm_password")
+                span By clicking “Create Account” you agree to the terms and conditions of the following:
+                    a(href="#") Universal Terms of Service
+                    |&nbsp;&nbsp;
+                    a(href="#") Privacy Policy
+                .button
+                    a(href="#").normal-btn.normal-btn-main.btn-size-5 CREATE ACCOUNT
+
+//- Block UnderConstruction -//
+mixin countdown-block
+    .countdown(data-start="1362139200" data-end="1388461320" data-now="1387461319" data-border-color="rgba(255, 255, 255, .8)")
+        .clock-item.clock-days.countdown-time-value
+            #canvas-days.clock-canvas
+            .text
+                p.val 0
+                p.type-days.type-time Days
+        .clock-item.clock-hours.countdown-time-value
+            #canvas-hours.clock-canvas
+            .text
+                p.val 0
+                p.type-hours.type-time Hours
+        .clock-item.clock-minutes.countdown-time-value
+            #canvas-minutes.clock-canvas
+            .text
+                p.val 0
+                p.type-minutes.type-time Minutes
+        .clock-item.clock-seconds.countdown-time-value
+            #canvas-seconds.clock-canvas
+            .text
+                p.val 0
+                p.type-seconds.type-time Seconds
+
+//- Section UnderConstruction -//
+mixin under-construction-section-2
+    .container.text-center.page-under-construction-2
+        h1 WE’RE COMING SOON
+        h4 We’re working on some improvements and will comeback in
+        +countdown-block
+
+mixin under-construction-subcribe-2(bgImg)
+    .subcribe.text-center
+        .container
+            h4 SUBCRIBE TO OUR NEWSLETTER
+            p Sign up now to our newsletter and you’ll be one of the first to know when the site is ready:
+            form
+                input(type="email" placeholder="Email Address")
+                a(href="#").normal-btn.normal-btn-main.btn-size-5 SUBCRIBLE
+            +social-03(data_social[0])
+mixin underconstruction-3-header
+    header.underconstruction-3-header
+        .text-center
+            img(src="assets/images/logo13.svg" alt="logo")
+//- Section -//
+mixin page-under-construction-3(bgImg)
+    .underconstruction-3-hr
+    .page-under-construction-3.text-left
+        .container.underconstruction-container
+            h4 Hi! Im Wolverine Them
+            h1 We are currently working on something <br>awesome. Stay tuned!
+            +countdown-block
+        .underconstruction-3-hr
+        +under-construction-subcribe-2
+    

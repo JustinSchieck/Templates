@@ -1,0 +1,229 @@
+//- Page
+mixin homepage-slip-screen(Class,Id)
+    .homepage-slip-screen(class=Class,id=Id)
+        block
+
+mixin slip-section-item-bgi(item)
+    .row.slip-bg-image(style="background-image: url(#{item.bgImg});")
+
+//- Home
+//- ======
+
+-var data_slipHome = []
+
+-data_slipHome[1] = {}
+-data_slipHome[1].bgImg = "assets/images/slip-bg-1.jpg"
+-data_slipHome[1].text1 = "WELCOME TO"
+-data_slipHome[1].text2 = "WOLVERINE THEME"
+
+-data_slipHome[2] = {}
+-data_slipHome[2].bgImg = "assets/images/slip-bg-2.jpg"
+
+//- Item
+mixin slip-home-caption(item)
+    .overlay
+        .cell-vertical-wrapper
+            .cell-middle
+                .caption-wrapper.text-center
+                    p= item.text1
+                    img.caption-icon(src="assets/images/icon-4-main.svg" alt="Slip home icon")
+                    p= item.text2
+
+//- Section
+mixin slip-home(Class,Id)
+    |<!-- Home -->
+    .slip-section.section(class=Class,id=Id)
+        .slip-home.slip-wrapper
+            .container-fluid.slip-full-height
+                .row.slip-home-item-wrapper.slip-full-height
+                    .col-md-6.slip-full-height
+                        +slip-section-item-bgi(data_slipHome[1])
+                    .col-md-6.hidden-xs.hidden-sm.slip-full-height
+                        +slip-section-item-bgi(data_slipHome[2])
+                    +slip-home-caption(data_slipHome[1])
+    |<!-- end - Home -->
+
+//- About
+//- ======
+-var data_slipAbout = []
+
+-data_slipAbout[1] = {}
+-data_slipAbout[1].bgImg = "assets/images/slip-bg-3.jpg"
+
+-data_slipAbout[2] = {}
+-data_slipAbout[2].subtitle = "WHO WE ARE"
+-data_slipAbout[2].title = "A STORY ABOUT US"
+-data_slipAbout[2].text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate, sed diam nonummy nibh euismod tincidunt <br/><br/> Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
+-data_slipAbout[2].name = "Elena Lincoln"
+
+mixin slip-about-item-content(item)
+    .row.slip-full-height
+        .item-content-wrapper
+            .cell-vertical-wrapper
+                .cell-middle
+                    .item-content.text-center
+                        h5.heading-icon-1= item.subtitle
+                        h2= item.title
+                        p.paragraph!= item.text
+                        p.name= item.name
+
+mixin slip-about(Class,Id)
+    |<!-- About -->
+    .slip-section.section(class=Class,id=Id)
+        .slip-about.slip-wrapper.slip-height-xs
+            .container-fluid.slip-full-height
+                .row.slip-full-height
+                    .col-md-6.slip-full-height.hidden-xs.hidden-sm
+                        +slip-section-item-bgi(data_slipAbout[1])
+                    .col-md-6.slip-full-height
+                        +slip-about-item-content(data_slipAbout[2])
+    |<!-- end - About -->
+
+//- Portfolio
+//- ======
+
+-var data_slipPortfolio = []
+
+-data_slipPortfolio[1] = {}
+-data_slipPortfolio[1].subtitle = "CREATIVITY & DARINGS"
+-data_slipPortfolio[1].title = "SOME OF OUR WORKS"
+-data_slipPortfolio[1].text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate, sed diam nonummy nibh euismod tincidunt."
+
+-data_slipPortfolio[2] = {}
+-data_slipPortfolio[2].bgImg = "assets/images/slip-bg-4.jpg"
+
+mixin slip-portfolio-item-content(item)
+    .row.slip-full-height
+        .item-content-wrapper
+            .cell-vertical-wrapper
+                .cell-middle
+                    .item-content
+                        h5.heading-icon-1= item.subtitle
+                        h2= item.title
+                        p.paragraph!= item.text
+                        a(href="#").border-btn.border-btn-main.btn-size-5
+                            |PORTFOLIO
+
+mixin slip-portfolio(Class,Id)
+    |<!-- Portfolio -->
+    .slip-section.section(class=Class,id=Id)
+        .slip-portfolio.slip-wrapper.slip-height-xs
+            .container-fluid.slip-full-height
+                .row.slip-full-height
+                    .col-md-6.slip-full-height
+                        +slip-portfolio-item-content(data_slipPortfolio[1])
+                    .col-md-6.slip-full-height.hidden-xs.hidden-sm
+                        +slip-section-item-bgi(data_slipPortfolio[2])
+    |<!-- end - Portfolio -->
+
+//- Service
+//- ======
+-var data_slipService = []
+
+-data_slipService[1] = {}
+-data_slipService[1].bgImg = "assets/images/slip-bg-5.jpg"
+
+-data_slipService[2] = {}
+-data_slipService[2].subtitle = "CREATIVITY & DARINGS"
+-data_slipService[2].title = "CHECK OUT OUR SERVICES"
+
+mixin slip-service-item-content(item)
+    .row.slip-full-height
+        .item-content-wrapper
+            .cell-vertical-wrapper
+                .cell-middle
+                    .item-content
+                        .content-header
+                            h5.heading-icon-1= item.subtitle
+                            h2= item.title
+                        +accordion-01
+
+mixin slip-service(Class,Id)
+    |<!-- Service -->
+    .slip-section.section(class=Class,id=Id)
+        .slip-service.slip-wrapper.slip-height-xs
+            .container-fluid.slip-full-height
+                .row.slip-full-height
+                    .col-md-6.slip-full-height.hidden-xs.hidden-sm
+                        +slip-section-item-bgi(data_slipService[1])
+                    .col-md-6.slip-full-height
+                        +slip-service-item-content(data_slipService[2])
+    |<!-- end - Service -->
+
+//- Blog
+//- ======
+
+-var data_slipBlog = []
+
+-data_slipBlog[1] = {}
+-data_slipBlog[1].subtitle = "FROM OUR BLOG"
+-data_slipBlog[1].title = "I LOVE MY LIFE VERY MUCH"
+-data_slipBlog[1].text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate ..."
+
+-data_slipBlog[2] = {}
+-data_slipBlog[2].bgImg = "assets/images/slip-bg-6.jpg"
+
+mixin slip-blog-item-content(item)
+    .row.slip-full-height
+        .item-content-wrapper
+            .cell-vertical-wrapper
+                .cell-middle
+                    .item-content
+                        h5.heading-icon-1= item.subtitle
+                        h2= item.title
+                        p.paragraph!= item.text
+                        a(href="#").border-btn.border-btn-main.btn-size-5
+                            |READ MORE
+
+mixin slip-blog(Class,Id)
+    |<!-- Blog -->
+    .slip-section.section(class=Class,id=Id)
+        .slip-blog.slip-wrapper.slip-height-xs
+            .container-fluid.slip-full-height
+                .row.slip-full-height
+                    .col-md-6.slip-full-height
+                        +slip-blog-item-content(data_slipBlog[1])
+                    .col-md-6.slip-full-height.hidden-xs.hidden-sm
+                        +slip-section-item-bgi(data_slipBlog[2])
+    |<!-- end - Blog -->
+
+//- Contact
+//- ======
+
+-var data_slipContact = []
+
+-data_slipContact[1] = {}
+-data_slipContact[1].bgImg = "assets/images/slip-bg-1.jpg"
+
+-data_slipContact[2] = {}
+-data_slipContact[2].bgImg = "assets/images/slip-bg-2.jpg"
+
+//- Item
+mixin slip-contact-caption(item)
+    .overlay
+        .cell-vertical-wrapper
+            .cell-middle
+                .caption-wrapper.text-center
+                    img.caption-logo(src="assets/images/logo-9.svg" alt="Slip contact logo")
+                    .contact-info
+                        p Email:
+                            span hello123@gmail.com
+                        p Phone:
+                            span 0123 456 789
+                        p Add:
+                            span 2809 Lincoln st, Califonia, USA
+                    +social-04
+
+//- Section
+mixin slip-contact(Class,Id)
+    |<!-- Contact -->
+    .slip-section.section(class=Class,id=Id)
+        .slip-contact.slip-wrapper
+            .container-fluid.slip-full-height
+                .row.slip-contact-item-wrapper.slip-full-height
+                    .col-md-6.slip-full-height
+                        +slip-section-item-bgi(data_slipContact[1])
+                    .col-md-6.hidden-xs.hidden-sm.slip-full-height
+                        +slip-section-item-bgi(data_slipContact[2])
+                    +slip-contact-caption(data_slipContact[1])
+    |<!-- end - Contact -->

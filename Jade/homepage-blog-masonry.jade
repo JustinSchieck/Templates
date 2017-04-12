@@ -1,0 +1,40 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_about_header = { subtitle: "WHAT WE DO" , title: "A STORY ABOUT US" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+//- body>main>
+block header
+    +main-nav-2-a1
+//- body>main>
+block main
+    header
+        +homepage-blog-masonry-portfolio-header
+    section.no-padding-bottom
+        +section-header-1-1(data_about_header)
+        .container
+            .row
+                aside.col-md-3.hidden-sm.hidden-xs
+                    +widget-author-style-2
+                    +widget-blog-categories
+                    +widget-blog-related
+                    +widget-instagram
+                    +widget-search
+                    +widget-banner
+                .col-md-9.col-xs-12
+                    +group-masonry-post-index-style-1
+                    +pagination
+block footer
+    +footer-preset-02
+//- body>
+block after-main

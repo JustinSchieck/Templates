@@ -1,0 +1,52 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+//- body>
+block before-main
+    +main-nav-1-2("style-2")
+    +shop-side-cart-fixed
+//- body>main>
+block header
+    header.site-header
+        +home-boxed-slider-4
+//- body>main>
+block main
+    section.no-padding-bottom.pt-40
+        +shop-homepage-banner-2
+    section.no-padding-bottom.pt-60
+        .container.text-center.shop-homepage-1-category-links-wrapper.mb-80
+            .shop-homepage-1-category-links
+                a.active(href="#") ALL
+                a(href="#") TABLE
+                a(href="#") CHAIR
+                a(href="#") DECORATIVE
+                a(href="#") SALE
+        .container
+            .row.product-listing-1
+                each data in data_shopProduct
+                    .col-md-4.col-sm-6.col-xs-12.shop-product-1-wrapper
+                        +shop-product-1(data)
+                .col-md-4.col-sm-6.col-xs-12
+                    .shop-product-1.next-page
+                        a(href="#")
+                            .fixed-ratio-1-1.bgc-gray.text-center
+                                .fixed-ratio-content
+                                    h5 NEXT PAGE
+                                    i.icon-outline-vector-icons-pack-149.fz-common-2
+        .container.mb-80
+            +shop-homepage-other-links
+//- body>main>
+block footer
+    +footer-preset-04
+//- body>
+block after-main
+    +quick-view-modal

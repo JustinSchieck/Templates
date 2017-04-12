@@ -1,0 +1,42 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_portfolio_header = { title: "SOME OF OUR WORKS" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+    - var data_portfolio_header = { title: "VIEW OUR WORKS" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('PORTFOLIO')
+block main
+    section.no-padding
+        +portfolio-home-creative(data_portfolio_header)
+    section
+        +portfolio-special-index-onepage
+    section.no-padding
+        -var data_portfolio_array = []
+        -var data_filter_array = ['art', 'business' , 'interior' , 'photography' , 'fashion']
+        -for( var i=0 ; i<7; i++)
+            -data_portfolio_array[i] = {}
+            -data_portfolio_array[i].img = 'assets/images/portfolio-600-'+ ((i+27)%30 + 1) + '.jpg'
+            -data_portfolio_array[i].title = 'LOVE MY LIFE'
+            -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit'
+            -data_portfolio_array[i].filter = data_filter_array[i%5] + " " + data_filter_array[(i+3)%5]
+        +portfolio-group-generator('item-1', data_portfolio_array , 'container-fluid remove-col-padding' , 'dark-overlay col-lg-3 col-md-4 col-sm-6 col-xs-6 ' , false , false)
+    section.large-space.no-padding-bottom
+        +section-header-2-2(data_portfolio_header)
+        +portfolio-home-corporate
+    section
+        +homepage-classic_porfolio
+block footer
+    +footer-preset-02
+block after-main

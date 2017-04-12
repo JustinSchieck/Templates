@@ -1,0 +1,50 @@
+extends module/form
+block page-config
+    -page_option.body_class = "default-page";
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_about_header = { subtitle: "WHO WE ARE" , title: "A STORY ABOUT US" , caption:"Wolverine Creative is an award winning digital media, web design and PR agency. In 2012, Wolverine Creative was recognized as one of the top 3 Advertising Agencies in Wisconsin by readers of Corporate Report Wisconsin."}
+    - var data_portfolio_header = { subtitle: "WHAT WE WORK" , title: "ENJOY OUR PORTFOLIO" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+    - var data_service_header = { subtitle: "CREATIVITY & DARINGS" , title: "OUR SERVICES" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+    - var data_blog_header = { subtitle: "BLOG UPDATES" , title: "LASTED POSTS FROM OUR BLOG" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+    - var data_team_header = { subtitle: "MEET OUR TEAM" , title: "WHAT MAKES US SUCCESSFUL" , caption:"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+//- body>
+block before-main
+//- body>main>
+block header
+    header.site-header.home-sticky-nav-trigger
+        +home-fw-slider-7("parents-height")
+        +main-nav-2('type-3')
+//- body>main>
+block main
+    section.border-bottom
+        +service-section-03
+    section.large-space.border-bottom
+        +section-header-2-2(data_service_header)
+        +service-section-02
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img1.jpg');")
+        +quote-slider-01
+    section.large-space.no-padding-bottom
+        +section-header-2-2(data_portfolio_header)
+        +portfolio-home-corporate
+    section
+        +section-header-2-1(data_team_header)
+        +team-section-01
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img2.jpg');")
+        +testimonial-01()
+    section.large-space.one-child
+        +brand-carousel-1
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main

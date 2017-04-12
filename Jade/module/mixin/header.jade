@@ -1,0 +1,17 @@
+//- Common header
+mixin common-static-header(title)
+    header.site-header.common-static-header
+        .parallax-bg(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/header-parallax.jpg');")
+        .container
+            h1= title
+mixin common-static-header-2(title)
+    header.site-header.portfolio-page-header
+        .parallax-bg(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/home-box-3d.jpg');")
+        .container
+            h1= title
+mixin portfolio-page-header(title)
+    header.site-header.portfolio-page-header
+        .parallax-bg(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/header-parallax.jpg');")
+        .container
+            h1= title
+

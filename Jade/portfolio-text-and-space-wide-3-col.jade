@@ -1,0 +1,13 @@
+extends module/form-portfolio
+block page-config
+    -portfolio_data = []
+    -for (var i = 0; i<9 ; i++)
+        -portfolio_data[i] = {}
+        -portfolio_data[i].img = 'assets/images/portfolio-tas-' + ((i + 1)%12 + 1) + '.jpg'
+        -portfolio_data[i].title = 'WOOL CHAIR HANDMADE'
+        -portfolio_data[i].subtitle = 'Wolverine Design'
+        -portfolio_data[i].filter = portfolio_filter_array[(i+1)%5] + ' ' + portfolio_filter_array[(i+3)%5]
+    -portfolio_option.page_title = 'PORTFOLIO';
+    -portfolio_option.type = 'footer-title';
+    -portfolio_option.container_class = 'container-fuild';
+    -portfolio_option.item_class = 'col-md-4 col-sm-6 col-xs-12';

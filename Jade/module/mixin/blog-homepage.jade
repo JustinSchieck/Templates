@@ -1,0 +1,340 @@
+//- Blog post data
+-var blog_post_index_data = []
+-var counter = 0;
+-blog_post_index_data[counter] = {}
+-blog_post_index_data[counter].post_thumbnail = null
+-blog_post_index_data[counter].post_video = '<iframe src="https://player.vimeo.com/video/136689216?api=1" allowfullscreen></iframe>'
+-blog_post_index_data[counter].post_audio = null
+-blog_post_index_data[counter].post_quote = null
+-blog_post_index_data[counter].post_category = 'FASHIONS'
+-blog_post_index_data[counter].post_date = '13.04.15'
+-blog_post_index_data[counter].post_author = 'Jonh Black'
+-blog_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, consectetuer adipiscing elit, consequatsed diam nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequatnisl ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. '
+
+-counter++
+-blog_post_index_data[counter] = {}
+-blog_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-l-01.jpg'
+-blog_post_index_data[counter].post_video = null
+-blog_post_index_data[counter].post_audio = null
+-blog_post_index_data[counter].post_quote = null
+-blog_post_index_data[counter].post_category = 'FASHIONS'
+-blog_post_index_data[counter].post_date = '13.04.15'
+-blog_post_index_data[counter].post_author = 'Jonh Black'
+-blog_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, consectetuer adipiscing elit, consequatsed diam nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequatnisl ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. '
+
+-counter++
+-blog_post_index_data[counter] = {}
+-blog_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-l-02.jpg'
+-blog_post_index_data[counter].post_video = null
+-blog_post_index_data[counter].post_audio = null
+-blog_post_index_data[counter].post_quote = null
+-blog_post_index_data[counter].post_category = 'FASHIONS'
+-blog_post_index_data[counter].post_date = '13.04.15'
+-blog_post_index_data[counter].post_author = 'Jonh Black'
+-blog_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, consectetuer adipiscing elit, consequatsed diam nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequatnisl ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. '
+
+-counter++
+-blog_post_index_data[counter] = {}
+-blog_post_index_data[counter].post_thumbnail = null
+-blog_post_index_data[counter].post_video = null
+-blog_post_index_data[counter].post_audio = null
+-blog_post_index_data[counter].post_quote = 'Dolor sit amet, consectetuer adipiscing elit, sedes arts diam nonummy nibh euismod tincidunt ut wisi laoreet dolore magna consectetuer wisi aliquam erat volutpat. Ut wisi enim ad minim veniam.'
+-blog_post_index_data[counter].post_category = 'FASHIONS'
+-blog_post_index_data[counter].post_date = '13.04.15'
+-blog_post_index_data[counter].post_author = 'Jonh Black'
+-blog_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, consectetuer adipiscing elit, consequatsed diam nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequatnisl ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. '
+
+-counter++
+-blog_post_index_data[counter] = {}
+-blog_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-l-04.jpg'
+-blog_post_index_data[counter].post_video = null
+-blog_post_index_data[counter].post_audio = null
+-blog_post_index_data[counter].post_quote = null
+-blog_post_index_data[counter].post_category = 'FASHIONS'
+-blog_post_index_data[counter].post_date = '13.04.15'
+-blog_post_index_data[counter].post_author = 'Jonh Black'
+-blog_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, consectetuer adipiscing elit, consequatsed diam nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequatnisl ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. '
+
+-counter++
+
+//- *************** post-index-style-01 ******************
+//- BLOCK
+mixin post-index-style-1(data)
+    -var post_type = null
+    if(data.post_thumbnail)
+        -post_type = 'standard'
+    else if (data.post_video)
+        -post_type = 'video-embed'
+    else if (data.post_audio)
+        -post_type = 'audio-embed'
+    else if (data.post_quote)
+        -post_type = 'quote'
+
+    article.post-index.post-index-style-1(class="#{post_type}")
+        if (post_type == 'quote')
+            header.entry-header
+                .icon-quote
+                h6.post-meta.color-main #{data.post_category}/#{data.post_date}
+                h2.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content
+                blockquote: q #{data.post_quote}
+            .entry-footer
+                .author.font-serif
+                    span _ #{data.post_author}
+        else
+            header.entry-header
+                if(post_type == 'standard')
+                    .post-thumbnail
+                        a.blog-link(href="#")
+                            img.img-responsive(src="#{data.post_thumbnail}" alt="#{data.post_title}")
+                else if (post_type == 'video-embed')
+                    .video-container
+                        != data.post_video
+                else if (post_type == 'audio-embed')
+                    .audio-container
+                        != data.post_audio
+                h6.post-meta.color-main #{data.post_category}/#{data.post_date}
+                h2.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content #{data.post_content}
+            footer.entry-footer
+                .readmore.text-center
+                    a(href="#").border-btn.border-btn-lightgray.btn-size-3 READ MORE
+                .author.font-serif.color-main
+                    span Posted by #{data.post_author}
+                +social-default-01
+//-GROUP
+mixin group-post-index-style-1
+    each data in blog_post_index_data
+        +post-index-style-1(data)
+
+//- *************** post-index-style-02 ******************
+//- BLOCK
+mixin post-index-style-2(data)
+    -var post_type = null
+    if(data.post_thumbnail)
+        -post_type = 'standard'
+    else if (data.post_video)
+        -post_type = 'video-embed'
+    else if (data.post_audio)
+        -post_type = 'audio-embed'
+    else if (data.post_quote)
+        -post_type = 'quote'
+    article.post-index.post-index-style-2(class="#{post_type}")
+        if (post_type == 'quote')
+            header.entry-header
+                .icon-quote
+                h6.post-meta.color-main #{data.post_category}/#{data.post_date}
+                h2.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content
+                blockquote: q #{data.post_quote}
+            .entry-footer
+                .author.font-serif
+                    span _ #{data.post_author}
+        else
+            header.entry-header
+                if(post_type == 'standard')
+                    .post-thumbnail
+                        a.blog-link(href="#")
+                            img.img-responsive(src="#{data.post_thumbnail}" alt="#{data.post_title}")
+                else if (post_type == 'video-embed')
+                    .video-container
+                        != data.post_video
+                else if (post_type == 'audio-embed')
+                    .audio-container
+                        != data.post_audio
+                h6.post-meta.color-main #{data.post_category}/#{data.post_date}
+                h2.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content #{data.post_content}
+            footer.entry-footer
+                .author.font-serif.color-main
+                    span Posted by #{data.post_author}
+                +social-default-01
+//-GROUP
+mixin group-post-index-style-2
+    each data in blog_post_index_data
+        +post-index-style-2(data)
+
+//- Blog masonry post data
+-var blog_masonry_post_index_data = []
+-var counter = 0;
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-m-01.jpg'
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = null
+-blog_masonry_post_index_data[counter].post_quote = null
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+-counter++
+
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = null
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = null
+-blog_masonry_post_index_data[counter].post_quote = 'Dolor sit amet, consectetuer adipiscing elit, sedes arts diam nonummy nibh isted euismod tincidunt ut wisi laoreet dolore ist magna consectetuer wisi aliquam erat volutpat. Ut  wisi enim ad minim veniam. Dolor sit amet, wisi consectetuer adipiscing elit.'
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+
+-counter++
+
+
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-m-02.jpg'
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = null
+-blog_masonry_post_index_data[counter].post_quote = null
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+-counter++
+
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-m-03.jpg'
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = null
+-blog_masonry_post_index_data[counter].post_quote = null
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+-counter++
+
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-m-04.jpg'
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = null
+-blog_masonry_post_index_data[counter].post_quote = null
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+-counter++
+
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = 'assets/images/blog-thumbnail-m-05.jpg'
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = null
+-blog_masonry_post_index_data[counter].post_quote = null
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+-counter++
+
+-blog_masonry_post_index_data[counter] = {}
+-blog_masonry_post_index_data[counter].post_thumbnail = null
+-blog_masonry_post_index_data[counter].post_video = null
+-blog_masonry_post_index_data[counter].post_audio = '<iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/221633127&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>'
+-blog_masonry_post_index_data[counter].post_quote = null
+-blog_masonry_post_index_data[counter].post_date = 'May 25th, 2015'
+-blog_masonry_post_index_data[counter].post_author = 'Jonh Black'
+-blog_masonry_post_index_data[counter].post_category = 'FASHIONS'
+-blog_masonry_post_index_data[counter].post_title = 'FIVE TABLE STYLES I’M LOVING NOW'
+-blog_masonry_post_index_data[counter].post_content = 'Lorem ipsum dolor sit ametse, ideases is consectetuer adipiscing elit, consequatsed diamese  nonummy nibh euismod tincidunt  ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim add isminim veniam. '
+-counter++
+//- *************** post-masonry-style-01 ******************
+mixin masonry-post-index-style-1(data)
+    -var post_type = null
+    if(data.post_thumbnail)
+        -post_type = 'standard'
+    else if (data.post_video)
+        -post_type = 'video-embed'
+    else if (data.post_audio)
+        -post_type = 'audio-embed'
+    else if (data.post_quote)
+        -post_type = 'quote'
+    article.masonry-post-index.masonry-post-index-style-1(class="#{post_type}")
+        if (post_type == 'quote')
+            header.entry-header
+                h4.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content
+                blockquote: q #{data.post_quote}
+            .entry-footer
+                .author.font-serif.color-main
+                    span _ #{data.post_author}
+        else
+            header.entry-header
+                if(post_type == 'standard')
+                    .post-thumbnail
+                        a.blog-link(href="#")
+                            img.img-responsive(src="#{data.post_thumbnail}" alt="#{data.post_title}")
+                else if (post_type == 'video-embed')
+                    .video-container
+                        != data.post_video
+                else if (post_type == 'audio-embed')
+                    .audio-container
+                        != data.post_audio
+                h4.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content #{data.post_content}
+            footer.entry-footer
+                .date.font-serif.color-main.pull-left #{data.post_date}
+                .share.pull-right
+                    a(href="#"): i.fa.fa-share-alt
+//- *************** group-post-masonry-style-01 ******************
+mixin group-masonry-post-index-style-1
+    .row.masonry-container
+        each data in blog_masonry_post_index_data
+            .col-md-6
+                +masonry-post-index-style-1(data)
+
+//- *************** post-masonry-style-02 ******************
+mixin masonry-post-index-style-2(data)
+    -var post_type = null
+    if(data.post_thumbnail)
+        -post_type = 'standard'
+    else if (data.post_video)
+        -post_type = 'video-embed'
+    else if (data.post_audio)
+        -post_type = 'audio-embed'
+    else if (data.post_quote)
+        -post_type = 'quote'
+    article.masonry-post-index.masonry-post-index-style-2(class="#{post_type}")
+        if (post_type == 'quote')
+            header.entry-header
+                h4.post-title: a.blog-link(href="#") #{data.post_title}
+            .entry-content
+                blockquote: q #{data.post_quote}
+            .entry-footer
+                .author.font-serif.color-main
+                    span _ #{data.post_author}
+        else
+            header.entry-header
+                if(post_type == 'standard')
+                    .post-thumbnail
+                        a.blog-link(href="#")
+                            img.img-responsive(src="#{data.post_thumbnail}" alt="#{data.post_title}")
+                else if (post_type == 'video-embed')
+                    .video-container
+                        != data.post_video
+                else if (post_type == 'audio-embed')
+                    .audio-container
+                        != data.post_audio
+
+            .entry-content
+                .post-meta
+                    .date.font-serif.color-main #{data.post_date}
+                h4.post-title: a.blog-link(href="#") #{data.post_title}
+                p #{data.post_content}
+
+//- *************** group-post-masonry-style-02 ******************
+mixin group-masonry-post-index-style-2
+    .row.masonry-container
+        each data in blog_masonry_post_index_data
+            .col-md-6
+                +masonry-post-index-style-2(data)
+

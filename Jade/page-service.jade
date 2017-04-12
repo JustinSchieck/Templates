@@ -1,0 +1,29 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_service_header = { subtitle: "CREATIVITY & DARINGS" , title: "SHOW OFF OUR SERVICES" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('SERVICES')
+block main
+    section
+        +section-header-1-2(data_service_header)
+        +service-section-01
+    section.bgc-gray
+        +page-services
+    section
+        +counto-section('style-1')
+block footer
+    +footer-preset-03
+block after-main

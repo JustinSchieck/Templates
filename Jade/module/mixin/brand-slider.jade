@@ -1,0 +1,46 @@
+//- Brand Carousel (Multiple Items - Slider)
+//- ============================
+//- Data brandCarousel_1-//
+-var data_brandCarousel_1 = {}
+
+-data_brandCarousel_1[0] = {imgUrl: "assets/images/brand-slider-1.png"}
+-data_brandCarousel_1[1] = {imgUrl: "assets/images/brand-slider-2.png"}
+-data_brandCarousel_1[2] = {imgUrl: "assets/images/brand-slider-3.png"}
+-data_brandCarousel_1[3] = {imgUrl: "assets/images/brand-slider-4.png"}
+-data_brandCarousel_1[4] = {imgUrl: "assets/images/brand-slider-5.png"}
+-data_brandCarousel_1[5] = {imgUrl: "assets/images/brand-slider-6.png"}
+
+//- Data brandCarousel_1 -//
+
+-var data_brandCarousel_2 = {}
+
+-data_brandCarousel_2[0] = {imgUrl: "assets/images/brand-slider-1a.png"}
+-data_brandCarousel_2[1] = {imgUrl: "assets/images/brand-slider-2a.png"}
+-data_brandCarousel_2[2] = {imgUrl: "assets/images/brand-slider-3a.png"}
+-data_brandCarousel_2[3] = {imgUrl: "assets/images/brand-slider-4a.png"}
+-data_brandCarousel_2[4] = {imgUrl: "assets/images/brand-slider-5a.png"}
+-data_brandCarousel_2[5] = {imgUrl: "assets/images/brand-slider-6a.png"}
+
+//- Block Item
+mixin brand-carousel-item(item)
+    .brand-item
+        .item-image
+            a(href="#")
+                img.img-responsive.center-block(src=item.imgUrl alt="Brand image")
+
+//- Section
+mixin brand-carousel-1(Class)
+    .container
+        .brand-carousel.multi-slider(class=Class)
+            each item in data_brandCarousel_1
+                +brand-carousel-item(item)
+            each item in data_brandCarousel_1
+                +brand-carousel-item(item)
+
+mixin brand-carousel-2(Class)
+    .container
+        .brand-carousel.multi-slider(class=Class)
+            each item in data_brandCarousel_2
+                +brand-carousel-item(item)
+            each item in data_brandCarousel_2
+                +brand-carousel-item(item)

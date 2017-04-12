@@ -1,0 +1,159 @@
+//- DATA HEADER//
+-var data_services_header_01 = {subtitle: "CREATIVITY & BRANDING", title:"CHECK OUT OUR SERVICES", caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- ---
+-var data_services_header_02 = {title: "OUR SERVICES" , caption:'"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."'}
+
+//- DATA  Services -//
+-var data_services = []
+
+- data_services[0] = {}
+- data_services[0].title = "WEB & DIGITAL DESIGN"
+- data_services[0].icon = 'icon-outline-vector-icons-pack-101'
+- data_services[0].logo = 'icon-indians-icons-07'
+- data_services[0].content = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.'
+- data_services[0].content2 = "Lorem ipsum dolor sit amet, edasdw consectetuer adipiscing elit, sedes is diam nonummy nibh euismod tincidunt ut laoreetast dolore magna aliquam"
+- data_services[1] = {}
+- data_services[1].title = "CREATIVITY & BRANDING"
+- data_services[1].icon = 'icon-outline-vector-icons-pack-132'
+- data_services[1].logo = 'icon-indians-icons-08'
+- data_services[1].content = data_services[0].content
+- data_services[1].content2 = data_services[0].content2
+- data_services[2] = {}
+- data_services[2].title = "PRODUCT DEVELOPMENT"
+- data_services[2].icon = 'icon-outline-vector-icons-pack-126'
+- data_services[2].logo = 'icon-indians-icons-02'
+- data_services[2].content = data_services[0].content
+- data_services[2].content2 = data_services[0].content2
+
+//- block-service-style-01
+mixin block-service-style-01(service)
+    .block-service-style-01
+        a(href="#"): h5
+            i(class=service.icon)
+            |#{service.title}
+        p= service.content
+//- service-section 01
+
+mixin service-section-01
+    .service-section-01
+        .container
+            .row
+                .col-lg-6.image-container.section-block
+                    img(src='assets/images/service_01.jpg' alt="service")
+                .col-lg-6.content-container.section-block
+                    each service in data_services
+                        +block-service-style-01(service)
+                    .service-button
+                        a(href="#").border-btn.border-btn-main.btn-size-5 JOIN NOW
+
+//- //////////////////// service-style-02 (SERVICE ACCORDION)
+//- Block
+mixin block-service-style-02(service, index)
+    -var heading_class = 'collapsed'
+    -if(index == 0)
+        -var panel_class = 'in'
+        -var heading_class = null
+    .panel.service-item
+        .panel-heading
+            a(data-toggle="collapse" data-parent="#accordion-service-1" href='#service-item-1-' + index class=heading_class).panel-title
+                h5
+                    i(class=service.icon)
+                    |#{service.title}
+        .panel-collapse.collapse(id='service-item-1-' + index  class=panel_class)
+            .panel-body= service.content
+
+//- Section
+mixin service-section-02
+    .service-section-02.section-block
+        .container
+            .row
+                .col-lg-6.text-center
+                    img(src='assets/images/our-service-1.jpg' alt="image")
+                .col-lg-6
+                    #accordion-service-1.panel-group
+                        each service , index in data_services
+                            +block-service-style-02(service , index)
+
+//- ////////////////////service-style-03
+//- Block
+mixin block-service-style-03(service)
+    .block-service-style-03
+        a(href="#")
+            i(class=service.logo)
+            h5.heading-hr-2= service.title
+            p=service.content
+
+//- Section
+mixin service-section-03
+    .service-section-03
+        .container
+            .row
+                each service in data_services
+                    .col-md-4.service-item-wrapper.text-center.section-block
+                        +block-service-style-03(service)
+
+//- ////////////////////service-style-04
+//- Data
+-var data_services_4 = []
+-data_services_4[0] = {icon:'icon-indians-icons-07', title: data_services[0].title}
+-data_services_4[1] = {icon:'icon-indians-icons-08', title: data_services[1].title}
+-data_services_4[2] = {icon:'icon-indians-icons-02', title: data_services[2].title}
+
+//- Block
+mixin block-service-style-04(service)
+    a(href="#").block-service-style-04
+        i(class=service.icon)
+        h5=service.title
+
+//- Section
+mixin service-section-04
+    .service-section-04
+        .container.text-center
+            .row
+                each service in data_services_4
+                    .col-md-4.service-item-wrapper
+                        +block-service-style-04(service)
+
+//- ////////////////////service-style-05
+//- Block
+mixin block-service-style-05(service)
+    .block-service-style-05
+        a(href="#")
+            h5=service.title
+            .content
+                i(class=service.logo)
+                p=service.content2
+//- Section
+mixin service-section-05
+    .service-section-05
+        .container.text-center
+            .row
+                each service in data_services
+                    .col-md-4.service-item-wrapper
+                        +block-service-style-05(service)
+
+//- //////////////////// About
+//- Data
+-var data_about = []
+-data_about[0] = {img:'assets/images/about_01.jpg', subtitle:'WE ARE', title:'FULLY RESPONSIVE & RETINA READY', content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl'}
+-data_about[1] = {img:'assets/images/about_02.jpg', subtitle:'WE HAVE', title:'30 USEFUL SHORTCODES', content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl'}
+-data_about[2] = {img:'assets/images/about_03.jpg', subtitle:'WE OFFERS', title:'FAST SUPPORT & FREE UPDATES', content:'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl'}
+
+//- Block
+mixin about-item(about)
+    .about-item-01
+        a(href="#")
+            div
+                img(src=about.img alt="service")
+                h6= about.subtitle
+                h4= about.title
+                p= about.content
+
+//- Section
+mixin about-section-01(Id)
+    .container
+        .row
+            each about in data_about
+                .col-md-4.section-block-p
+                    +about-item(about)
+

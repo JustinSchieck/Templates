@@ -1,0 +1,26 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    +common-static-header('CLIENTS')
+block main
+    section
+        +page-services("bgc-light")
+    section.one-child(style="background: #939e98")
+        +brand-carousel-2
+    section.one-child
+        +brand-carousel-1
+block footer
+    +footer-preset-03
+block after-main

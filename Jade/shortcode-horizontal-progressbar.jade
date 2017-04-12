@@ -1,0 +1,32 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+    -page_option.progressbar = true;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('HORIZONTAL PROGRESS BAR')
+block main
+    section.border-bottom
+        .container
+            .row
+                .col-md-6.progressbar-wrapper
+                    +group-progressbar('basic')
+                .col-md-6.progressbar-wrapper
+                    +group-progressbar('fill-text')
+    section.one-child
+        .container.progressbar-wrapper
+            +group-progressbar('tooltip')
+block footer
+    +footer-preset-02
+block after-main

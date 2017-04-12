@@ -1,0 +1,107 @@
+mixin post-detail-style-01
+    .post-detail-01
+        .title
+            h2 I LOVE MY LIFE VERY MUCH
+            p Travel&nbsp;&nbsp;/&nbsp;&nbsp;
+                span May 25th, 2015
+        .content
+            .post-thumbnail
+                img.img-responsive(src="assets/images/blog-thumbnail-m-01.jpg" alt="thumbnail")
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing.
+            blockquote Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit delenit augue duis dolore te feugait nulla facilisi.
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        .tag-share
+            .tag
+                p Tag:
+                span # sleep
+                span # love
+                span # ostheme
+                span # more
+            .share
+                p SHARE:
+                +social-01("icon-twitter","icon-facebook","icon-gplus","icon-lastfm")
+
+mixin post-detail-style-02(Class)
+    .post-detail-01.style-02(class=Class)
+        .post-thumbnail
+            img.img-responsive(src="assets/images/blog-thumbnail-l-01.jpg" alt="thumbnail")
+        .title
+            h2 I LOVE MY LIFE VERY MUCH
+            p Travel&nbsp;&nbsp;/&nbsp;&nbsp;
+                span May 25th, 2015
+        .content
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        .tag-share
+            .tag
+                p Tag:
+                span #&nbsp;sleep
+                span #&nbsp;love
+                span #&nbsp;ostheme
+                span #&nbsp;more
+            .share
+                p SHARE:
+                +social-01("icon-twitter","icon-facebook","icon-gplus","icon-lastfm")
+
+mixin post-author
+    .post-author
+        .avatar
+            img.img-responsive(src="assets/images/author.jpg" alt="author")
+        .content
+            h4 ANGRY BIRD
+            +social-01("icon-twitter","icon-facebook","icon-gplus","icon-lastfm")
+            p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+
+
+-var data_comments = []
+- data_comments[0] = {img:"assets/images/comments-01.jpg", name:"Angry Bird", date:"May 23, 3015", content:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.", like:"15"}
+- data_comments[1] = {img:"assets/images/comments-02.jpg", name:"Angry Bird", date:"May 23, 3015", content:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut ", like:"15"}
+-data_comments[2] = {img:"assets/images/comments-small-01.jpg", name:"Angry Bird", date:"May 23, 3015", content:"Thanks you! ", like:"15"}
+
+
+
+mixin comments-style-01(comments, Class)
+    .post-comments-style(class=Class)
+        .image
+            a(href="#"): img(src=comments.img alt="avatar")
+        .content 
+            p.name=comments.name
+            a(href="#").date=comments.date
+            p.comment=comments.content
+            .like-reply.text-right
+                a(href="#").like Like: 
+                    span=comments.like
+                a(href="#").reply Reply
+
+mixin post-comments-form
+    .post-comments-form
+        .image
+            img(src="assets/images/comments-03.jpg" alt="avatar")
+        .widget.contact-us
+            form(action="#")
+                .row
+                    .col-sm-6.col-xs-12
+                        input.name(type="text" name="name" placeholder="Name") 
+                    .col-sm-6.col-xs-12
+                        input.email(type="email" name="email" placeholder="Email")
+                    .col-xs-12
+                        textarea.msg(placeholder="Message")
+                a.normal-btn.normal-btn-main.btn-size-5(href="") SEND
+mixin post-comments
+    .post-comments.section-block
+        ul
+            li.big-comment
+                +comments-style-01(data_comments[0])
+                ul
+                    li.small-comment
+                        +comments-style-01(data_comments[1], "style-02")
+                    li.small-comment
+                        +comments-style-01(data_comments[2], "style-02")
+            li.big-comment
+                +comments-style-01(data_comments[1])
+                ul
+                    li.small-comment
+                        +comments-style-01(data_comments[0], "style-02")
+            li
+                +post-comments-form

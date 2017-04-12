@@ -1,0 +1,69 @@
+//- Create on 05/09/2015
+    Company: OSTheme
+    Author: ANHMTV
+    To create section form
+
+//- DATA
+    data of mixin in this file in page
+
+//- BLOCK
+//- _Section wrapper
+mixin section-wrapper(section_name)
+    |<!-- #{section_name} -->
+    block
+    |<!-- end of #{section_name} -->
+
+//- _Section header
+//- __Section header type 1 with icon and subtitle
+    Section header type 1 data prototype data={subtitle:"" , title:"" , caption:""}
+mixin section-header-1-1(data_header , additional_classes)
+    header.section-header.header-type-1.style-1(class=additional_classes)
+        .container
+            .row
+                .col-lg-10.col-lg-offset-1
+                    h5.heading-icon-1= data_header.subtitle
+                    h2= data_header.title
+                    p.header-caption= data_header.caption
+
+mixin section-header-1-2(data_header , additional_classes)
+    header.section-header.header-type-1.style-2(class=additional_classes)
+        .container
+            .row
+                .col-lg-10
+                    h5= data_header.subtitle
+                    h2.heading-icon-2= data_header.title
+                    p.header-caption= data_header.caption
+
+mixin section-header-1-3(data_header , additional_classes)
+    header.section-header.header-type-1.style-3(class=additional_classes)
+        .container
+            .row
+                .col-lg-10.col-lg-offset-1
+                    h5= data_header.subtitle
+                    h2.heading-icon-2= data_header.title
+                    p.header-caption= data_header.caption
+
+//- __Section header type 2 (more simpler than type 1)
+    Section header type 1 data prototype data={title:"" , caption:""}
+mixin section-header-2-1(data_header , additional_classes)
+    header.section-header.header-type-2.style-1(class=additional_classes)
+        .container
+            h4.heading-hr-1= data_header.title
+            q.header-caption= data_header.caption
+mixin section-header-2-2(data_header , additional_classes)
+    header.section-header.header-type-2.style-2(class=additional_classes)
+        .container
+            .row
+                .col-lg-3.col-md-4.col-xs-12
+                    h1= data_header.title
+                .col-lg-9.col-md-8.col-xs-12
+                    q.header-caption= data_header.caption
+//- __Section header of shop home page
+mixin section-header-shop-homepage(data_header, additional_classes)
+    header.section-header-shop-homepage.pb-75(class=additional_classes)
+        .container
+            h4.heading-border-1
+                span= data_header.title
+            p.font-serif.header-caption.text-center= data_header.caption
+//- GROUP
+    Mixin block of this file is called in page

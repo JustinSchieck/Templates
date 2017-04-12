@@ -1,0 +1,39 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-a3
+//- body>main>
+block header
+//- body>main>
+block main
+    +page-breadcrumb(['Shop','Shopping Cart'])
+    section.no-padding
+        form.cart-page-form
+            .container
+                .row
+                    .col-xs-12
+                        +shop-cart-list
+                    .col-md-7.col-xs-12
+                        .list-button
+                            a(href="shop-checkout.html").normal-btn.normal-btn-main.btn-size-3 CHECKOUT
+                            br
+                            a(href="#").border-btn.border-btn-gray.btn-size-4 CONTINUE SHOPPING
+                        +shop-cart-coupon
+                    .col-lg-4.col-lg-offset-1.col-md-5.col-xs-12
+                        +shop-cart-total
+//- body>main>
+block footer
+    +footer-preset-04
+//- body>
+block after-main

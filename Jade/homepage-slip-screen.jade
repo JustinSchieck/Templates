@@ -1,0 +1,22 @@
+extends module/form.jade
+extends module/form
+block page-config
+    -page_option.body_class = "slip-control-nav"
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = true;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = true;
+    -page_option.magnific_popup = false;
+block before-main
+    +main-nav-slip
+block main
+    +homepage-slip-screen("fullpage-container")
+        +slip-home(Class,"home")
+        +slip-about(Class,"about")
+        +slip-portfolio(Class,"portfolio")
+        +slip-service(Class,"service")
+        +slip-blog(Class,"blog")
+        +slip-contact(Class,"contact")

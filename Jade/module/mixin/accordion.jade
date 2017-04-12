@@ -1,0 +1,92 @@
+//- *************** Accordion 01 ***************-//
+//- Block
+mixin block-accordion-style-01(service, index)
+    -var heading_class = 'collapsed'
+    -if(index == 0)
+        -var panel_class = 'in'
+        -var heading_class = null
+    .panel
+        .panel-heading
+            a(data-toggle="collapse" data-parent="#accordion-service-1" href='#service-item-1-' + index class=heading_class).panel-title
+                h5
+                    i(class=service.icon)
+                    |#{service.title}
+        .panel-collapse.collapse(id='service-item-1-' + index  class=panel_class)
+            .panel-body= service.content
+
+//- Section
+mixin accordion-01
+    .accordion-1
+        #accordion-service-1.panel-group
+            each service , index in data_services
+                +block-accordion-style-01(service , index)
+
+//- *************** Accordion 02 ***************-//
+//- Block
+mixin block-accordion-style-02(service, index)
+    -var heading_class = 'collapsed'
+    -if(index == 0)
+        -var panel_class = 'in'
+        -var heading_class = null
+    .panel
+        .panel-heading
+            a(data-toggle="collapse" data-parent="#accordion-service-2" href='#service-item-2-' + index class=heading_class).panel-title
+                h5
+                    i(class=service.icon)
+                    |#{service.title}
+        .panel-collapse.collapse(id='service-item-2-' + index  class=panel_class)
+            .panel-body= service.content
+
+//- Section
+mixin accordion-02
+    .accordion-1.style-2
+        #accordion-service-2.panel-group
+            each service , index in data_services
+                +block-accordion-style-02(service , index)
+
+//- *************** Accordion 03 ***************-//
+//- Data
+-var data_description = []
+- data_description[0] = {title:"DESCRIPTION", content:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."}
+- data_description[1] = {title:"REVIEWS (3)", content:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."}
+
+//- Block
+mixin block-accordion-style-03(description, index)
+    -var heading_class = 'collapsed'
+    -if(index == 0)
+        -var panel_class = 'in'
+        -var heading_class = null
+    .panel
+        .panel-heading
+            a(data-toggle="collapse" data-parent="#accordion-3" href='#description' + index class=heading_class).panel-title
+                h5=description.title
+        .panel-collapse.collapse(id='description' + index  class=panel_class)
+            .panel-body= description.content
+
+//- Section
+mixin accordion-03
+    .accordion-3
+        #accordion-3.panel-group
+            each description , index in data_description
+                +block-accordion-style-03(description , index)
+
+//- *************** Accordion 04 ***************-//
+//- Block
+mixin block-accordion-style-04(description, index)
+    -var heading_class = 'collapsed'
+    -if(index == 0)
+        -var panel_class = 'in'
+        -var heading_class = null
+    .panel
+        .panel-heading
+            a(data-toggle="collapse" data-parent="#accordion-4" href='#description1' + index class=heading_class).panel-title
+                h5=description.title
+        .panel-collapse.collapse(id='description1' + index  class=panel_class)
+            .panel-body= description.content
+
+//- Section
+mixin accordion-04
+    .accordion-3.style-2
+        #accordion-4.panel-group
+            each description , index in data_description
+                +block-accordion-style-04(description , index)

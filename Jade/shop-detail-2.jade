@@ -1,0 +1,77 @@
+extends module/form
+block page-config
+    -page_option.body_class = "shop-detail-2-page";
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = true;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-a3
+//- body>main>
+block header
+//- body>main>
+block main
+    +page-breadcrumb(['Shop','Products','Facette Watch Bulbul By Kibisi'])
+    section
+        .container
+            .row
+                .col-md-3.hidden-sm.hidden-xs.shop-detail-side-bar
+                    .category-product-wrapper
+                        h5 CATEGORY PRODUCT
+                        +widget-category-product
+                    +widget-recently-viewed
+                    .product-tags
+                        h5 PRODUCT TAGS
+                        a(href="#") CREATIVE
+                        a(href="#") WOODEN CLOCK
+                        a(href="#") TABLE
+                        a(href="#") WATCH
+                        a(href="#") CHAIR
+                        a(href="#") FASHION
+                        a(href="#") BAG
+                        a(href="#") WOOD CHAIR
+                .col-md-9
+                    .row.product-detail-2-wrapper
+                        .col-sm-6.col-xs-12.product-thumbnail-slider-wrapper
+                            +product-thumbnail-slider(data,ID,"zoomed-img-container",Class2)
+                        .col-sm-6.col-xs-12.product-detail-2
+                            h3 FACETTE WATCH BULBUL BY KIBISI
+                            h1.color-main $200
+                            .text 
+                                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            .rating.clearfix
+                                +star-rating(4)
+                                p (1 customer review)
+                            +product-option
+                            .product-detail-others
+                                p SKU:&nbsp;
+                                    a(href="#") 0010
+                                p CATEGORY:&nbsp;
+                                    a(href="#") Other
+                                p TAGS:&nbsp;
+                                    a(href="#") Watch
+                                    |,&nbsp;
+                                    a(href="#") Fashion
+                        .col-xs-12.pt-50
+                            +accordion-04
+                    .row
+                        .col-xs-12.pt-70.pb-70
+                            +shop-detail-orther-link
+                    .row.shop-detail-relate.pb-45
+                        .col-xs-12
+                            h5.mb-40 MAY YOU LIKE
+                        each data in data_shopDetailRelate
+                            .col-md-3.col-sm-6.shop-detail-relate-item-wrapper
+                                +shop-detail-relate-item(data)
+//- body>main>
+block footer
+    +footer-preset-04
+//- body>
+block after-main
+    +quick-view-modal

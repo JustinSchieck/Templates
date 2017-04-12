@@ -1,0 +1,108 @@
+-var data_portfolioBoxSlider = []
+
+-data_portfolioBoxSlider[0] = {imgUrl: "assets/images/portfolio-slider-lg-1.jpg"} 
+-data_portfolioBoxSlider[1] = {imgUrl: "assets/images/portfolio-slider-lg-2.jpg"} 
+-data_portfolioBoxSlider[2] = {imgUrl: "assets/images/portfolio-slider-lg-3.jpg"} 
+-data_portfolioBoxSlider[3] = {imgUrl: "assets/images/portfolio-slider-lg-4.jpg"} 
+-data_portfolioBoxSlider[4] = {imgUrl: "assets/images/portfolio-slider-lg-5.jpg"} 
+-data_portfolioBoxSlider[5] = {imgUrl: "assets/images/portfolio-slider-lg-6.jpg"} 
+-data_portfolioBoxSlider[6] = {imgUrl: "assets/images/portfolio-slider-lg-7.jpg"} 
+
+//- Portfolio Boxed Slider
+
+mixin portfolio-box-slider-item(item)
+    .portfolio-slider-item
+        .item-image
+            img.mfp-item(src=item.imgUrl data-mfp-src=item.imgUrl alt="Portfolio slider image")
+
+mixin portfolio-box-slider(Class2,Class1)
+    div(class=Class1)
+        .portfolio-box-slider.simple-slider.dir-nav(class=Class2)
+            each item in data_portfolioBoxSlider
+                +portfolio-box-slider-item(item)
+
+//- Portfolio Thumbnail Slider
+//- ============================
+
+//- Thumbnail Slider 1
+//- ======
+-var data_portfolioThumbnailSlider_1 = []
+
+-data_portfolioThumbnailSlider_1[0] = {imgLgUrl: "assets/images/portfolio-slider-lg-1.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-1.jpg"}
+
+-data_portfolioThumbnailSlider_1[1] = {imgLgUrl: "assets/images/portfolio-slider-lg-2.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-2.jpg"}
+
+-data_portfolioThumbnailSlider_1[2] = {imgLgUrl: "assets/images/portfolio-slider-lg-3.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-3.jpg"}
+
+-data_portfolioThumbnailSlider_1[3] = {imgLgUrl: "assets/images/portfolio-slider-lg-4.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-4.jpg"}
+
+-data_portfolioThumbnailSlider_1[4] = {imgLgUrl: "assets/images/portfolio-slider-lg-5.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-5.jpg"}
+
+-data_portfolioThumbnailSlider_1[5] = {imgLgUrl: "assets/images/portfolio-slider-lg-6.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-6.jpg"}
+
+-data_portfolioThumbnailSlider_1[6] = {imgLgUrl: "assets/images/portfolio-slider-lg-7.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-7.jpg"}
+
+//- Thumbnail Slider 2
+//- ======
+
+-var data_portfolioThumbnailSlider_2 = []
+
+-data_portfolioThumbnailSlider_2[0] = {imgLgUrl: "assets/images/portfolio-slider-lg-1a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-1a.jpg"}
+
+-data_portfolioThumbnailSlider_2[1] = {imgLgUrl: "assets/images/portfolio-slider-lg-2a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-2a.jpg"}
+
+-data_portfolioThumbnailSlider_2[2] = {imgLgUrl: "assets/images/portfolio-slider-lg-3a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-3a.jpg"}
+
+-data_portfolioThumbnailSlider_2[3] = {imgLgUrl: "assets/images/portfolio-slider-lg-4a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-4a.jpg"}
+
+-data_portfolioThumbnailSlider_2[4] = {imgLgUrl: "assets/images/portfolio-slider-lg-5a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-5a.jpg"}
+
+-data_portfolioThumbnailSlider_2[5] = {imgLgUrl: "assets/images/portfolio-slider-lg-6a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-6a.jpg"}
+
+-data_portfolioThumbnailSlider_2[6] = {imgLgUrl: "assets/images/portfolio-slider-lg-7a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-7a.jpg"}
+
+-data_portfolioThumbnailSlider_2[7] = {imgLgUrl: "assets/images/portfolio-slider-lg-8a.jpg", imgSmUrl: "assets/images/portfolio-slider-sm-8a.jpg"}
+
+//- syn 1
+//- ======
+
+mixin portfolio-thumbnail-slider-syn-1-item(item)
+    .portfolio-slider-item
+        .item-image
+            img.mfp-item(src=item.imgLgUrl data-mfp-src=item.imgLgUrl alt="Portfolio slider image")
+
+//- Section               
+mixin portfolio-thumbnail-slider-syn-1(data,Class)
+    .container
+        .row
+            .col-lg-10.col-lg-offset-1.col-xs-12
+                .portfolio-syn-slider-1.syn-slider-1.dir-nav(class=Class)
+                    each item in data
+                        +portfolio-thumbnail-slider-syn-1-item(item)
+
+//- Syn 2
+//- ======
+
+mixin portfolio-thumbnail-slider-syn-2-item(item)
+    .portfolio-slider-item
+        .item-image.text-center.layout-after
+            img(src=item.imgSmUrl alt="Portfolio slider image")
+
+//- Section
+mixin portfolio-thumbnail-slider-syn-2(data,Class)
+    .portfolio-syn-slider-2-wrapper
+        .container
+            .portfolio-syn-slider-2.syn-slider-2.dir-nav(class=Class)
+                each item in data
+                    +portfolio-thumbnail-slider-syn-2-item(item)
+
+//- Combine
+//- ======
+
+mixin portfolio-thumbnail-slider(data,ID,Class1,Class2)
+    -data = (data === 1) ? data_portfolioThumbnailSlider_1 : data_portfolioThumbnailSlider_2;
+    .portfolio-thumbnail-slider.thumbnail-slider(id=ID)
+        +portfolio-thumbnail-slider-syn-1(data,Class1)
+        +portfolio-thumbnail-slider-syn-2(data,Class2)
+
+

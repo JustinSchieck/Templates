@@ -1,0 +1,123 @@
+//- Create on 05/09/2015
+    Company: OSThemes
+    Author: ANHMTV
+    To create page form
+//- Page option
+-var page_option = {}
+-page_option.body_class = null
+-page_option.count_to = false
+-page_option.count_down = false
+-page_option.slider = false
+-page_option.isotope = true
+-page_option.slip_screen = false
+-page_option.bootstrap_js = false
+-page_option.jquery_ui = false
+-page_option.magnific_popup = true
+
+//- Portfolio filter array
+-var portfolio_filter_array = ['art', 'business' , 'interior' , 'photography' , 'fashion']
+
+-var portfolio_data = []
+-for (var i = 0; i<12 ; i++)
+    -portfolio_data[i] = {}
+    -portfolio_data[i].img = 'assets/images/portfolio-600-' + (i + 1) + '.jpg'
+    -portfolio_data[i].filter = portfolio_filter_array[(i+1)%5] + ' ' + portfolio_filter_array[(i+3)%5]
+
+
+//- Portfolio option
+-var portfolio_option = {};
+-portfolio_option.page_title = 'PORTFOLIO';
+-portfolio_option.type = 'icon-item';
+-portfolio_option.container_class = 'container';
+-portfolio_option.item_class = 'col-md-3 dark-overlay';
+
+doctype html
+include mixin/mixin
+block page-config
+html.no-js
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        title Wolverine - Multipurpose Responsive HTML5 Template
+        meta(name='description', content='Wolverine - Responsive Multipurpose HTML5 Template')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        +favicon
+        //- Bootstrap
+        link(rel="stylesheet" href="vendors/bootstrap/bootstrap.min.css")
+        //- Animate
+        link(rel="stylesheet" href="vendors/animate/animate.min.css")
+        //- Font
+        link(rel="stylesheet" href="assets/fonts/wolverine/styles.css")
+        link(href='//fonts.googleapis.com/css?family=Montserrat:700,400' rel='stylesheet' type='text/css')
+        link(href='//fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic&subset=latin,latin-ext,cyrillic' rel='stylesheet' type='text/css')
+        link(href='//fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900' rel='stylesheet' type='text/css')
+        link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+        //- Slick
+        link(rel="stylesheet" type="text/css" href="vendors/slick/slick.css")
+        //- Fullpage
+        link(rel="stylesheet" type="text/css" href="vendors/full-page/jquery.fullPage.css")
+        //Main stylesheet
+        link(rel="stylesheet" href="assets/css/main.css")
+        //Modernizr js
+        script(src="vendors/modernizr/modernizr-2.8.3-respond-1.4.2.min.js")
+        |<style> .nav-main-menu > li > ul, .nav-shop-cart{display:none;}</style>
+    body(class=page_option.body_class)
+        <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        +main-nav-2-b1
+        main
+            //site header
+            +portfolio-page-header(portfolio_option.page_title)
+            //end site header
+
+            block main
+                section.min-padding.portfolio-section
+                    +portfolio-group-generator(portfolio_option.type , portfolio_data , portfolio_option.container_class , portfolio_option.item_class , false , true , false)
+                    .portfolio-show-more.text-center
+                        a(href="#") SHOW MORE
+            //site footer
+            +footer-preset-02
+            //end site footer
+
+        script(src="vendors/jquery/jquery-1.11.2.min.js")
+        //- Parallax
+        script(src="vendors/stellar/jquery.stellar.min.js")
+        //- Smooth scroll
+        script(src="vendors/smooth-scroll/SmoothScroll.js")
+        if page_option.jquery_ui
+            //- Jquery UI
+            script(src="vendors/jqueryui/jquery-ui.min.js")
+        if page_option.bootstrap_js
+            //- Bootstrap JS
+            script(src="vendors/bootstrap/bootstrap.min.js")
+        if page_option.slider
+            //- Slick
+            script(type="text/javascript" src="vendors/slick/slick.js")
+        if page_option.magnific_popup
+            //- Magnific Popup
+            script(type="text/javascript" src="vendors/magnific-popup/jquery.magnific-popup.js")
+        if page_option.isotope
+            //- Isotope
+            script(src="vendors/isotope/isotope.pkgd.min.js")
+            script(src="vendors/isotope/packery-mode.pkgd.min.js")
+            script(type="text/javascript" src="vendors/img-loaded/imagesloaded.pkgd.min.js")
+        if page_option.slip_screen
+            //- Fullpage.js for slipscreen_layout
+            script(type="text/javascript" src="vendors/full-page/jquery.slimscroll.min.js")
+            script(type="text/javascript" src="vendors/full-page/jquery.easings.min.js")
+            script(type="text/javascript" src="vendors/full-page/jquery.fullPage.js")
+        if page_option.count_to
+            //- CountTo
+            script(src="vendors/countto/jquery.countTo.js")
+        if page_option.count_down
+            //- Countdown
+            script(src="vendors/jquery-countdown/dist/jquery.countdown.js")
+            script(src="vendors/jquery-countdown/dist/jquery.final-countdown.js")
+            script(src="vendors/jquery-countdown/dist/kinetic.js")
+        if page_option.progressbar
+            script(src="vendor/progressbar/dist/prgressbar.min.js")
+        //- Main JS
+        script(src="assets/js/main.js")
+        //- Google analytics
+        script (function(b,o,i,l,e,r){b.GoogleAsnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create','UA-57387972-1');ga('send','pageview');

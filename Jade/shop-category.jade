@@ -1,0 +1,62 @@
+extends module/form
+block page-config
+    -page_option.body_class = "shop-category-page";
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = true;
+    -page_option.magnific_popup = false;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-a3
+//- body>main>
+block header
+//- body>main>
+block main
+    section.no-padding.bgc-gray
+        .container
+            .page-breadcumb.pull-left
+                a(href="#") Shop
+                a(href="#") Category
+            .category-sorting.pull-right.clearfix.hidden-xs
+                p Showing&nbsp;
+                    span.from 1
+                    |–
+                    span.to 12
+                    |&nbsp;of&nbsp;
+                    span.total 25
+                    |&nbsp;results
+                select(name="orderby")
+                    option(value="menu_order") Default sorting
+                    option(value="popularity") Sort by popularity
+                    option(value="rating") Sort by average rating
+                    option(value="date") Sort by newness
+                    option(value="price") Sort by price: low to high
+                    option(value="price-desc") Sort by price: high to low
+    section.no-padding-bottom
+        .container
+            .row
+                .col-md-3.hidden-sm.hidden-xs.shop-category-side-bar
+                    .category-product-wrapper
+                        h5 CATEGORY PRODUCT
+                        +widget-category-product
+                    +widget-filter-by-price
+                    +widget-recently-viewed
+                .col-md-9.col-xs-12
+                    .row.product-listing-2
+                        -for (var i=0; i<12; i++)
+                            .col-md-4.col-sm-6.col-xs-12.shop-product-2-wrapper
+                                +shop-product-2(data_shopProduct_2[i])
+                    .row
+                        .col-xs-12
+                            +pagination-2
+//- body>main>
+block footer
+    +footer-preset-04
+//- body>
+block after-main
+    +quick-view-modal

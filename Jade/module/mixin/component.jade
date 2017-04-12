@@ -1,0 +1,61 @@
+//- favicon
+mixin favicon
+    link(rel="apple-touch-icon", sizes="57x57", href="favicon/apple-touch-icon-57x57.png")
+    link(rel="apple-touch-icon", sizes="60x60", href="favicon/apple-touch-icon-60x60.png")
+    link(rel="apple-touch-icon", sizes="72x72", href="favicon/apple-touch-icon-72x72.png")
+    link(rel="apple-touch-icon", sizes="76x76", href="favicon/apple-touch-icon-76x76.png")
+    link(rel="apple-touch-icon", sizes="114x114", href="favicon/apple-touch-icon-114x114.png")
+    link(rel="apple-touch-icon", sizes="120x120", href="favicon/apple-touch-icon-120x120.png")
+    link(rel="apple-touch-icon", sizes="144x144", href="favicon/apple-touch-icon-144x144.png")
+    link(rel="apple-touch-icon", sizes="152x152", href="favicon/apple-touch-icon-152x152.png")
+    link(rel="apple-touch-icon", sizes="180x180", href="favicon/apple-touch-icon-180x180.png")
+    link(rel="icon", type="image/png", href="favicon/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="favicon/favicon-194x194.png", sizes="194x194")
+    link(rel="icon", type="image/png", href="favicon/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="favicon/android-chrome-192x192.png", sizes="192x192")
+    link(rel="icon", type="image/png", href="favicon/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="favicon/manifest.json")
+    meta(name="msapplication-TileColor", content="#da532c")
+    meta(name="msapplication-TileImage", content="favicon/mstile-144x144.png")
+    meta(name="theme-color", content="#ffffff")
+
+mixin back-to-home
+    .back-to-home
+        a(href="#") BACK TO HOME
+
+mixin star-rating(rated)
+    .star-ratings(data-rating=rated)
+        span &#9733;
+        span &#9733;
+        span &#9733;
+        span &#9733;
+        span &#9733;
+
+mixin page-common-parallax(url)
+    if(url)
+        .page-common-background(data-stellar-background-ratio="0.25" style="background-image: url(#{url});")
+    else
+        .page-common-background(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/header-01.jpg');")
+
+mixin page-breadcrumb(array, noContent)
+    section.no-padding.bgc-gray
+        .container.page-breadcumb(class = noContent ? "no-content" : "")
+            each data in array
+                a(href="#")= data
+
+mixin pagination(CLASS)
+    .pagination(class= CLASS)
+        a.active(href="#") 1
+        a(href="#") 2
+        a(href="#") 3
+        a(href="#") ...
+        a(href="#")
+            i.icon-svg-icon-18
+
+mixin pagination-2(Class)
+    .pagination-2
+        ul
+            li.active: a(href="#") 1
+            li: a(href="#") 2
+            li: a(href="#") 3
+            li: a(href="#"): i.icon-right-open-big

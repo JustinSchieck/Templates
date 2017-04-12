@@ -1,0 +1,44 @@
+-var data_coverBoxExample = []
+
+-data_coverBoxExample[0] = {}
+-data_coverBoxExample[0].imgUrl = "assets/images/coverbox-item-01.jpg"
+-data_coverBoxExample[0].subTitle = "WE HAVE"
+-data_coverBoxExample[0].title = "SUPER RESPONSIVE"
+-data_coverBoxExample[0].text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam..."
+
+-data_coverBoxExample[1] = {}
+-data_coverBoxExample[1].imgUrl = "assets/images/coverbox-item-02.jpg"
+-data_coverBoxExample[1].subTitle = data_coverBoxExample[0].subTitle
+-data_coverBoxExample[1].title = data_coverBoxExample[0].title
+-data_coverBoxExample[1].text = data_coverBoxExample[0].text
+
+-data_coverBoxExample[2] = {}
+-data_coverBoxExample[2].imgUrl = "assets/images/coverbox-item-03.jpg"
+-data_coverBoxExample[2].subTitle = data_coverBoxExample[0].subTitle
+-data_coverBoxExample[2].title = data_coverBoxExample[0].title
+-data_coverBoxExample[2].text = data_coverBoxExample[0].text
+
+-data_coverBoxExample[3] = {}
+-data_coverBoxExample[3].imgUrl = "assets/images/coverbox-item-04.jpg"
+-data_coverBoxExample[3].subTitle = data_coverBoxExample[0].subTitle
+-data_coverBoxExample[3].title = data_coverBoxExample[0].title
+-data_coverBoxExample[3].text = data_coverBoxExample[0].text
+
+mixin cover-box-shortcode-item(item)
+    .cover-box
+        div
+            img(src=item.imgUrl alt="Cover box image example")
+            .cover-box-content
+                .cell-vertical-wrapper
+                    .cell-middle
+                        .content-wrapper
+                            h6= item.subTitle
+                            h5= item.title
+                            p= item.text
+                            a(href="#").normal-btn.normal-btn-main.btn-size-6 
+                                |READ MORE
+mixin cover-box-shortcode
+    .container
+        .row.cover-box-shortcode.cover-box-container(data-sm=1 data-md=2)
+            each item in data_coverBoxExample
+                +cover-box-shortcode-item(item)

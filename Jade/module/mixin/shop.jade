@@ -1,0 +1,95 @@
+//- Data Shop -//
+-var data_shopProduct = []
+- data_shopProduct[0] = {image:"assets/images/shop-item-01.jpg", content:"Pillow Black Wool Handmade", oldprice:"$300", price:"$210"}
+- data_shopProduct[1] = {image:"assets/images/shop-item-02.jpg", content:"Pillow Black Wool Handmade", price:"$300"}
+- data_shopProduct[2] = {image:"assets/images/shop-item-03.jpg", content:"Pillow Black Wool Handmade", oldprice:"$280", price:"$224"}
+- data_shopProduct[3] = {image:"assets/images/shop-item-04.jpg", content:"Pillow Black Wool Handmade", price:"$200"}
+- data_shopProduct[4] = {image:"assets/images/shop-item-05.jpg", content:"Pillow Black Wool Handmade", price:"$300"}
+- data_shopProduct[5] = {image:"assets/images/shop-item-06.jpg", content:"Pillow Black Wool Handmade", oldprice:"$300", price:"$210"}
+- data_shopProduct[6] = {image:"assets/images/shop-item-07.jpg", content:"Pillow Black Wool Handmade", price:"$200"}
+- data_shopProduct[7] = {image:"assets/images/shop-item-08.jpg", content:"Pillow Black Wool Handmade", price:"$300"}
+
+//- Block Shop 01 -//
+mixin shop-product-1(shop)
+    .shop-product-1
+        .image
+            img(src=shop.image alt="Shop Product")
+            .overlay
+                ul
+                    li
+                        a(href="#" data-toggle="modal" data-target="#product-quick-view").quick-view: i.icon-search-icon
+        .info.clearfix
+            a.name(href="shop-detail-1.html")=shop.content
+            a.add-to-cart(href="shop-cart.html"): i.icon-svg-icon-16
+            .price
+                if shop.oldprice 
+                    del=shop.oldprice
+                span=shop.price
+
+//- =================
+
+//- Data Shop 2 -//
+-var data_shopProduct_2 = []
+- data_shopProduct_2[0] = {image:"assets/images/shop-product-1.png", content:"Cabinet News Paper",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2[1] = {image:"assets/images/shop-product-2.jpg", content:"Dining Table",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2[2] = {image:"assets/images/shop-product-3.jpg", content:"Chair For Reading Room",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2[3] = {image:"assets/images/shop-product-4.jpg", content:"BoldRoll Top Bag",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2[4] = {image:"assets/images/shop-product-5.png", content:"Iron Kettle Nambu Tekki",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2[5] = {image:"assets/images/shop-product-6.jpg", content:"Wall Clock",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2[6] = {image:"assets/images/shop-product-7.jpg", content:"Extra Watch Normal",oldprice:"$300", price:"$210", saleoff:"-30%",rated: "4"}
+- data_shopProduct_2[7] = {image:"assets/images/shop-product-8.jpg", content:"Wooden Wall Clock",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2[8] = {image:"assets/images/shop-product-9.png", content:"Vilmar Chair",oldprice:"", price:"$200", saleoff:"",rated: "3"}
+- data_shopProduct_2[9] = {image:"assets/images/shop-product-10.jpg", content:"Pillow Wool Handmade",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2[10] = {image:"assets/images/shop-product-11.jpg", content:"Felt Pods Flip Tumble Gray",oldprice:"", price:"$200", saleoff:"",rated: "5"}
+- data_shopProduct_2[11] = {image:"assets/images/shop-product-12.jpg", content:"Magne Hinge Glasses",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2[12] = {image:"assets/images/shop-product-13.jpg", content:"Maiaimi Mini Lather Bag ",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2[13] = {image:"assets/images/shop-product-14.jpg", content:"Roald Backpack",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2[14] = {image:"assets/images/shop-product-15.png", content:"Vilmar Chair Black",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2[15] = {image:"assets/images/shop-product-16.jpg", content:"Maiaimi Mini Lather Bag",oldprice:"", price:"$200", saleoff:"",rated: ""}
+//- Data Shop 2 Caro -//
+-var data_shopProduct_2_caro = []
+- data_shopProduct_2_caro[0] = {image:"assets/images/shop-product-1.png", content:"Cabinet News Paper",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2_caro[1] = {image:"assets/images/shop-product-2.jpg", content:"Dining Table",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2_caro[2] = {image:"assets/images/shop-product-3a.jpg", content:"Chair For Reading Room",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2_caro[3] = {image:"assets/images/shop-product-4.jpg", content:"BoldRoll Top Bag",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2_caro[4] = {image:"assets/images/shop-product-5.png", content:"Iron Kettle Nambu Tekki",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2_caro[5] = {image:"assets/images/shop-product-6.jpg", content:"Wall Clock",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2_caro[6] = {image:"assets/images/shop-product-7a.jpg", content:"Extra Watch Normal",oldprice:"$300", price:"$210", saleoff:"-30%",rated: "4"}
+- data_shopProduct_2_caro[7] = {image:"assets/images/shop-product-8.jpg", content:"Wooden Wall Clock",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2_caro[8] = {image:"assets/images/shop-product-9.png", content:"Vilmar Chair",oldprice:"", price:"$200", saleoff:"",rated: "3"}
+- data_shopProduct_2_caro[9] = {image:"assets/images/shop-product-10.jpg", content:"Pillow Wool Handmade",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2_caro[10] = {image:"assets/images/shop-product-11a.jpg", content:"Felt Pods Flip Tumble Gray",oldprice:"", price:"$200", saleoff:"",rated: "5"}
+- data_shopProduct_2_caro[11] = {image:"assets/images/shop-product-12.jpg", content:"Magne Hinge Glasses",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2_caro[12] = {image:"assets/images/shop-product-13a.jpg", content:"Maiaimi Mini Lather Bag ",oldprice:"", price:"$200", saleoff:"",rated: "4"}
+- data_shopProduct_2_caro[13] = {image:"assets/images/shop-product-14.jpg", content:"Roald Backpack",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2_caro[14] = {image:"assets/images/shop-product-15.png", content:"Vilmar Chair Black",oldprice:"", price:"$200", saleoff:"",rated: ""}
+- data_shopProduct_2_caro[15] = {image:"assets/images/shop-product-16.jpg", content:"Maiaimi Mini Lather Bag",oldprice:"", price:"$200", saleoff:"",rated: ""}
+
+//- Block Shop 02 -//
+mixin shop-product-2(shop)
+    .shop-product-2
+        .image
+            .saleoff
+                if shop.saleoff 
+                    p=shop.saleoff
+                else 
+                    p(style="display:none;")
+            img(src=shop.image alt="Shop Product")
+            .overlay.text-center
+                ul
+                    li.clearfix
+                        a(href="#" data-toggle="modal" data-target="#product-quick-view").quick-view: i.icon-search-icon
+                        a(href="shop-cart.html").add-to-cart: i.icon-svg-icon-15
+        .info
+            a(href="shop-detail-2.html")=shop.content
+            .price
+                if shop.oldprice 
+                    del=shop.oldprice
+                else 
+                    del(style="display:none;")
+                span=shop.price
+            if shop.rated
+                +star-rating(shop.rated)
+            else
+                +star-rating(0)
+

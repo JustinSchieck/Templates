@@ -1,0 +1,87 @@
+mixin checkout-account
+    .checkout-account
+        h5 CUSTOMER INFORMATION
+        .log-in
+            span Have an account?
+            a(href="#") Log in
+        .sign-up
+            p Enter your name and email address
+            .input-wrapper
+                .name
+                    input(type="text" name="information" placeholder="Name")
+                .email
+                    input(type="email" name="information" placeholder="Email")
+        .question
+            p Do you have an account?
+            label
+                input(type="radio" name="boolean-0" value="no" checked)
+                span
+                    i.radio-button
+                    span No
+                    i (You can choose to creat an account later)
+            br
+            label
+                input(type="radio" name="boolean-0" value="yes")
+                span
+                    i.radio-button
+                    span Yes
+        .separator-5
+
+mixin checkout-shipping-address
+    .checkout-shipping-address
+        h5 SHIPPING ADDRESS
+        .content
+            div
+                span Address :
+                input(type="text" name="shipping")
+            div
+                span City :
+                input(type="text" name="shipping")
+            div
+                span Country :
+                input(type="text" name="shipping")
+            div
+                span Postal code :
+                input(type="text" name="shipping")
+            div
+                span Phone :
+                input(type="text" name="shipping")
+
+mixin checkout-payment
+    .checkout-payment
+        h4 BILLING &amp; PAYMENT
+        .payment-credit-card
+            .item-head
+                label
+                    input(type="radio" name="payment" value="type1" checked)
+                    span
+                        i.radio-button
+                        span Credit card
+                span.logo
+                    img(src="assets/images/billing1.jpg", alt="Logo")
+            .item-body
+                div
+                    p Card number
+                        span :
+                    h5 0123789789
+                div
+                    p Name on card
+                        span :
+                    h5 JEAN HOMESOND
+                div
+                    p Expiry
+                        span :
+                    h5 01   /   2015
+        .payment-paypal
+            label
+                input(type="radio" name="payment" value="type2")
+                span
+                    i.radio-button
+                    span
+                        img(src="assets/images/paypal.jpg", alt="Logo")
+            span.logo
+                img(src="assets/images/billing2.jpg", alt="Logo")
+        .button-wrapper.clearfix
+            a.border-btn.border-btn-gray.btn-size-4(href="shop-successfully.html") SUBMIT
+
+

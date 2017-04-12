@@ -1,0 +1,49 @@
+mixin shop-detail-orther-link(Class)
+    .shop-detail-orther-link(class=Class)
+        a(href="#").border-btn.border-btn-lightgray.btn-size-3 BACK TO SHOP
+        br
+        a(href="shop-checkout.html").normal-btn.normal-btn-gray.btn-size-3 CHECKOUT
+
+//- Shop detail relate
+-var data_shopDetailRelate = []
+-data_shopDetailRelate[0]= {image:"assets/images/shop-product-2.jpg"}
+-data_shopDetailRelate[1]= {image:"assets/images/shop-product-4.jpg"}
+-data_shopDetailRelate[2]= {image:"assets/images/shop-product-6.jpg"}
+-data_shopDetailRelate[3]= {image:"assets/images/shop-product-10.jpg"}
+
+mixin shop-detail-relate-item(shop)
+    .shop-detail-relate-item
+        .image
+            img(src=shop.image alt="Shop Product")
+            .overlay
+                ul
+                    li
+                        a(href="#" data-toggle="modal" data-target="#product-quick-view").quick-view: i.icon-search-icon
+
+mixin quick-view-modal
+    .modal.fade.product-quick-view#product-quick-view(role="dialog")
+        .modal-dialog.modal-lg
+            .modal-content
+                .modal-body
+                    button(type="button" data-dismiss="modal").close
+                    .content.clearfix
+                        .product-thumbnail-slider-wrapper
+                            +product-thumbnail-slider
+                        .product-detail-2
+                            h3 FACETTE WATCH BULBUL BY KIBISI
+                            h1.color-main $200
+                            .text 
+                                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            .rating.clearfix
+                                +star-rating(4)
+                                p (1 customer review)
+                            +product-option
+                            .product-detail-others
+                                p SKU:&nbsp;
+                                    a(href="#") 0010
+                                p CATEGORY:&nbsp;
+                                    a(href="#") Other
+                                p TAGS:&nbsp;
+                                    a(href="#") Watch
+                                    |,&nbsp;
+                                    a(href="#") Fashion

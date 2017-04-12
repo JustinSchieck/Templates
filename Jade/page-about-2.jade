@@ -1,0 +1,40 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+    -page_option.progressbar = true;
+block page-data
+    -var data_team_header ={title : "MEET OUR TEAM" , caption :"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    -var data_skills_header = { title: "WE ARE GOOD AT" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+block before-main
+    +main-nav-2-a3
+block header
+    header.site-header
+    +common-static-header-2('ABOUT US')
+block main
+    section
+        +section-header-2-1(data_team_header)
+        +team-section-01
+    section.no-padding
+        +page-about-no-header
+    section
+        +section-header-2-1(data_skills_header)
+        .container
+            .row
+                .col-md-6.col-xs-12(style="margin-bottom: 50px")
+                    +accordion-01
+                .col-md-6.progressbar-wrapper
+                    +group-progressbar('fill-text')
+    section.one-child(style="background: #444")
+        +brand-carousel-2
+block footer
+    +footer-preset-02
+block after-main
+           

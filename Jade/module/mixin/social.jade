@@ -1,0 +1,100 @@
+//- 4 Icon
+mixin social-01(icon1,icon2,icon3,icon4)
+    ul.social-01
+        li
+            a(href="#"): i.fa(class=icon1)
+        li
+            a(href="#"): i.fa(class=icon2)
+        li
+            a(href="#"): i.fa(class=icon3) 
+        li
+            a(href="#"): i.fa(class=icon4)
+
+mixin social-default-01
+    ul.social-01
+        li
+            a(href="#"): i.fa(class='fa-twitter')
+        li
+            a(href="#"): i.fa(class='fa-facebook')
+        li
+            a(href="#"): i.fa(class='fa-google-plus') 
+        li
+            a(href="#"): i.fa(class='fa-pinterest-p')
+
+//- 6 Icon
+mixin social-02(icon1,icon2,icon3,icon4,icon5,icon6)
+    ul.social-02
+        li
+            a(href="#"): i.fa(class=icon1)
+        li
+            a(href="#"): i.fa(class=icon2)
+        li
+            a(href="#"): i.fa(class=icon3) 
+        li
+            a(href="#"): i.fa(class=icon4)
+        li
+            a(href="#"): i.fa(class=icon5)
+        li
+            a(href="#"): i.fa(class=icon6)
+
+mixin social-default-02
+    ul.social-02
+        li
+            a(href="#"): i.fa(class='fa-twitter')
+        li
+            a(href="#"): i.fa(class='fa-facebook')
+        li
+            a(href="#"): i.fa(class='fa-google-plus') 
+        li
+            a(href="#"): i.fa(class='fa-pinterest-p')
+        li
+            a(href="#"): i.fa(class='fa-tumblr')
+        li
+            a(href="#"): i.fa(class='fa-heart')
+
+//- Icon + Text
+//- =============================
+//- 2 types (you can choose one):
+//- ===
+//- Type 1 :
+-var data_social = []
+- data_social[0] = {icon1: "fa-facebook",name1: "FACEBOOK",icon2: "fa-twitter",name2: "TWITTER",icon3: "fa-pinterest-p",name3: "PINTEREST",icon4: "fa-instagram",name4: "INSTAGRAM"}
+mixin social-03(social)
+    ul.social-03
+        li
+            a(href="#"): i.fa(class= social.icon1)= social.name1
+        li
+            a(href="#"): i.fa(class= social.icon2)= social.name2
+        li
+            a(href="#"): i.fa(class= social.icon3)= social.name3
+        li
+            a(href="#"): i.fa(class= social.icon4)= social.name4
+//- Example:
+//- +social-03(data_social[0])
+
+//- ===
+//- Type 2:
+mixin social-03-item(icon,name)
+        li
+            a(href="#"): i.fa(class=icon)= name
+
+//- Require "social-03-item"
+mixin social-03-type-2
+    ul.social-03
+        block
+//- Example:
+//- +social-03-type-2
+//-     +social-03-item("fa-facebook","FACEBOOK")
+//-     +social-03-item("fa-twitter","TWITTER")
+
+//- ===
+//-============================
+
+//- Text
+mixin social-04
+    .social-04
+        a(href="#") FACEBOOK
+        a(href="#") TWITTER
+        a(href="#") PINTEREST
+        a(href="#") INSTAGRAM
+        a(href="#") GMAIL

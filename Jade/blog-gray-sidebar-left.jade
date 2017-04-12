@@ -1,0 +1,38 @@
+extends module/form
+block page-config
+    -page_option.body_class = 'bgc-gray';
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-b1
+//- body>main>
+block header
+    +common-static-header('BLOG LIST')
+//- body>main>
+block main
+    section.no-padding-bottom
+        .container
+            .row
+                aside.col-md-4.hidden-sm.hidden-xs
+                    +widget-author-style-1
+                    +widget-blog-categories
+                    +widget-blog-related
+                    +widget-instagram
+                    +widget-banner
+                    +widget-search
+                .col-md-8.col-xs-12
+                    +group-post-index-style-2
+                    +pagination
+//- body>main>
+block footer
+    +footer-preset-05
+//- body>
+block after-main

@@ -1,0 +1,53 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_lastestItems_header = { title: "LATEST ITEMS" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+    - var data_suggestItems_header = { title: "SPECIAL OFFERS" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+    +main-nav-2-b2
+//- body>main>
+block header
+    header.site-header
+        +home-fw-slider-5-2
+//- body>main>
+block main
+    section.no-padding-bottom.pt-40
+        +group-shop-homepage-banner
+    section.no-padding-bottom.pt-55
+        +section-header-shop-homepage(data_lastestItems_header)
+        .container
+            .row.product-listing-2
+                -for (var i=0; i<8; i++)
+                    .col-md-3.col-sm-6.col-xs-12.shop-product-2-wrapper
+                        +shop-product-2(data_shopProduct_2[i])
+    section.no-padding-bottom
+        +section-header-shop-homepage(data_suggestItems_header)
+        .container
+            .row.product-listing-2
+                -for (var i=8; i<16; i++)
+                    .col-md-3.col-sm-6.col-xs-12.shop-product-2-wrapper
+                        +shop-product-2(data_shopProduct_2[i])
+            .row
+                .col-xs-12.pt-40
+                    .separator-5
+    section.no-padding-bottom
+        .container
+            +shop-homepage-other-links
+    section.pb-60
+        +call-to-action-2
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main
+    +quick-view-modal

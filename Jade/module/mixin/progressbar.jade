@@ -1,0 +1,67 @@
+//- Data
+
+-var data_progressbar = []
+-data_progressbar[0] = {title: "GRAPHIC DESIGN" , value : "60"}
+-data_progressbar[1] = {title: "RESEARCH" , value : "74"}
+-data_progressbar[2] = {title: "IDENTITY" , value : "95"}
+-data_progressbar[3] = {title: "WEB DEVELOPMENT" , value : "88"}
+-data_progressbar[4] = {title: "PHOTOGRAPHY" , value : "88"}
+
+- var data_vertical_progressbar = []
+- data_vertical_progressbar[0] ={title:'IDEA' , value: '70'}
+- data_vertical_progressbar[1] ={title:'USER' , value: '42'}
+- data_vertical_progressbar[2] ={title:'LOGO' , value: '60'}
+- data_vertical_progressbar[3] ={title:'SHOP' , value: '80'}
+- data_vertical_progressbar[4] ={title:'TEST' , value: '69'}
+- data_vertical_progressbar[5] ={title:'DESIGN' , value: '81'}
+- data_vertical_progressbar[6] ={title:'STAFF' , value: '90'}
+- data_vertical_progressbar[7] ={title:'USER' , value: '79'}
+- data_vertical_progressbar[8] ={title:'SHOP' , value: '60'}
+- data_vertical_progressbar[9] ={title:'BLOG' , value: '65'}
+- data_vertical_progressbar[10] ={title:'IDEA' , value: '68'}
+- data_vertical_progressbar[11] ={title:'LOGO' , value: '51'}
+
+//- Block
+mixin block-progressbar-basic(data)
+    .progressbar-container.basic
+        h5.progressbar-title= data.title
+        .progressbar(role="progressbar" data-transitiongoal=data.value)
+
+mixin block-progressbar-fill-text(data)
+    .progressbar-container.fill-text
+        h5.progressbar-title= data.title
+        .progressbar(role="progressbar" data-transitiongoal=data.value)
+            h5.progressbar-title= data.title
+
+mixin block-progressbar-tooltip(data)
+    .progressbar-container.style-tooltip
+        h5.progressbar-title= data.title
+        .progressbar(role="progressbar" data-transitiongoal=data.value)
+
+mixin block-vertical-progressbar(data , block_class)
+    .progressbar-container.vertical.small(class=block_class)
+        .progressbar(role="progressbar" data-transitiongoal=data.value)
+        h5.progressbar-title= data.title
+//- Group
+
+mixin group-progressbar(style)
+    case style
+        when 'basic'
+            each data in data_progressbar
+                +block-progressbar-basic(data)
+        when 'fill-text'
+            each data in data_progressbar
+                +block-progressbar-fill-text(data)
+        when 'tooltip'
+            each data in data_progressbar
+                +block-progressbar-tooltip(data)
+        default
+            each data in data_progressbar
+                +block-progressbar-basic(data)
+
+mixin group-vertical-progressbar(block_class)
+    .container.progressbar-wrapper
+        .row
+            each data in data_vertical_progressbar
+                .col-md-1.col-sm-2.col-xs-3
+                    +block-vertical-progressbar(data , block_class)

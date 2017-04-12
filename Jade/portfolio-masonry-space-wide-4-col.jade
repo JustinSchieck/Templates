@@ -1,0 +1,29 @@
+extends module/form-portfolio
+block page-config
+    -portfolio_data = []
+    -for (var i = 0; i<16 ; i++)
+        -portfolio_data[i] = {}
+        -portfolio_data[i].title = 'CREATIVELY DESIGNED'
+        -portfolio_data[i].caption = 'Lorem ipsum dolor sit'
+        -portfolio_data[i].filter = portfolio_filter_array[(i+1)%5] + ' ' + portfolio_filter_array[(i+3)%5]
+    -var tmp = 0
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (1) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (1) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (2) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (2) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (3) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (3) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (4) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (4) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (5) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (6) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (5) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (6) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (7) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-600-' + (8) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (8) + '.jpg'
+    -portfolio_data[tmp++].img = 'assets/images/portfolio-tas-' + (7) + '.jpg'
+    -portfolio_option.page_title = 'PORTFOLIO';
+    -portfolio_option.type = 'item-2';
+    -portfolio_option.container_class = 'container-fluid';
+    -portfolio_option.item_class = 'col-lg-3 col-md-4 col-sm-6 col-xs-12';

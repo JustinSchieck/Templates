@@ -1,0 +1,29 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-b1
+//- body>main>
+block header
+    +common-static-header('BLOG LIST')
+//- body>main>
+block main
+    section.no-padding-bottom
+        .container
+            +group-masonry-post-index-style-2
+            +pagination
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main

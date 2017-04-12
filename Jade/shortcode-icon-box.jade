@@ -1,0 +1,29 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    header.site-header
+    +common-static-header('ICON BOX')
+block main
+    section.bgc-light
+        +service-section-03
+    section.bgc-gray
+        +service-section-03
+    section.no-padding-bottom
+        +service-section-05
+    section.one-child
+        +service-section-04
+block footer
+    +footer-preset-02
+block after-main

@@ -1,0 +1,58 @@
+mixin shop-side-cart-fixed
+    .shop-side-cart-fixed
+        a(href="#")
+            .shop-side-cart(data-content="2")
+                i.icon-svg-icon-16
+
+mixin shop-homepage-other-links
+    .shop-homepage-other-links
+        a(href="#").border-btn.border-btn-lightgray.btn-size-3 NEWSLETTER
+        br
+        a(href="shop-cart").normal-btn.normal-btn-gray.btn-size-3 GO TO CART
+
+//- Shop homepage banner
+//- =========
+
+//- 1
+-var data_shopHpBanner = []
+-data_shopHpBanner[0] = {img:'assets/images/shop-hp-banner-1.jpg',icon:"icon-indians-icons-05" , title:'SUPER RESPONSIVE'}
+-data_shopHpBanner[1] = {img:'assets/images/shop-hp-banner-2.jpg',icon:"icon-indians-icons-08", title:'BEAUTIFULL THEME'}
+-data_shopHpBanner[2] = {img:'assets/images/shop-hp-banner-3.jpg',icon:"icon-indians-icons-02", title:'BUY NOW'}
+
+mixin block-shop-homepage-banner(data)
+    .shop-homepage-banner-wrapper
+        a(href="#")
+            .shop-homepage-banner
+                img(src=data.img alt="banner")
+                .overlay
+                    .cell-vertical-wrapper
+                        .cell-middle.overlay-content.text-center
+                            i(class=data.icon)
+                            h5= data.title
+
+mixin group-shop-homepage-banner
+    .container
+        .row
+            .col-md-4.col-sm-6.col-xs-12
+                +block-shop-homepage-banner(data_shopHpBanner[0])
+            .col-md-4.col-sm-6.col-xs-12
+                +block-shop-homepage-banner(data_shopHpBanner[1])
+            .col-md-4.col-xs-12
+                +block-shop-homepage-banner(data_shopHpBanner[2])
+
+//- 2
+-var data_shopHpBanner_2 = []
+-data_shopHpBanner_2[0] = {url:'assets/images/shop-hp-banner-4.jpg'}
+-data_shopHpBanner_2[1] = {url:'assets/images/shop-hp-banner-5.jpg'}
+
+mixin block-shop-homepage-banner-2(data)
+    .shop-homepage-banner-2(style="background-image: url(#{data.url});")
+        a(href="#")
+            .overlay
+
+mixin shop-homepage-banner-2
+    .container
+        .row
+            each data in data_shopHpBanner_2
+                .col-sm-6.col-xs-12.shop-homepage-banner-wrapper-2
+                    +block-shop-homepage-banner-2(data)

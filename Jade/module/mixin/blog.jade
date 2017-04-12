@@ -1,0 +1,124 @@
+//- Data blog-header
+
+//- Lastest blog post
+- var data_lastestBlogPost_header = {subtitle:"CREATIVITY & DARINGS" , title: "LASTED POSTS FROM OUR BLOG" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- ===
+//- Blog post
+- var data_blogPost_header = []
+
+- data_blogPost_header[0] = {}
+- data_blogPost_header[0].title = "FROM OUR BLOG"
+- data_blogPost_header[0].caption = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.'
+
+
+//- ==========================
+//- Lastest blog post
+//- ======
+
+//- DATA
+//- ===
+- var data_lastestBlogPost = []
+
+- data_lastestBlogPost[0] = {imgUrl: "assets/images/lated-post-1.jpg",tag: "FASHIONS",date: "13.04.15",title: "OFFICIAL SITE OF THE EAGLES" }
+
+- data_lastestBlogPost[1] = {imgUrl: "assets/images/lated-post-2.jpg",tag: "FASHIONS",date: "13.04.15",title: "STONE MOUNTAIN THEME PARK"}
+
+- data_lastestBlogPost[2] = {imgUrl: "assets/images/lated-post-3.jpg",tag: "FASHIONS",date: "13.04.15",title: "GREAT SMOKY MOUNTAINS NATIONAL PARK"}
+
+//- BLOCK
+mixin blog-item-01(post)
+    .blog-item.section-block-p
+        a(href="#")
+            .item-image.layout-after
+                img(src= post.imgUrl, alt="Post Image")
+        p
+            a(href="#")= post.tag
+            |&nbsp;/&nbsp;
+            span= post.date
+        h5
+            a(href="#")= post.title
+
+//- SECTION
+mixin blog-lastest-post
+    .blog-lastest-post
+        .container
+            .row
+                each item in data_lastestBlogPost
+                    .col-md-4.col-xs-12
+                        +blog-item-01(item)
+//- ==========================
+//- blog-post-01 (Corporate)
+//- DATA
+- var data_blogPost = []
+
+- data_blogPost[0] = {}
+- data_blogPost[0].imgUrl = "assets/images/post-img1.jpg"
+- data_blogPost[0].date = "13/04/2015"
+- data_blogPost[0].title = "OFFICIAL SITE OF THE EAGLES"
+- data_blogPost[0].text = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex.'
+
+- data_blogPost[1] = {}
+- data_blogPost[1].imgUrl = "assets/images/post-img2.jpg"
+- data_blogPost[1].date = data_blogPost[0].date 
+- data_blogPost[1].title = "STONE MOUNTAIN THEME PARK" 
+- data_blogPost[1].text = data_blogPost[0].text
+
+- data_blogPost[2] = {}
+- data_blogPost[2].imgUrl = "assets/images/post-img3.jpg"
+- data_blogPost[2].date = data_blogPost[0].date 
+- data_blogPost[2].title = "OFFICIAL SITE OF THE EAGLES" 
+- data_blogPost[2].text = data_blogPost[0].text
+
+- data_blogPost[3] = {}
+- data_blogPost[3].imgUrl = "assets/images/post-img4.jpg"
+- data_blogPost[3].date = data_blogPost[0].date 
+- data_blogPost[3].title = "STONE MOUNTAIN THEME PARK" 
+- data_blogPost[3].text = data_blogPost[0].text
+
+//- BLOCK
+mixin blog-index-corporate-item(post)
+    .blog-index-corporate-item
+        a(href="#").item-image
+            img(src= post.imgUrl, alt="Post Image")
+        .item-content.text-center
+            h6= post.date
+            h5.heading-icon-2: a(href="#")= post.title
+            p= post.text
+
+//- SECTION
+mixin blog-index-corporate
+    .blog-index-corporate.section-block
+        .container-fluid.remove-col-padding
+            .row
+                each data in data_blogPost
+                    +blog-index-corporate-item(data)
+
+//- *************** blog style 3 *****************-//
+//- Data
+-var data_blogPost2 = []
+- data_blogPost2[0] = {image:'assets/images/our-blog-01.jpg', date: data_blogPost[0].date, title: data_blogPost[1].title}
+- data_blogPost2[1] = {image:'assets/images/our-blog-02.jpg', date: data_blogPost[0].date, title: data_blogPost[1].title}
+- data_blogPost2[2] = {image:'assets/images/our-blog-03.jpg', date: data_blogPost[0].date, title: data_blogPost[1].title}
+- data_blogPost2[3] = {image:'assets/images/our-blog-04.jpg', date: data_blogPost[0].date, title: data_blogPost[1].title}
+- data_blogPost2[4] = {image:'assets/images/our-blog-05.jpg', date: data_blogPost[0].date, title: data_blogPost[1].title}
+- data_blogPost2[5] = {image:'assets/images/our-blog-06.jpg', date: data_blogPost[0].date, title: data_blogPost[1].title}
+
+//- Block
+mixin blog-item-02(post2)
+        .blog-image
+            img(src=post2.image)
+            .overlay
+                .cell-vertical-wrapper
+                    .blog-content.text-center.cell-middle
+                        h6= post2.date
+                        h2= post2.title
+                        a(href="").normal-btn.normal-btn-darkgray.btn-size-5 READ MORE
+
+//- Section
+mixin blog-post-02
+    .blog-post-02.text-center
+        .container-fluid(style="max-width:1581px")
+            .row
+                .blog-item-02
+                    each post2 in data_blogPost2
+                        +blog-item-02(post2)

@@ -1,0 +1,45 @@
+extends module/form
+block page-config
+    -page_option.body_class = "shop-detail-1-page";
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = true;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-a3
+//- body>main>
+block header
+//- body>main>
+block main
+    +page-breadcrumb(['Shop','Products','Facette Watch Bulbul By Kibisi'])
+    section.no-padding
+        .container
+            .row
+                .col-lg-7.col-sm-6.col-xs-12
+                    +product-image-slider("zoomed-img-container animation-zoom")
+                .col-lg-5.col-sm-6.col-xs-12.product-detail-1
+                    h3 FACETTE WATCH BULBUL BY KIBISI
+                    h1.color-main $200
+                    +product-option
+                    +accordion-04
+            .row
+                .col-xs-12
+                    +shop-detail-orther-link
+                    .separator-5
+    section.no-padding
+        .shop-detail-relate
+            .container
+                h5 MAY YOU LIKE
+                +shop-gallery-carousel(data_shopGallery_1,"caro")
+//- body>main>
+block footer
+    +footer-preset-04
+//- body>
+block after-main
+    +quick-view-modal

@@ -1,0 +1,30 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+block before-main
+    +main-nav-2-b1
+block header
+    +common-static-header('TESTIMONIALS')
+block main
+    section.one-child
+        +testimonial-02
+    section.one-child
+        .parallax-bg.background-default(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img1.jpg');")
+        +testimonial-01(Class,"hr-light")
+    section.one-child
+        +testimonial-02("style-2")
+    section
+        .parallax-bg.background-default(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img2.jpg');")
+        +testimonial-01
+block footer
+    +footer-preset-03
+block after-main

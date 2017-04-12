@@ -1,0 +1,31 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = false;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = false;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    -var data_team_header ={title : "MEET OUR TEAM" , caption :'"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."'}
+block before-main
+    +main-nav-2-b1
+block header
+    +common-static-header('TEAM')
+block main
+    section.no-padding-bottom
+        +section-header-2-2(data_team_header)
+    section
+        +team-section-01
+    .separator-6.clearfix
+    section
+        +team-section-02
+    .separator-6.clearfix
+    section.ex-layout
+        +team-section-01
+block footer
+    +footer-preset-03
+block after-main

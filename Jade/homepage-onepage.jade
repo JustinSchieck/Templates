@@ -1,0 +1,56 @@
+extends module/form
+
+block page-config
+    -page_option.body_class = "onepage-page";
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_about_header = { subtitle: "WHO WE ARE" , title: "A STORY ABOUT US" , caption:"Wolverine Creative is an award winning digital media, web design and PR agency. In 2012, Wolverine Creative was recognized as one of the top 3 Advertising Agencies in Wisconsin by readers of Corporate Report Wisconsin."}
+    - var data_portfolio_header = { subtitle: "WHAT WE WORK" , title: "ENJOY OUR PORTFOLIO" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+    - var data_service_header = { subtitle: "CREATIVITY & DARINGS" , title: "CHECK OUT OUR SERVICES" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+    - var data_block_header = { subtitle: "BLOG UPDATES" , title: "LASTED POSTS FROM OUR BLOG" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+    +main-nav-one-page("home-sticky-nav" , '' ,"main-nav-onepage")
+//- body>main>
+block header
+    header#home.site-header.home-sticky-nav-trigger
+        +home-fw-slider-1("parents-height")
+//- body>main>
+
+block main
+    section#about
+        +section-header-1-1(data_about_header)
+        +about-section-01
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/quote-bg.jpg');")
+        +quote-slider-01
+    section#service
+        +section-header-1-2(data_service_header)
+        +service-section-01
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img1.jpg');")
+        +testimonial-01(null , 'hr-light')
+    section#portfolio
+        +section-header-1-2(data_portfolio_header)
+        +portfolio-special-index-onepage
+    section.no-padding
+        +call-to-action("style-2","normal-btn normal-btn-main btn-size-5")
+    section#blog
+        +section-header-1-1(data_block_header)
+        +blog-lastest-post
+    section.bgc-gray.one-child
+        +brand-carousel-1
+    section#contact
+        +page-contact
+//- body>main>
+block footer
+    +footer-preset-03
+//- body>
+block after-main

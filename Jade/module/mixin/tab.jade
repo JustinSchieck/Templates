@@ -1,0 +1,41 @@
+//- Data TAB -//
+- var data_tab = []
+- data_tab[0]  = {}
+- data_tab[0].title  = "MARKETING"
+- data_tab[0].content = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper<br><br>.Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper."
+
+- data_tab[1]  = {}
+- data_tab[1].title  = "BRANDING"
+- data_tab[1].content = data_tab[0].content
+
+- data_tab[2]  = {}
+- data_tab[2].title  = "ADVERTISING"
+- data_tab[2].content = data_tab[0].content
+
+- data_tab[3]  = {}
+- data_tab[3].title  = "FASHION"
+- data_tab[3].content = data_tab[0].content
+
+//- Tab Nav -//
+mixin tab-nav-01(tab, index , parentID)
+    -if (index == 0)
+        -var show_class = 'active'
+    li(class=show_class): a(data-toggle="tab" href="#tab"+ index + parentID )=tab.title
+
+//- Block Tab -//
+mixin tab-item-01(tab, index , parentID)
+    -if (index == 0)
+        -var show_class = 'active'
+        -var in_class = 'in'
+    .tab-pane.fade(class=in_class + " " + show_class id= "tab" + index + parentID)
+        p!=tab.content
+
+//- Section Tab
+mixin tab-section-01(Class , ID)
+    .tab-section-01(class=Class id=ID)
+        ul.tabs
+            each tab, index in data_tab
+                +tab-nav-01(tab, index , ID)
+        .content
+            each tab, index in data_tab
+                +tab-item-01(tab, index , ID)

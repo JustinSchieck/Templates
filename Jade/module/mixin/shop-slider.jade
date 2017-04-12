@@ -1,0 +1,71 @@
+//- Shop Gallery Carousel (Multiple Items - Slider)
+//- ============================
+-var data_shopGallery_1 = []
+
+-data_shopGallery_1[0] = {}
+-data_shopGallery_1[0].imgUrl = "assets/images/shop-gallery1.jpg" 
+-data_shopGallery_1[0].name = "Extra Watch Normal"
+
+-data_shopGallery_1[1] = {}
+-data_shopGallery_1[1].imgUrl = "assets/images/shop-gallery2.jpg"
+-data_shopGallery_1[1].name = "Maiaimi Mini Lather Bag"
+
+-data_shopGallery_1[2] = {}
+-data_shopGallery_1[2].imgUrl = "assets/images/shop-product-5.png"
+-data_shopGallery_1[2].name = "Tetu Cast Iron Kettle Nambu"
+
+-data_shopGallery_1[3] = {}
+-data_shopGallery_1[3].imgUrl = "assets/images/shop-gallery4.jpg"
+-data_shopGallery_1[3].name = "Maiaimi Mini Lather Bag"
+
+-data_shopGallery_1[4] = {}
+-data_shopGallery_1[4].imgUrl = "assets/images/shop-gallery5.jpg"
+-data_shopGallery_1[4].name = "Felt Pods Flip Tumble Gray"
+
+-data_shopGallery_1[5] = {}
+-data_shopGallery_1[5].imgUrl = "assets/images/shop-gallery6.jpg"
+-data_shopGallery_1[5].name = "Magne Hinge Glasses"
+
+//- ===
+
+-var data_shopGallery_2 = []
+
+-data_shopGallery_2[0] = data_shopGallery_1[0]
+
+-data_shopGallery_2[1] = {}
+-data_shopGallery_2[1].imgUrl = "assets/images/shop-gallery2a.jpg"
+-data_shopGallery_2[1].name = "Maiaimi Mini Lather Bag"
+
+-data_shopGallery_2[2] = data_shopGallery_1[2]
+
+-data_shopGallery_2[3] = {}
+-data_shopGallery_2[3].imgUrl = "assets/images/shop-gallery4a.jpg"
+-data_shopGallery_2[3].name = "Maiaimi Mini Lather Bag"
+
+-data_shopGallery_2[4] = data_shopGallery_1[4]
+
+-data_shopGallery_2[5] = {}
+-data_shopGallery_2[5].imgUrl = "assets/images/shop-gallery7.jpg"
+-data_shopGallery_2[5].name = "Hauteville Concrete Chair"
+
+//- Block Item
+mixin shop-gallery-carousel-item(item)
+    .shop-product-item
+        .content.text-center
+            .image
+                img(src=item.imgUrl alt="Shop gallery image")
+                .overlay
+                    ul
+                        li
+                            a(href="#" data-toggle="modal" data-target="#product-quick-view").quick-view: i.icon-search-icon
+            .name
+                a(href="shop-detail-1.html")= item.name
+
+//- Section
+mixin shop-gallery-carousel(data, Class)
+    .shop-gallery-carousel.multi-slider.dir-nav(class=Class)
+        each item in data
+            +shop-gallery-carousel-item(item)
+        each item in data
+            +shop-gallery-carousel-item(item)
+

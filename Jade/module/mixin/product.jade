@@ -1,0 +1,113 @@
+-var data_productSlider = []
+
+-data_productSlider[0] = {imgUrl: "assets/images/product-img-1.jpg"} 
+-data_productSlider[1] = {imgUrl: "assets/images/product-img-2.jpg"} 
+-data_productSlider[2] = {imgUrl: "assets/images/product-img-3.jpg"} 
+-data_productSlider[3] = {imgUrl: "assets/images/product-img-4.jpg"} 
+
+mixin product-image-item(item)
+    .product-image-item
+        .item-image
+            img.mfp-item(src=item.imgUrl data-mfp-src=item.imgUrl alt="Portfolio slider image")
+
+mixin product-image-slider(Class2,Class1)
+    .product-image-slider-wrapper(class=Class1)
+        .product-image-slider.simple-slider.control-nav(class=Class2)
+            each item in data_productSlider
+                +product-image-item(item)
+//- Portfolio Thumbnail Slider
+//- ============================
+
+//- Thumbnail Slider 1
+//- ======
+-var data_productThumbnailSlider_1 = []
+
+-data_productThumbnailSlider_1[0] = {imgUrl: "assets/images/product-img-1.jpg"}
+
+-data_productThumbnailSlider_1[1] = {imgUrl: "assets/images/product-img-2.jpg"}
+
+-data_productThumbnailSlider_1[2] = {imgUrl: "assets/images/product-img-3.jpg"}
+
+-data_productThumbnailSlider_1[3] = {imgUrl: "assets/images/product-img-4.jpg"}
+
+-data_productThumbnailSlider_1[4] = {imgUrl: "assets/images/product-img-5.jpg"}
+
+//- syn 1
+//- ======
+
+mixin product-thumbnail-slider-syn-1-item(item)
+    .product-slider-item
+        .item-image
+            img.mfp-item(src=item.imgUrl data-mfp-src=item.imgUrl alt="Product slider image")
+
+//- Section
+mixin product-thumbnail-slider-syn-1(data,Class)
+    .product-syn-slider-1.syn-slider-1.dir-nav(class=Class)
+        each item in data
+            +product-thumbnail-slider-syn-1-item(item)
+
+//- Syn 2
+//- ======
+
+mixin product-thumbnail-slider-syn-2-item(item)
+    .product-slider-item
+        .item-image.text-center.layout-after
+            img(src=item.imgUrl alt="Product slider image")
+
+//- Section
+mixin product-thumbnail-slider-syn-2(data,Class)
+    .product-syn-slider-2-wrapper
+        .product-syn-slider-2.syn-slider-2(class=Class)
+            each item in data
+                +product-thumbnail-slider-syn-2-item(item)
+
+//- Combine
+//- ======
+
+mixin product-thumbnail-slider(data,ID,Class1,Class2)
+    -data = (data) ? data : data_productThumbnailSlider_1;
+    .product-thumbnail-slider(id=ID)
+        +product-thumbnail-slider-syn-1(data,Class1)
+        +product-thumbnail-slider-syn-2(data,Class2)
+
+//- Others
+//- ============================
+
+//- Product option
+mixin product-option
+    form.product-option
+        .clearfix
+            .colour
+                div
+                    p Colour:
+                div
+                    label.color-option-1
+                        input(type="radio" name="product-1" value="color 1")
+                        span
+                            i.radio-button
+                    label.color-option-2
+                        input(type="radio" name="product-1" value="color 2" checked)
+                        span
+                            i.radio-button
+                    label.color-option-3
+                        input(type="radio" name="product-1" value="color 3")
+                        span
+                            i.radio-button
+            .size
+                div
+                    p Size:
+                div
+                    select(name="size")
+                        option(value="none") -
+                        option(value="S") S
+                        option(value="M") M
+                        option(value="L") L
+        .clearfix
+            .quantity-wrapper
+                .quantity
+                    p Quantity:
+                    input(type="number", name="quantity", value="1")
+            .cart-button
+                a(href="shop-cart.html").normal-btn.normal-btn-gray.btn-size-3 
+                        i.icon-svg-icon-16
+                        |ADD TO CART

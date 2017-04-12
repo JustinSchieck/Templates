@@ -1,0 +1,30 @@
+//- Data
+-var data_piechart = []
+- data_piechart[0] = {icon : 'icon-tools' , value : '36' , title : 'CREATIVE IDEAS' , caption : 'Ut wisi enim ad minim veniam, quis nos trud exerci tation ullamcorper.'}
+- data_piechart[1] = {icon : 'icon-lifebuoy' , value : '58' , title : 'SOLUTIONS' , caption : 'Ut wisi enim ad minim veniam, quis nos trud exerci tation ullamcorper.'}
+- data_piechart[2] = {icon : 'icon-leaf' , value : '70' , title : 'PROJECTS' , caption : 'Ut wisi enim ad minim veniam, quis nos trud exerci tation ullamcorper.'}
+- data_piechart[3] = {icon : 'icon-rocket' , value : '90' , title : 'CUSTOMER SUPPORT' , caption : 'Ut wisi enim ad minim veniam, quis nos trud exerci tation ullamcorper.'}
+//- Block
+mixin block-piechart(data,color_class)
+    .block-piechart(class=color_class)
+        .piechart(data-value=data.value)
+        h5= data.title
+        p.font-serif= data.caption
+
+mixin block-piechart-icon(data,color_class)
+    .block-piechart(class=color_class)
+        .piechart.piechart-icon(data-value=data.value)
+            .icon(class=data.icon)
+        h5= data.title
+        p.font-serif= data.caption
+//- Group
+
+mixin group-piechart(type ,color_class)
+    .container
+        .row
+            each data in data_piechart
+                .col-md-3.col-sm-6.col-xs-12.section-block-p
+                    if(type === 'icon')
+                        +block-piechart-icon(data , color_class)
+                    else
+                        +block-piechart(data , color_class)

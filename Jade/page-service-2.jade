@@ -1,0 +1,34 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    -var data_pricing_table_header = { title: "CHECK OUR PRICES" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+block before-main
+    +main-nav-2-a3
+block header
+    header.site-header
+    +common-static-header-2('SERVICES')
+block main
+    section.bgc-gray
+        +service-section-03
+    section
+        +counto-section('style-1')
+    section.bgc-gray
+        +page-services
+    section.one-child
+        +section-header-2-2(data_pricing_table_header)
+        +section-price-table
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img2.jpg');")
+        +testimonial-01()
+block footer
+    +footer-preset-02
+block after-main

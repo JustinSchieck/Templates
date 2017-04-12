@@ -1,0 +1,44 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+//- body>
+block before-main
+    +main-nav-2-b1
+//- body>main>
+block header
+    +common-static-header('PORTFOLIO')
+    +page-breadcrumb(['Home','Porfolio','Horizontal Slide'])
+//- body>main>
+block main
+    section.no-padding-bottom
+        +portfolio-thumbnail-slider(1)
+    section
+        .container
+            h5 ABOUT PROJECT
+            .row
+                .col-lg-9.col-md-8.section-block-p
+                    p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+                    p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.
+                .col-lg-3-col-md-4.section-block-p
+                    h5.smb CUSTOM FIELD
+                    p Lorem ipsum dolor sit amet, consectetuer adipiscing elit
+                    h5.smb DATE
+                    p 24 September, 2014
+                    h5.smb CATEGORY
+                    p Art, Photography
+                    h5.smb CLIENT
+                    p Instrmnt Watches
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main

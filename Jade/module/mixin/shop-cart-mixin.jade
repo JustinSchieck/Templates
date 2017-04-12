@@ -1,0 +1,84 @@
+mixin shop-cart-list(Class, Id)
+    .shop-cart-list(class=Class id=Id)
+        table
+            thead
+                tr
+                    th.product-img IMAGE
+                    th.product-name PRODUCT
+                    th.product-size SIZE
+                    th.product-price PRICE
+                    th.product-quantity QUANTITY
+                    th.product-total TOTAL
+                    th.product-remove &nbsp;
+            tbody
+                tr.cart-item
+                    td.product-img
+                        a(href="#")
+                            .image
+                                img(src="assets/images/product-img-2.jpg", alt="Cart Item")
+                    td.product-name
+                        a(href="#")
+                            |FACETTE WATCH BULBUL BY KIBISI
+                    td.product-size -
+                    td.product-price $200.00
+                    td.product-quantity
+                        input(type="number" name="quantity1" min="0" value="1")
+                    td.product-total $200.00
+                    td.product-remove
+                        a(href="#")
+                tr.cart-item
+                    td.product-img
+                        a(href="#")
+                            .image
+                                img(src="assets/images/shop-item-12.jpg", alt="Cart Item")
+                    td.product-name
+                        a(href="#")
+                            |MAIAIMI MINI LATHER BAG
+                    td.product-size M
+                    td.product-price $200.00
+                    td.product-quantity
+                        input(type="number" name="quantity2" min="0" value="1")
+                    td.product-total $200.00
+                    td.product-remove
+                        a(href="#")
+
+mixin shop-cart-coupon(Class, Id)
+    .shop-cart-coupon(class=Class id=Id)
+        h5 COUPON
+        p Enter your coupon code if you have one.
+        input(type="text" name="coupon" placeholder="Your coupon code")
+        br
+        a(href="shop-checkout.html").border-btn.border-btn-main.color-common.btn-size-4 APPLY
+
+mixin shop-cart-total(Class, Id)
+    .shop-cart-total(class=Class id=Id)
+        h3.title CART TOTAL
+        .sub-total
+            h5 SUBTOTAL
+            span.price $400.00
+        .shipping
+            h5 SHIPPING
+            .content
+                label
+                    input(type="radio" name="service-0" value="flat rate" checked)
+                    span
+                        i.radio-button
+                        span.name Flat Rate:
+                        span.price $16.00
+                label
+                    input(type="radio" name="service-0" value="free shipping")
+                    span
+                        i.radio-button
+                        span.name Free Shipping
+                label
+                    input(type="radio" name="service-0" value="international delivery")
+                    span
+                        i.radio-button
+                        span.name  International Delivery:
+                        span.price $116.00
+                p Calculate Shipping
+        .total
+            h4 TOTAL
+            span.price $416.00
+        .button-wrapper
+            a(href="shop-checkout.html").border-btn.border-btn-main.color-common.btn-size-3 CHECKOUT

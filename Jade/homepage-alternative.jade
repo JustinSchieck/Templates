@@ -1,0 +1,48 @@
+extends module/form
+block page-config
+    -page_option.body_class = "alternative";
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = false;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_service_header = { subtitle: "CREATIVITY & DARINGS" , title: "SHOW OFF OUR SERVICES" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+    - var data_team_header = { subtitle: "MEET OUR TEAM" , title: "WHAT MAKES US SUCCESSFUL" , caption:"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    - var data_blog_header = { title: "BLOG UPDATES" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+//- body>
+block before-main
+    +main-nav-2-b1
+//- body>main>
+block header
+    header.site-header
+        +home-fw-slider-8
+//- body>main>
+
+block main
+    section
+        +section-header-1-2(data_service_header)
+        +service-section-01
+    section.bgc-gray
+        +page-services
+    section
+        +counto-section('style-1')
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img2.jpg');")
+        +testimonial-01()
+    section
+        +section-header-1-2(data_team_header)
+        +team-section-02
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img1.jpg');")
+        +quote-slider-01
+    section
+        +page-contact
+//- body>main>
+block footer
+    +footer-preset-03
+//- body>
+block after-main

@@ -1,0 +1,19 @@
+//- *************** Count **************-//
+//- DATA
+-var data_counto = []
+-data_counto[0] = {title: "Web Design Projects" , from:"0" , to:"195"}
+-data_counto[1] = {title: "Happy Client", from:"0"  , to:"280"}
+-data_counto[2] = {title: "Award Winer", from:"0"  , to:"369"}
+-data_counto[3] = {title: "Cup Of Coffee", from:"0"  , to:"124"}
+-data_counto[4] = {title: "Codelines" , from:"0"  , to:"105"}
+
+//- BLOCK+SECTION
+mixin counto-section(Class)
+    .count-section-01(class=Class)
+        .container.remove-col-padding
+            .counter-group
+                each counter in data_counto
+                    .count-wrapper.col-sm-6.col-xs-12.section-block
+                        .counter
+                            h1.timer(data-from=counter.from data-to=counter.to)
+                            p= counter.title

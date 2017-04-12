@@ -1,0 +1,16 @@
+//- Call To Action Style 1 -//
+mixin call-to-action(Class,a_class)
+    .call-to-action-wrapper(class=Class)
+        .container
+            .call-to-action
+                p Start now with this demo or check out our other demos to find what you need.
+                a(href="http://goo.gl/oLvVJV" class=a_class)  PURCHASE
+
+//- Call To Action Style 2 -//
+mixin call-to-action-2
+    .call-to-action-2
+        .container
+            .content(style="background-image: url('assets/images/call-to-action-2.jpg')")
+                a(href="homepage-blog.html")
+                    h3 GO TO OUR BLOG
+                p Click here to take a look

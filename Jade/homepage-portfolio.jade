@@ -1,0 +1,35 @@
+extends module/form
+block page-config
+    -page_option.body_class = null;
+    -page_option.count_to = false;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_portfolio_header = { subtitle: "WHAT WE WORK" , title: "WELCOME TO OUR PORTFOLIO" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+//- body>
+block before-main
+    +main-nav-2-a2
+//- body>main>
+block header
+    header.site-header
+//- body>main>
+block main
+    section.no-padding.bgc-gray
+        +portfolio-special-index-homepage-portfolio-filter
+    section
+        +section-header-1-1(data_portfolio_header)
+        +portfolio-special-index-homepage-portfolio
+    section.no-padding
+        +call-to-action("style-2","border-btn border-btn-main btn-size-5")
+    section.one-child
+        +brand-carousel-1
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main

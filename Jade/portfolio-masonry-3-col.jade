@@ -1,0 +1,23 @@
+extends module/form-portfolio
+block page-config
+    -portfolio_data = []
+    -for (var i = 0; i<5 ; i++)
+        -portfolio_data[2*i] = {}
+        -portfolio_data[2*i].img = 'assets/images/portfolio-600-' + (i + 11) + '.jpg'
+        -portfolio_data[2*i].title = 'CREATIVELY DESIGNED'
+        -portfolio_data[2*i].caption = 'Lorem ipsum dolor sit'
+        -portfolio_data[2*i].filter = portfolio_filter_array[(i+1)%5] + ' ' + portfolio_filter_array[(i+3)%5]
+        -portfolio_data[2*i+1] = {}
+        -portfolio_data[2*i+1].img = 'assets/images/portfolio-tas-' + (i + 1) + '.jpg'
+        -portfolio_data[2*i+1].title = 'CREATIVELY DESIGNED'
+        -portfolio_data[2*i+1].caption = 'Lorem ipsum dolor sit'
+        -portfolio_data[2*i+1].filter = portfolio_filter_array[(i+3)%5] + ' ' + portfolio_filter_array[(i+4)%5]
+    -portfolio_data[10] = {}
+    -portfolio_data[10].img = 'assets/images/portfolio-tas-' + (i + 1) + '.jpg'
+    -portfolio_data[10].title = 'CREATIVELY DESIGNED'
+    -portfolio_data[10].caption = 'Lorem ipsum dolor sit'
+    -portfolio_data[10].filter = portfolio_filter_array[(i+3)%5] + ' ' + portfolio_filter_array[(i+4)%5]
+    -portfolio_option.page_title = 'PORTFOLIO';
+    -portfolio_option.type = 'item-2';
+    -portfolio_option.container_class = 'container remove-col-padding';
+    -portfolio_option.item_class = 'col-md-4 col-sm-6 col-xs-12';

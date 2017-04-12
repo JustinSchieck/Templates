@@ -1,0 +1,60 @@
+extends module/form
+block page-config
+    -page_option.body_class = "left-menu";
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+block page-data
+    - var data_about_header = { subtitle: "WHO WE ARE" , title: "A STORY ABOUT US" , caption:"Wolverine Creative is an award winning digital media, web design and PR agency. In 2012, Wolverine Creative was recognized as one of the top 3 Advertising Agencies in Wisconsin by readers of Corporate Report Wisconsin."}
+    - var data_service_header = { subtitle: "CREATIVITY & DARINGS" , title: "CHECK OUT OUR SERVICES" , caption:"Wolverine Creative are an independent , one-stop creative specialist  with the experience & the know how to come up with great business solutions and make them happen"}
+    - var data_team_header = { subtitle: "WHO WE ARE" , title: "MEET OUR TEAM" , caption:"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    - var data_portfolio_header = { subtitle: "WHAT WE WORK" , title: "ENJOY OUR PORTFOLIO" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+//- body>
+block before-main
+    //- body>main>
+    +main-nav-left
+    +main-nav-1-3("home-sticky-nav")
+block header
+    header.site-header.home-sticky-nav-trigger
+        +home-fw-slider-4("parents-height")
+//- body>main>
+block main
+    section
+        +section-header-1-1(data_about_header)
+        +portfolio-about
+    section.bgc-gray
+        +counto-section("style-1")
+    section
+        +section-header-1-1(data_service_header)
+        +service-section-02
+    section.one-child.bgc-gray
+        +quote-slider-02
+    section
+        +section-header-1-1(data_team_header)
+        +team-section-02
+    section.bgc-gray.one-child
+        +brand-carousel-1
+    section
+        +section-header-1-2(data_portfolio_header)
+        -var data_portfolio_array = []
+        -var data_filter_array = ['art', 'business' , 'interior' , 'photography' , 'fashion']
+        -for( var i=0 ; i<7; i++)
+            -data_portfolio_array[i] = {}
+            -data_portfolio_array[i].img = 'assets/images/portfolio-600-'+ ((i+27)%30 + 1) + '.jpg'
+            -data_portfolio_array[i].title = 'LOVE MY LIFE'
+            -data_portfolio_array[i].caption = 'Lorem ipsum dolor sit'
+            -data_portfolio_array[i].filter = data_filter_array[i%5] + " " + data_filter_array[(i+3)%5]
+        +portfolio-group-generator('item-1', data_portfolio_array , 'container-fluid remove-col-padding' , 'dark-overlay col-lg-3 col-md-4 col-sm-6 col-xs-6 ' , false , false)
+    section.one-child
+        +testimonial-02
+//- body>main>
+block footer
+    +footer-preset-02
+//- body>
+block after-main
+                                        

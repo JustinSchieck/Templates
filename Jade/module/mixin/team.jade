@@ -1,0 +1,110 @@
+//- team-style-01
+//- Data
+-var data_team = []
+- data_team[0] = {img: 'assets/images/team-01.jpg', name:'NICOLAS OTAMENDI', job:'Graphic Design'}
+- data_team[1] = {img: 'assets/images/team-02.jpg', name:'STELLA MCCARTNEY', job:'Brading / UX design'}
+- data_team[2] = {img: 'assets/images/team-03.jpg', name:'HENRY JACKMAN', job:'Web Designer'}
+
+//- block
+mixin team-style-01(team)
+    .team-style-01.text-center.section-block-p
+        .image
+            img(src=team.img, alt="")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        +social-default-01
+        h5.name= team.name
+        p.job= team.job
+
+//- Section
+mixin team-section-01
+    .team-section-01
+        .container
+            .row
+                each team in data_team
+                    .col-md-4
+                        +team-style-01(team)
+
+//- team-style-02
+//- Data
+-var data_team1 = []
+- data_team1[0] = {img: 'assets/images/team-04.jpg', name:'NICOLAS OTAMENDI', job:'Graphic Design'}
+- data_team1[1] = {img: 'assets/images/team-05.jpg', name:'STELLA MCCARTNEY', job:'Brading / UX design'}
+- data_team1[2] = {img: 'assets/images/team-06.jpg', name:'HENRY JACKMAN', job:'Developers'}
+
+//- block
+mixin team-style-02(team)
+    .team-style-02
+        .image
+            img(src=team.img, alt="")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        +social-default-01
+        h5.name= team.name
+        p.job= team.job
+
+//- Section
+mixin team-section-02
+    .team-section-02.text-center
+        .container
+            .row
+                each team in data_team1
+                    .col-md-4
+                        +team-style-02(team)
+//- team-style-03
+//- Data
+-var data_team2 = []
+- data_team2[0] = {icon:'icon-indians-icons-05', img: 'assets/images/team-07.jpg', name:'NICOLAS OTAMENDI', job:'Technical Managers'}
+- data_team2[1] = {icon:'icon-indians-icons-06', img: 'assets/images/team-08.jpg', name:'STELLA MCCARTNEY', job:'Brading / UX design'}
+- data_team2[2] = {icon:'icon-indians-icons-02', img: 'assets/images/team-09.jpg', name:'HENRY JACKMAN', job:'Developers'}
+
+//- Block
+mixin team-style-03(team)
+    .team-style-03
+        .image
+            img(src=team.img, alt="")
+            .overlay
+                    h5.name=team.name
+                    p.job=team.job
+                    i.icon(class=team.icon)
+                    +social-default-01
+
+//- Section
+mixin team-section-03
+    .team-section-03.text-center
+        .container
+            .row
+                each team in data_team2
+                    .col-md-4
+                        +team-style-03(team)
+
+//- team-style-04
+//- Data
+-var data_team3 = []
+- data_team3[0] = {img: 'assets/images/team-01.jpg', name:'NICOLAS OTAMENDI', job:'Graphic Design'}
+- data_team3[1] = {img: 'assets/images/team-02.jpg', name:'STELLA MCCARTNEY', job:'Brading / UX design'}
+- data_team3[2] = {img: 'assets/images/team-03.jpg', name:'HENRY JACKMAN', job:'Web Designer'}
+- data_team3[3] = {img: 'assets/images/team-03.jpg', name:'HENRY JACKMAN', job:'Web Designer'}
+- data_team3[4] = {img: 'assets/images/team-01.jpg', name:'NICOLAS OTAMENDI', job:'Graphic Design'}
+- data_team3[5] = {img: 'assets/images/team-02.jpg', name:'STELLA MCCARTNEY', job:'Brading / UX design'}
+//- block
+mixin team-style-04(team)
+    .team-style-01.text-center.section-block-p
+        .image
+            img(src=team.img, alt="")
+            .overlay
+                .cell-vertical-wrapper
+                    .cell-middle
+                        +social-default-01
+        h5.name= team.name
+        p.job= team.job
+//- Section
+mixin team-section-04
+    .team-section-01
+        .container
+            .row
+                each team in data_team3
+                    .col-md-4
+                        +team-style-04(team)

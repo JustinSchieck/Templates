@@ -1,0 +1,54 @@
+extends module/form
+block page-config
+    -page_option.body_class = "business-page";
+    -page_option.count_to = true;
+    -page_option.count_down = false;
+    -page_option.slider = true;
+    -page_option.isotope = true;
+    -page_option.slip_screen = false;
+    -page_option.bootstrap_js = true;
+    -page_option.jquery_ui = false;
+    -page_option.magnific_popup = false;
+    -page_option.progressbar = true;
+block page-data
+    - var data_blog_header = { subtitle: "BLOG UPDATES" , title: "LASTED POSTS FROM OUR BLOG" , caption:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper"}
+    - var data_team_header ={title : "MEET OUR TEAM" , caption :"Most businesses think that product is the most important thing, but without great leadership, mission and a team that deliver results at a high level, even the best product won't make a company successful."}
+    - var data_skills_header = { title: "WHY CHOOSE US" , caption:"Design is our art and our passion. Our goal is to create the best products with a pixel-perfect eye for detail and a high standard for aesthetic excellence. Let us help you make your website simple, beautiful and professional."}
+//- body>
+block before-main
+    +main-nav-landing-page
+//- body>main>
+block header
+    header.site-header.home-sticky-nav-trigger
+        +home-fw-slider-9("parents-height")
+//- body>main>
+block main
+    section.no-padding
+        +page-about-no-header
+    section.border-bottom
+        +section-header-2-1(data_skills_header)
+        .container
+            .row
+                .col-md-6.col-xs-12(style="margin-bottom: 50px")
+                    +accordion-01
+                .col-md-6.progressbar-wrapper
+                    +group-progressbar('basic')
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img1.jpg');")
+        +quote-slider-01
+    section
+        +section-header-2-1(data_team_header)
+        +team-section-02
+    section.large-space.one-child.bgc-gray
+        +brand-carousel-1
+    section.one-child
+        .parallax-bg.quote-slider-parallax(data-stellar-background-ratio="0.25" style="background-image: url('assets/images/testimonial-img2.jpg');")
+        +testimonial-01()
+    section
+        +section-header-1-2(data_blog_header)
+        +blog-lastest-post
+//- body>main>
+block footer
+    +footer-preset-03
+//- body>
+block after-main
